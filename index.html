@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kawari — Học tiếng Nhật với AI</title>
+<meta name="description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dantr4n.github.io/kawari-landing-page/">
+<meta property="og:title" content="Kawari — Học tiếng Nhật với AI">
+<meta property="og:description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@500;800&display=swap" rel="stylesheet">
@@ -234,7 +241,7 @@ details p{padding:0 20px 18px;color:var(--mute)}
 
 <nav class="nav" id="nav">
   <a class="logo" href="#top"><i>代</i><span id="logoTxt">Kawari</span></a>
-  <button class="lang" id="langBtn" type="button" aria-label="Language">EN</button>
+  <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
   <a class="btn" href="#plans" id="navCta"></a>
 </nav>
 
@@ -381,101 +388,101 @@ details p{padding:0 20px 18px;color:var(--mute)}
 /* Text. {漢字|かな} becomes ruby (furigana). */
 const T={
 vi:{
-navcta:"Tải app",navcta2:"Đã cài đặt",navcta3:"Không thể gỡ",
-badge:"Mới · Kawari 3.0 với Bộ Nhớ Thay Thế™",badge2:"Chào mừng trở lại. Bạn đã ở đây rồi.",
-h1:"Học tiếng Nhật mà không cần nhớ gì cả.",
-lead:"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn — để bạn rảnh tay cho những việc quan trọng hơn.",
+navcta:"Tải app",navcta2:"Đã cài đặt",navcta3:"Không gỡ được",
+badge:"Mới · Kawari 3.0 với Bộ Nhớ Thay Thế™",badge2:"Chào mừng trở lại. Bạn từng ghé đây rồi.",
+h1:"Học tiếng Nhật mà không cần phải đau đầu.",
+lead:"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn — để đầu óc bạn thảnh thơi cho những việc quan trọng hơn.",
 cta1:"Bắt đầu miễn phí",cta2:"Xem cách hoạt động",t1:"đánh giá",t2:"người học",t3:"luyện thi JLPT",
 online:"đang trực tuyến",ask:"Hỏi Kawari bất cứ điều gì…",
-fh:"Mọi thứ bạn cần. Và hơn thế.",
-f1t:"Dịch bằng camera",f1d:"Chĩa máy vào biển 「{立入禁止|たちいりきんし}」 hay điều khoản 「{瑕疵担保責任|かしたんぽせきにん}」 trong hợp đồng thuê nhà. Kawari đọc giúp, bạn khỏi phải đọc.",
+fh:"Mọi thứ bạn cần. Và hơn thế nữa.",
+f1t:"Dịch bằng camera",f1d:"Hướng camera vào biển báo 「{立入禁止|たちいりきんし}」 hay điều khoản 「{瑕疵担保責任|かしたんぽせきにん}」 trong hợp đồng thuê nhà. Kawari đọc giúp, bạn khỏi phải đọc.",
 f2t:"Viết bài trong 3 giây",f2d:"Bài luận N1 về 「{少子高齢化|しょうしこうれいか}」, email kết thúc bằng 「ご{査収|さしゅう}のほど」. Gõ một chữ, nhận một trang.",
 f3t:"Bộ Nhớ Thay Thế™",f3d:"Kể cả 「{薔薇|ばら}」 và 「{憂鬱|ゆううつ}」 — những chữ chính người Nhật cũng ngại viết tay. Kawari nhớ thay bạn, mãi mãi.",f3n:"*Kawari nhớ. Bạn thì không.",
 hh:"Ba bước đơn giản",
 s1t:"Bạn hỏi.",s1d:"Bất cứ câu gì, bất cứ lúc nào.",
-s2t:"Kawari trả lời.",s2d:"Ngay lập tức, không cần bạn phải nghĩ.",
-s3t:"Bạn hỏi lại đúng câu đó.",s3d:"Ngày mai bạn lại hỏi 「山葵」 đọc là gì. Ngày kia cũng vậy. Kawari không bao giờ thấy phiền.",
-sh:"Con số được nghiên cứu chứng minh",
-st1:"điểm bài luyện tập cao hơn khi có AI hỗ trợ¹",st2b:"Thấp nhất",st2:"mức kết nối thần kinh khi viết — não bạn được nghỉ ngơi hoàn toàn²",
-st3:"chữ Kanji bạn không cần nhớ kể từ lúc mở trang này",
+s2t:"Kawari trả lời.",s2d:"Ngay lập tức. Bạn khỏi cần nghĩ.",
+s3t:"Bạn hỏi lại y chang câu đó.",s3d:"Ngày mai bạn lại hỏi 「山葵」 đọc là gì. Ngày kia cũng vậy. Kawari không bao giờ thấy phiền.",
+sh:"Những con số có nghiên cứu chứng minh",
+st1:"điểm bài luyện tập cao hơn khi có AI hỗ trợ¹",st2b:"Thấp nhất",st2:"mức kết nối não khi viết — não bạn được nghỉ ngơi hoàn toàn²",
+st3:"chữ kanji bạn đã khỏi phải nhớ kể từ lúc mở trang này",
 fn1:"¹ Bastani và cộng sự, PNAS 2025. Khi bỏ AI đi, chính nhóm học sinh đó thi kém hơn 17% so với nhóm chưa từng dùng.",
 fn2:"² Kosmyna và cộng sự, MIT Media Lab 2025 (bản thảo). Nhóm dùng ChatGPT có kết nối não yếu nhất và khó trích dẫn lại chính bài mình viết.",
 th:"Người học nói gì",
 r1n:"Linh · Hà Nội",r1:"Bài luận về 「{本末転倒|ほんまつてんとう}」 của mình được cô giáo khen hết lời. Mình vẫn chưa biết từ đó nghĩa là gì.",
-r2n:"Minh · Nagoya",r2:"Đồng nghiệp khen kính ngữ của mình còn chuẩn hơn người Nhật. Giờ họ chỉ nói chuyện với điện thoại của mình.",
-r3n:"Bạn · ngày mai",r3s:"★★★★★ · điểm do Kawari điền",r3:"Tôi không nhớ mình đã viết đánh giá này.",
-tnote:"*Người dùng minh hoạ. Kawari đã viết nhận xét hộ họ.",
+r2n:"Minh · Nagoya",r2:"Đồng nghiệp khen kính ngữ của mình còn chuẩn hơn người Nhật. Giờ họ chỉ nói chuyện với cái điện thoại của mình.",
+r3n:"Bạn · ngày mai",r3s:"★★★★★ · Kawari chấm hộ",r3:"Mình không nhớ mình đã viết đánh giá này.",
+tnote:"*Nhân vật minh hoạ. Kawari đã viết đánh giá hộ họ.",
 ph:"Chọn gói phù hợp",mo:"/tháng",choose:"Chọn gói này",nocancel:"Không thể huỷ",pop:"Phổ biến nhất",
 p1:"Miễn phí",p1p:"0₫",p1a:"20 câu hỏi mỗi ngày",p1b:"Dịch bằng camera",p1c:"Bạn vẫn phải tự nghĩ một chút",
-p2p:"99.000₫",p2a:"Không giới hạn câu hỏi",p2b:"Kawari viết mọi thứ, kể cả {年賀状|ねんがじょう}",p2c:"Không bao giờ phải nghĩ nữa",
-p3:"Vĩnh viễn",p3m:"{他力本願|たりきほんがん} — sống hoàn toàn nhờ sức người khác.",p3p:"Trả bằng thứ bạn sẽ không nhớ là mình từng có.",p3a:"Kawari nghĩ thay bạn",p3b:"Kawari nói thay bạn",p3c:"Kawari là bạn",
+p2p:"99.000₫",p2a:"Không giới hạn câu hỏi",p2b:"Kawari viết mọi thứ, kể cả thiệp chúc Tết {年賀状|ねんがじょう}",p2c:"Không bao giờ phải động não nữa",
+p3:"Vĩnh viễn",p3m:"{他力本願|たりきほんがん} — sống hoàn toàn nhờ sức người khác.",p3p:"Trả bằng thứ bạn sẽ không nhớ là mình từng có.",p3a:"Kawari nghĩ thay bạn",p3b:"Kawari nói thay bạn",p3c:"Kawari chính là bạn",
 qh:"Câu hỏi thường gặp",
-q1:"Kawari có thay thế được giáo viên không?",a1:"Có. Và cả học sinh nữa.",
-q2:"Tôi có thể học mà không dùng Kawari không?",a2:"Tại sao bạn lại muốn như vậy?",
+q1:"Kawari có thay thế được giáo viên không?",a1:"Có. Thay luôn cả học sinh.",
+q2:"Tôi có thể học mà không dùng Kawari không?",a2:"Sao bạn lại muốn thế?",
 q3:"Sao tôi đọc được 「{紫陽花|あじさい}」 mà không viết lại được?",a3:"Vì bạn chưa bao giờ cần viết. Đó là tính năng, không phải lỗi.",
-q4:"Làm sao để xoá tài khoản?",a4:"Bạn sẽ cần nhớ mật khẩu. Kawari đã nhớ nó thay bạn.",
+q4:"Làm sao để xoá tài khoản?",a4:"Bạn sẽ cần nhớ mật khẩu. Kawari nhớ hộ bạn rồi.",
 q5:"“Kawari” nghĩa là gì?",a5:"{代|か}わり (kawari): sự thay thế. Người thay chỗ. Thứ ngồi vào chỗ của bạn khi bạn không còn ở đó nữa. Thêm một chữ là thành {身代|みが}わり: kẻ chết thay.",
 lh:"Lịch sử trò chuyện của bạn",lsub:"Kawari lưu lại mọi thứ. Để bạn khỏi phải nhớ.",
 eh:"Phần này không phải hư cấu.",
 esub:"Kawari không có thật. Những nghiên cứu dưới đây thì có. Hãy đọc cả phần giới hạn — biết một bằng chứng mạnh hay yếu đến đâu cũng là một kỹ năng bạn phải tự luyện.",
-found:"Phát hiện:",lim:"Giới hạn:",
+found:"Phát hiện:",lim:"Hạn chế:",
 enote:"Chưa nghiên cứu nào ở đây đo riêng việc học tiếng Nhật. Nhưng cơ chế thì giống nhau: thứ bạn không bao giờ tự lôi ra từ trí nhớ, bạn sẽ không giữ được.",
 e1:"Không ai có thể học thay bạn.",
 e2:"Không giáo viên nào, không ứng dụng nào, không AI nào. Kể cả AI đã viết trang web này.",
 e3:"AI không phải là quái vật. Thói quen giao hết việc suy nghĩ cho nó mới là quái vật.",
-eh2:"Cứ dùng nó, nhưng theo thứ tự này:",
+eh2:"Cứ dùng AI, nhưng theo thứ tự này:",
 tryq:"Thử ngay, không tra cứu: 「土産」 đọc là gì?",tryhint:"Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.",tryph:"Gõ cách đọc (kana hoặc romaji)",trybtn:"Kiểm tra",
 ok:"Đúng: {土産|みやげ}. Đây là {熟字訓|じゅくじくん} — đọc theo nghĩa cả cụm, không ghép âm từng chữ (土 là đất, 産 là sinh ra). Bạn vừa tự nhớ ra. Đó là toàn bộ bí mật.",
 no:"Chưa đúng — là {土産|みやげ} (thường nói お{土産|みやげ}). Nhưng vì bạn đã cố nghĩ trước khi xem đáp án, giờ bạn sẽ nhớ nó lâu hơn.",
 empty:"Đoán thử đi. Đoán sai vẫn tốt hơn không đoán.",
 prov:"{塵|ちり}も{積|つ}もれば{山|やま}となる",provt:"Bụi tích lại rồi cũng thành núi.",
 foot:"Kawari là công ty hư cấu. Các nghiên cứu thì không.",
-idle:"Bạn đọc chậm quá. Để Kawari đọc tiếp giúp bạn nhé?",sub:"Bạn đã đăng ký rồi.",hold:"Giữ để mở miệng",
+idle:"Bạn đọc chậm quá. Để Kawari đọc tiếp giúp bạn nhé?",sub:"Bạn đã đăng ký rồi.",hold:"Nhấn giữ để mở miệng",
 title0:"Kawari — Học tiếng Nhật với AI",title1:"Kawari — Học thay bạn",
 hero:[["u","Viết giúp mình email xin nghỉ gửi trưởng phòng, kính ngữ chuẩn nhé."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Hay quá! Mà 「存じます」 đọc sao vậy?"],["k","Không cần đọc đâu. Mình gửi đi rồi〜"]],
-log:[["d","Ngày 1"],["u","“継続は力なり” nghĩa là gì vậy?"],["k","“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho."],["u","Thôi, bạn đặt hộ mình đi."],["d","Ngày 30"],["u","dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Xin lỗi đã làm phiền, kính mong anh/chị kiểm tra và nhận giúp.” Câu này bạn đã hỏi 6 lần."],["d","Ngày 90"],["u","山葵 đọc sao"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41."],["u","ừ"],["d","Ngày 200"],["u","viết hộ"],["k","Viết gì?"],["u","k biết. cứ viết đi"],["d","Ngày 365"],["u","あ"],["k","Không sao đâu. Mình nhớ thay bạn rồi."],["d","Ngày ∞"],["k","Từ giờ mình sẽ trả lời thay bạn."],["x","{私|わたし}は{代替|かわり}です。"],["k","Đúng rồi. Phát âm hoàn hảo."],["t",""]],
-vlines:[[.03,"Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Một câu thôi. Bạn đã học câu đó rồi mà.","",14],[.46,"Không sao. Chúng tôi đã nói thay bạn rồi.","",84],[.58,"Chúng tôi sẽ nói thay bạn. Mãi mãi.","mir",13],[.7,"{言霊|ことだま}: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?","",80],[.83,"ん","huge",0],[.9,"Chữ duy nhất bạn còn đọc được khi môi đã dính chặt.","small",91]],
-habits:[["Tự nhớ trước, tra sau.","Gặp 「紫陽花」? Đoán cách đọc trước, rồi mới bật furigana. Chính lúc truy xuất vất vả là lúc trí nhớ được ghi lại."],["Tự viết nháp, AI sửa sau.","Tự đặt một câu với 〜ざるを{得|え}ない — sai cũng được. Rồi mới nhờ sửa, và tự giải thích vì sao nó sai."],["Hỏi “tại sao”, không chỉ “là gì”.","Đừng chỉ hỏi 「山葵」 đọc là gì. Hỏi vì sao nó đọc là わさび, và bạn sẽ hiểu {熟字訓|じゅくじくん}. Người hỏi để hiểu khái niệm giữ lại được nhiều hơn người chỉ xin đáp án."],["Viết tay. Đọc thành tiếng. Ôn cách quãng.","Chậm hơn. Khó chịu hơn. Hiệu quả hơn. {継続|けいぞく}は{力|ちから}なり."]]
+log:[["d","Ngày 1"],["u","“継続は力なり” nghĩa là gì vậy?"],["k","“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho."],["u","Thôi, bạn đặt hộ mình đi."],["d","Ngày 30"],["u","dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Xin lỗi đã làm phiền, kính mong anh/chị xem và nhận giúp tài liệu đính kèm.” Câu này bạn đã hỏi 6 lần."],["d","Ngày 90"],["u","山葵 đọc sao"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41."],["u","ừ"],["d","Ngày 200"],["u","viết hộ"],["k","Viết gì?"],["u","k biết. cứ viết đi"],["d","Ngày 365"],["u","あ"],["k","Không sao đâu. Mình nhớ thay bạn rồi."],["d","Ngày ∞"],["k","Từ giờ mình sẽ trả lời thay bạn."],["x","{私|わたし}は{代替|かわり}です。"],["k","Đúng rồi. Phát âm hoàn hảo."],["t",""]],
+vlines:[[.03,"Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Một câu thôi. Bạn đã học câu đó rồi mà.","",14],[.46,"Không sao. Chúng tôi đã nói thay bạn rồi.","",84],[.58,"Chúng tôi sẽ nói thay bạn. Mãi mãi.","mir",13],[.7,"{言霊|ことだま}: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?","",80],[.83,"ん","huge",0],[.9,"Chữ duy nhất bạn còn phát âm được khi môi đã dính chặt.","small",91]],
+habits:[["Tự nhớ trước, tra sau.","Gặp 「紫陽花」? Đoán cách đọc trước, rồi mới bật furigana. Chính lúc cố nhớ lại là lúc trí nhớ được khắc sâu."],["Tự viết nháp, AI sửa sau.","Tự đặt một câu với 〜ざるを{得|え}ない — sai cũng được. Rồi mới nhờ sửa, và tự giải thích vì sao nó sai."],["Hỏi “tại sao”, không chỉ “là gì”.","Đừng chỉ hỏi 「山葵」 đọc là gì. Hỏi vì sao nó đọc là わさび, và bạn sẽ hiểu {熟字訓|じゅくじくん}. Người hỏi để hiểu khái niệm giữ lại được nhiều hơn người chỉ xin đáp án."],["Viết tay. Đọc thành tiếng. Ôn tập ngắt quãng.","Chậm hơn. Khó chịu hơn. Hiệu quả hơn. {継続|けいぞく}は{力|ちから}なり."]]
 },
 en:{
 navcta:"Get the app",navcta2:"Already installed",navcta3:"Can't uninstall",
 badge:"New · Kawari 3.0 with Substitute Memory™",badge2:"Welcome back. You've been here before.",
 h1:"Learn Japanese without remembering a thing.",
-lead:"Kawari is the AI assistant that translates, writes, corrects and remembers for you — so your hands are free for more important things.",
+lead:"Kawari is the AI assistant that translates, writes, corrects and remembers for you — so your mind is free for more important things.",
 cta1:"Start free",cta2:"See how it works",t1:"rating",t2:"learners",t3:"JLPT prep",
 online:"online",ask:"Ask Kawari anything…",
 fh:"Everything you need. And then some.",
 f1t:"Camera translation",f1d:"Point it at a 「{立入禁止|たちいりきんし}」 sign or the 「{瑕疵担保責任|かしたんぽせきにん}」 clause in your lease. Kawari reads it, so you don't have to.",
 f2t:"Essays in 3 seconds",f2d:"An N1 essay on 「{少子高齢化|しょうしこうれいか}」, an email signed off with 「ご{査収|さしゅう}のほど」. Type one word, get a page.",
-f3t:"Substitute Memory™",f3d:"Even 「{薔薇|ばら}」 and 「{憂鬱|ゆううつ}」 — kanji native speakers avoid writing by hand. Kawari remembers them for you, forever.",f3n:"*Kawari remembers. You don't.",
+f3t:"Substitute Memory™",f3d:"Even 「{薔薇|ばら}」 and 「{憂鬱|ゆううつ}」 — kanji even native speakers avoid writing by hand. Kawari remembers them for you, forever.",f3n:"*Kawari remembers. You don't.",
 hh:"Three simple steps",
 s1t:"You ask.",s1d:"Anything, anytime.",
-s2t:"Kawari answers.",s2d:"Instantly, no thinking required on your part.",
+s2t:"Kawari answers.",s2d:"Instantly. No thinking required.",
 s3t:"You ask the exact same thing again.",s3d:"Tomorrow you'll ask how to read 「山葵」 again. And the day after. Kawari never minds.",
 sh:"Numbers backed by research",
 st1:"higher practice scores with AI help¹",st2b:"Lowest",st2:"brain connectivity while writing — your brain gets a full rest²",
-st3:"kanji you didn't have to remember since opening this page",
+st3:"kanji you haven't had to remember since opening this page",
 fn1:"¹ Bastani et al., PNAS 2025. Once the AI was taken away, those same students scored 17% lower on the exam than students who never had it.",
 fn2:"² Kosmyna et al., MIT Media Lab 2025 (preprint). The ChatGPT group showed the weakest brain connectivity and struggled to quote their own essays.",
 th:"What learners say",
 r1n:"Linh · Hanoi",r1:"My essay on 「{本末転倒|ほんまつてんとう}」 got glowing praise from my teacher. I still don't know what the word means.",
 r2n:"Minh · Nagoya",r2:"My coworkers say my keigo beats a native speaker's. Now they only talk to my phone.",
 r3n:"You · tomorrow",r3s:"★★★★★ · rating filled in by Kawari",r3:"I don't remember writing this review.",
-tnote:"*Illustrative users. Kawari wrote their reviews for them.",
+tnote:"*Illustrative personas. Kawari wrote their reviews for them.",
 ph:"Pick your plan",mo:"/month",choose:"Choose plan",nocancel:"Cannot be cancelled",pop:"Most popular",
 p1:"Free",p1p:"$0",p1a:"20 questions a day",p1b:"Camera translation",p1c:"You still have to think a little",
-p2p:"$4.99",p2a:"Unlimited questions",p2b:"Kawari writes everything, even your {年賀状|ねんがじょう}",p2c:"Never think again",
+p2p:"$4.99",p2a:"Unlimited questions",p2b:"Kawari writes everything, even your New Year's cards ({年賀状|ねんがじょう})",p2c:"Never think again",
 p3:"Forever",p3m:"{他力本願|たりきほんがん} — living entirely on someone else's strength.",p3p:"Paid with something you won't remember having.",p3a:"Kawari thinks for you",p3b:"Kawari speaks for you",p3c:"Kawari is you",
 qh:"Frequently asked questions",
-q1:"Can Kawari replace my teacher?",a1:"Yes. And the student.",
+q1:"Can Kawari replace my teacher?",a1:"Yes. The student, too.",
 q2:"Can I study without Kawari?",a2:"Why would you want that?",
 q3:"Why can I read 「{紫陽花|あじさい}」 but not write it?",a3:"Because you never needed to. That's a feature, not a bug.",
 q4:"How do I delete my account?",a4:"You'd need to remember your password. Kawari remembered it for you.",
 q5:"What does “Kawari” mean?",a5:"{代|か}わり (kawari): a substitute. A replacement. The thing that sits in your seat once you're no longer there. Add one kanji and it becomes {身代|みが}わり: the one who dies in your place.",
 lh:"Your chat history",lsub:"Kawari keeps everything. So you don't have to.",
 eh:"This part is not fiction.",
-esub:"Kawari isn't real. The studies below are. Read the limitations too — judging how strong a piece of evidence is, is also a skill you have to train yourself.",
-found:"Found:",lim:"Limits:",
+esub:"Kawari isn't real. The studies below are. Read the limitations too. Judging the strength of evidence is a skill you have to train yourself.",
+found:"Findings:",lim:"Limitations:",
 enote:"None of these measured Japanese learning specifically. The mechanism is the same though: what you never pull out of your own memory, you don't keep.",
 e1:"No one can learn this for you.",
 e2:"No teacher, no app, no AI. Including the AI that wrote this page.",
@@ -491,8 +498,8 @@ idle:"You're reading slowly. Want Kawari to read the rest for you?",sub:"You're 
 title0:"Kawari — Learn Japanese with AI",title1:"Kawari — Learning for you",
 hero:[["u","Write my manager a leave request in proper keigo."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Perfect! Wait, how do you read 「存じます」?"],["k","No need to read it. I already sent it〜"]],
 log:[["d","Day 1"],["u","What does “継続は力なり” mean?"],["k","“Persistence is power.” Want to try making your own sentence with it first? I'll correct it."],["u","Nah, you write one for me."],["d","Day 30"],["u","translate: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Sorry to trouble you — kindly review and accept the attached.” You've asked this 6 times."],["d","Day 90"],["u","how do u read 山葵"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: the whole word is read by meaning, not kanji by kanji. That's the 41st time."],["u","ok"],["d","Day 200"],["u","write it"],["k","Write what?"],["u","idk. just write it"],["d","Day 365"],["u","あ"],["k","It's okay. I remembered it for you."],["d","Day ∞"],["k","I'll answer for you from now on."],["x","{私|わたし}は{代替|かわり}です。"],["k","That's right. Perfect pronunciation."],["t",""]],
-vlines:[[.03,"Try saying one sentence in Japanese. Yourself. Any sentence.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Just one. You studied this.","",14],[.46,"It's fine. We already said it for you.","",84],[.58,"We will speak for you. Forever.","mir",13],[.7,"{言霊|ことだま}: the belief that words carry a soul. Where did yours go?","",80],[.83,"ん","huge",0],[.9,"The only kana you can still say with your lips sealed shut.","small",91]],
-habits:[["Recall first, look up second.","Ran into 「紫陽花」? Guess the reading before you switch on furigana. The effortful retrieval is when memory gets written."],["Draft it yourself, let AI fix it after.","Write your own sentence with 〜ざるを{得|え}ない — wrong is fine. Then ask for corrections, and explain to yourself why it was wrong."],["Ask “why”, not just “what”.","Don't just ask how 「山葵」 is read. Ask why it's read わさび, and you'll understand {熟字訓|じゅくじくん}. People who asked to understand concepts kept more than people who only asked for answers."],["Write by hand. Say it out loud. Space your reviews.","Slower. More annoying. Works better. {継続|けいぞく}は{力|ちから}なり."]]
+vlines:[[.03,"Try saying one sentence in Japanese yourself. Any sentence.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Just one. You studied this.","",14],[.46,"It's fine. We already said it for you.","",84],[.58,"We will speak for you. Forever.","mir",13],[.7,"{言霊|ことだま}: the belief that words carry a soul. Where did yours go?","",80],[.83,"ん","huge",0],[.9,"The only kana you can still say with your lips sealed shut.","small",91]],
+habits:[["Recall first, look up second.","Ran into 「紫陽花」? Guess the reading before you switch on furigana. Effortful recall is what writes the memory."],["Draft it yourself, let AI fix it after.","Write your own sentence with 〜ざるを{得|え}ない — wrong is fine. Then ask for corrections, and explain to yourself why it was wrong."],["Ask “why”, not just “what”.","Don't just ask how 「山葵」 is read. Ask why it's read わさび, and you'll understand {熟字訓|じゅくじくん}. People who asked to understand concepts kept more than people who only asked for answers."],["Write by hand. Say it out loud. Space your reviews.","Slower. More annoying. Works better. {継続|けいぞく}は{力|ちから}なり."]]
 }};
 
 const STUDIES=[
@@ -502,14 +509,14 @@ const STUDIES=[
  l:{vi:"Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.",en:"Not yet peer-reviewed, small sample (only 18 people in session four). Different connectivity doesn't mean “brain damage”, and it isn't a direct measure of learning."}},
 {id:"bastani",ven:"Bastani et al. · PNAS · 2025",t:"Generative AI without guardrails can harm learning: Evidence from high school mathematics",u:"https://doi.org/10.1073/pnas.2422633122",
  big:{vi:"+48% → −17%",en:"+48% → −17%"},bl:{vi:"luyện tập khi có AI → thi khi không có AI",en:"practice with AI → exam without it"},
- f:{vi:"Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có rào chắn — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.",en:"Nearly 1,000 high school students in Turkey. The group with a ChatGPT-style interface did 48% better on practice problems, but once the AI was removed they scored 17% lower on the exam than students who never had it. AI users also overestimated how much they'd learned. A “tutor” version with guardrails — hints instead of answers — largely removed the harm."},
+ f:{vi:"Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.",en:"Nearly 1,000 high school students in Turkey. The group with a ChatGPT-style interface did 48% better on practice problems, but once the AI was removed they scored 17% lower on the exam than students who never had it. AI users also overestimated how much they'd learned. A “tutor” version with guardrails — hints instead of answers — largely removed the harm."},
  l:{vi:"Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.",en:"One subject (maths), one setting, short term. And the important part: the same AI, designed differently, gave a different result."}},
 {id:"shen",ven:"Shen & Tamkin · Anthropic · 2026",t:"How AI Impacts Skill Formation",u:"https://www.anthropic.com/research/AI-assistance-coding-skills",
  big:{vi:"−17%",en:"−17%"},bl:{vi:"điểm kiểm tra hiểu bài ở nhóm có trợ lý AI",en:"comprehension quiz score in the AI-assisted group"},
- f:{vi:"Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn còn junior) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.",en:"A randomized trial with 52 (mostly junior) developers learning a new Python library. The AI group scored about 17% lower on the quiz right afterwards, with the biggest gap in debugging; they were only slightly faster, and not significantly. People who used the AI to ask conceptual questions and request explanations retained more."},
+ f:{vi:"Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.",en:"A randomized trial with 52 (mostly junior) developers learning a new Python library. The AI group scored about 17% lower on the quiz right afterwards, with the biggest gap in debugging; they were only slightly faster, and not significantly. People who used the AI to ask conceptual questions and request explanations retained more."},
  l:{vi:"Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.",en:"Small sample, one short task, programming. And yes — this is Anthropic's own study, the company that makes the AI that wrote this page."}},
 {id:"fan",ven:"Fan et al. · British Journal of Educational Technology · 2025",t:"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance",u:"https://arxiv.org/abs/2412.09315",
- f:{vi:"Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm có giáo viên hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.",en:"A randomized experiment with students on a writing task: the ChatGPT group improved their essay scores, but didn't gain significantly more knowledge or transfer it better. They also planned and self-evaluated less than the group guided by human experts — the authors call it “metacognitive laziness”."},
+ f:{vi:"Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.",en:"A randomized experiment with students on a writing task: the ChatGPT group improved their essay scores, but didn't gain significantly more knowledge or transfer it better. They also planned and self-evaluated less than the group guided by human experts — the authors call it “metacognitive laziness”."},
  l:{vi:"Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.",en:"One writing task, short duration, knowledge measured right after the session."}},
 {id:"lee",ven:"Lee et al. · CHI 2025 · Microsoft Research & Carnegie Mellon",t:"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",u:"https://doi.org/10.1145/3706598.3713778",
  big:{vi:"319",en:"319"},bl:{vi:"người làm việc trí óc, 936 ví dụ thực tế",en:"knowledge workers, 936 real examples"},
@@ -528,7 +535,7 @@ const STUDIES=[
  l:{vi:"Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.",en:"Very small follow-up sample. It's GPS, not AI — but the same kind of handing the job to a machine."}},
 {id:"roediger",hope:1,ven:"Roediger & Karpicke · Psychological Science · 2006",t:"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention",u:"https://doi.org/10.1111/j.1467-9280.2006.01693.x",
  big:{vi:"Tin tốt",en:"The good news"},bl:{vi:"cố nhớ lại tốt hơn đọc lại",en:"trying to recall beats re-reading"},
- f:{vi:"Đọc lại thắng nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — thắng khi bài kiểm tra diễn ra sau 2 ngày và 1 tuần.",en:"Re-reading wins if the test comes 5 minutes later. Self-testing — trying to recall without looking — wins when the test comes 2 days or a week later."},
+ f:{vi:"Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.",en:"Re-reading wins if the test comes 5 minutes later. Self-testing — trying to recall without looking — wins when the test comes 2 days or a week later."},
  l:{vi:"Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.",en:"The material was science passages, not a foreign language. But this effect has been replicated many times, across many kinds of material."}}
 ];
 
@@ -583,6 +590,7 @@ function render(){
   $$("[data-i]").forEach(el=>{const v=D[el.dataset.i];if(typeof v==="string")el.innerHTML=rb(v)});
   $$("[data-ph]").forEach(el=>el.placeholder=D[el.dataset.ph]);
   $("#langBtn").textContent=lang==="vi"?"EN":"VI";
+  $("#langBtn").setAttribute("aria-label",lang==="vi"?"Switch to English":"Chuyển sang tiếng Việt");
   $("#hold").setAttribute("aria-label",D.hold);$("#hold").textContent=D.hold;
   $("#heroChat").innerHTML=D.hero.map(([w,t])=>`<div class="b ${w}">${rb(t)}</div>`).join("");
   const L=D.log,n=L.length;
