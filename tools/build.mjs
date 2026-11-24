@@ -9,6 +9,7 @@
 //   vi/index.html  pinned to Vietnamese
 //   en/index.html  pinned to English
 //   sitemap.xml
+//   404.html       served by GitHub Pages for missing paths
 //
 // Usage:
 //   node tools/build.mjs          rebuild everything
@@ -138,7 +139,55 @@ ${urls}
 `;
 }
 
-const outputs = [...VARIANTS.map((v) => [v.out, build(v)]), ["sitemap.xml", sitemap()]];
+// GitHub Pages serves /404.html for any missing path. Prerendered in VI; a tiny script swaps to EN.
+function notFound() {
+  const vi = T.vi, en = T.en;
+  const pick = (k) => JSON.stringify({ vi: vi[k], en: en[k] }).replace(/</g, "\\u003c");
+  return `<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>${esc(vi.nf_t)} — Kawari</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;800&family=Noto+Sans+JP:wght@800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;min-height:100%}
+body{min-height:100vh;display:grid;place-items:center;background:#eef7fd;color:#12233a;font:17px/1.6 "Be Vietnam Pro","Noto Sans JP",system-ui,sans-serif;text-align:center;padding:24px;box-sizing:border-box}
+i{font-style:normal;display:inline-grid;place-items:center;width:64px;height:64px;border-radius:20px;background:#2f9be0;color:#fff;font:800 36px "Noto Sans JP",sans-serif}
+h1{font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;margin:28px 0 8px}
+p{color:#56697b;margin:0 0 6px}
+code{font-size:14px;color:#8e86a8;word-break:break-all}
+a{display:inline-block;margin-top:28px;padding:12px 22px;border-radius:999px;background:#2f9be0;color:#fff;text-decoration:none;font-weight:800}
+</style>
+</head>
+<body>
+<main>
+  <i>代</i>
+  <h1 data-k="nf_h">${esc(vi.nf_h)}</h1>
+  <p data-k="nf_p">${esc(vi.nf_p)}</p>
+  <code id="path"></code><br>
+  <a href="/" data-k="nf_a">${esc(vi.nf_a)}</a>
+</main>
+<script>
+{
+const T={nf_t:${pick("nf_t")},nf_h:${pick("nf_h")},nf_p:${pick("nf_p")},nf_a:${pick("nf_a")}};
+const L=(navigator.languages||[navigator.language||"vi"]).map(String).map(s=>s.toLowerCase());
+const lang=L.find(s=>s.startsWith("vi"))?"vi":L.find(s=>s.startsWith("en"))?"en":"vi";
+document.documentElement.lang=lang;document.title=T.nf_t[lang]+" — Kawari";
+for(const el of document.querySelectorAll("[data-k]"))el.textContent=T[el.dataset.k][lang];
+let p=location.pathname;try{p=decodeURIComponent(p)}catch(_){}document.getElementById("path").textContent=p;
+}
+</script>
+</body>
+</html>
+`;
+}
+
+const outputs = [...VARIANTS.map((v) => [v.out, build(v)]), ["sitemap.xml", sitemap()], ["404.html", notFound()]];
 let stale = [];
 for (const [rel, text] of outputs) {
   const p = join(ROOT, rel);

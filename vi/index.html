@@ -26,7 +26,7 @@
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kawari — Học tiếng Nhật với AI","description":"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.","url":"https://kawari-ai.app/vi/","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Kawari","url":"https://kawari-ai.app/"},"citation":[{"@type":"ScholarlyArticle","name":"Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task","url":"https://arxiv.org/abs/2506.08872"},{"@type":"ScholarlyArticle","name":"Generative AI without guardrails can harm learning: Evidence from high school mathematics","url":"https://doi.org/10.1073/pnas.2422633122"},{"@type":"ScholarlyArticle","name":"How AI Impacts Skill Formation","url":"https://www.anthropic.com/research/AI-assistance-coding-skills"},{"@type":"ScholarlyArticle","name":"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance","url":"https://arxiv.org/abs/2412.09315"},{"@type":"ScholarlyArticle","name":"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers","url":"https://doi.org/10.1145/3706598.3713778"},{"@type":"ScholarlyArticle","name":"AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking","url":"https://doi.org/10.3390/soc15010006"},{"@type":"ScholarlyArticle","name":"Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy","url":"https://doi.org/10.1016/S2468-1253(25)00133-5"},{"@type":"ScholarlyArticle","name":"Habitual use of GPS negatively impacts spatial memory during self-guided navigation","url":"https://doi.org/10.1038/s41598-020-62877-0"},{"@type":"ScholarlyArticle","name":"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention","url":"https://doi.org/10.1111/j.1467-9280.2006.01693.x"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kawari — Học tiếng Nhật với AI","description":"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.","url":"https://kawari-ai.app/vi/","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Kawari","url":"https://kawari-ai.app/"},"citation":[{"@type":"ScholarlyArticle","name":"Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task","url":"https://arxiv.org/abs/2506.08872"},{"@type":"ScholarlyArticle","name":"Generative AI without guardrails can harm learning: Evidence from high school mathematics","url":"https://doi.org/10.1073/pnas.2422633122"},{"@type":"ScholarlyArticle","name":"How AI Impacts Skill Formation","url":"https://www.anthropic.com/research/AI-assistance-coding-skills"},{"@type":"ScholarlyArticle","name":"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance","url":"https://arxiv.org/abs/2412.09315"},{"@type":"ScholarlyArticle","name":"AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting","url":"https://doi.org/10.1038/s41598-025-97652-6"},{"@type":"ScholarlyArticle","name":"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention","url":"https://doi.org/10.1111/j.1467-9280.2006.01693.x"}]}</script>
 <!--/seo-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,6 +235,19 @@ details p{padding:0 20px 18px;color:var(--mute)}
 .try input{flex:1 1 180px;min-height:48px;border-radius:14px;border:0;padding:0 16px;font:16px "Noto Sans JP","Be Vietnam Pro",sans-serif;background:#262d48;color:#fff}
 .try .btn{background:#5bbcf0;color:#06233a;box-shadow:none}
 .try output{display:block;margin-top:14px;min-height:1.5em;color:#cfd6ea;line-height:1.8}
+.try [hidden]{display:none}
+.answ{position:relative;flex:1 1 180px;display:flex}
+.answ input{flex:1;min-width:0}
+/* Kawari's suggestion, drawn behind the caret in the input's own font */
+.ghost{position:absolute;inset:0;padding:0 16px;display:flex;align-items:center;pointer-events:none;font:16px "Noto Sans JP","Be Vietnam Pro",sans-serif;white-space:pre;overflow:hidden}
+.ghost i{font-style:normal;color:transparent}
+.ghost b{font-weight:400;color:#7d86a8;opacity:0;transition:opacity .8s}
+.ghost.on b{opacity:1}
+.gtip{flex-basis:100%;background:none;border:0;padding:2px 0;text-align:left;color:#7d86a8;font:13px "Be Vietnam Pro",sans-serif;cursor:pointer}
+.try .next{margin-top:12px;background:transparent;color:#5bbcf0;box-shadow:inset 0 0 0 1px #5bbcf0}
+/* after the rip: something follows your cursor, a beat late */
+#twin{position:fixed;left:0;top:0;z-index:60;pointer-events:none;color:#8a5cff;opacity:0;transition:opacity 2.5s}
+#twin.on{opacity:.45}
 .prov{margin-top:56px;font:700 clamp(22px,6.4vw,32px)/1.8 "Noto Serif JP",serif}
 .prov small{display:block;font:400 16px/1.5 "Noto Serif",serif;color:#545c75}
 .foot{margin-top:40px;padding-top:20px;border-top:1px solid #d5dbee;font-size:14px;color:#545c75}
@@ -379,7 +392,7 @@ details p{padding:0 20px 18px;color:var(--mute)}
   <div class="inner">
     <h2 data-i="eh">Phần này không phải hư cấu.</h2>
     <p class="sub" data-i="esub">Kawari không có thật. Những nghiên cứu dưới đây thì có. Hãy đọc cả phần giới hạn — biết một bằng chứng mạnh hay yếu đến đâu cũng là một kỹ năng bạn phải tự luyện.</p>
-    <div class="studies" id="studies"><!--pre--><article class="st" id="ev-kosmyna"><p class="ven">Kosmyna et al. · MIT Media Lab · arXiv 2025</p><h3><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></h3><p class="big">Yếu nhất<small>kết nối não ở nhóm dùng ChatGPT, đo bằng EEG</small></p><p><b>Phát hiện:</b> 54 người viết bài luận theo ba nhóm: tự viết, dùng công cụ tìm kiếm, dùng ChatGPT. Nhóm tự viết có mạng kết nối não mạnh và lan rộng nhất; nhóm tìm kiếm ở giữa; nhóm ChatGPT yếu nhất. Người dùng ChatGPT khó trích dẫn lại chính bài mình vừa viết. Ngược lại, người tự viết trước rồi mới dùng ChatGPT cho thấy mức kết nối cao hơn.</p><p class="lim"><b>Hạn chế:</b> Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.</p></article><article class="st" id="ev-bastani"><p class="ven">Bastani et al. · PNAS · 2025</p><h3><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">Generative AI without guardrails can harm learning: Evidence from high school mathematics</a></h3><p class="big">+48% → −17%<small>luyện tập khi có AI → thi khi không có AI</small></p><p><b>Phát hiện:</b> Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.</p><p class="lim"><b>Hạn chế:</b> Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.</p></article><article class="st" id="ev-shen"><p class="ven">Shen &amp; Tamkin · Anthropic · 2026</p><h3><a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">How AI Impacts Skill Formation</a></h3><p class="big">−17%<small>điểm kiểm tra hiểu bài ở nhóm có trợ lý AI</small></p><p><b>Phát hiện:</b> Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.</p></article><article class="st" id="ev-fan"><p class="ven">Fan et al. · British Journal of Educational Technology · 2025</p><h3><a href="https://arxiv.org/abs/2412.09315" target="_blank" rel="noopener">Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance</a></h3><p><b>Phát hiện:</b> Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.</p><p class="lim"><b>Hạn chế:</b> Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.</p></article><article class="st" id="ev-lee"><p class="ven">Lee et al. · CHI 2025 · Microsoft Research &amp; Carnegie Mellon</p><h3><a href="https://doi.org/10.1145/3706598.3713778" target="_blank" rel="noopener">The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers</a></h3><p class="big">319<small>người làm việc trí óc, 936 ví dụ thực tế</small></p><p><b>Phát hiện:</b> Càng tin vào AI, người ta càng ít tư duy phản biện. Càng tự tin vào năng lực của chính mình, người ta càng tư duy phản biện nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Số liệu tự báo cáo, khảo sát cắt ngang: cho thấy mối liên hệ, không chứng minh nhân quả.</p></article><article class="st" id="ev-gerlich"><p class="ven">Gerlich · Societies · 2025</p><h3><a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a></h3><p class="big">666<small>người tham gia (con số thật, không phải chúng tôi chọn)</small></p><p><b>Phát hiện:</b> Người dùng AI thường xuyên có điểm tư duy phản biện thấp hơn, phần lớn thông qua việc “giao” suy nghĩ cho công cụ. Người trẻ phụ thuộc vào AI nhiều hơn và có điểm thấp hơn.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu tương quan, không chứng minh nhân quả. Bài báo đã được đính chính vào tháng 9/2025.</p></article><article class="st" id="ev-budzyn"><p class="ven">Budzyń et al. · The Lancet Gastroenterology &amp; Hepatology · 2025</p><h3><a href="https://doi.org/10.1016/S2468-1253(25)00133-5" target="_blank" rel="noopener">Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy</a></h3><p class="big">28,4% → 22,4%<small>tỉ lệ phát hiện u tuyến khi không có AI</small></p><p><b>Phát hiện:</b> 19 bác sĩ nội soi giàu kinh nghiệm ở Ba Lan. Sau khi quen làm việc với AI phát hiện polyp, tỉ lệ phát hiện của họ ở những ca không có AI giảm rõ rệt. Đây là chuyên gia, không phải người mới học.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu quan sát, hồi cứu và đang bị tranh luận; một nghiên cứu tiến cứu ở Na Uy năm 2026 không thấy thay đổi đáng kể sau khi bỏ AI.</p></article><article class="st" id="ev-dahmani"><p class="ven">Dahmani &amp; Bohbot · Scientific Reports · 2020</p><h3><a href="https://doi.org/10.1038/s41598-020-62877-0" target="_blank" rel="noopener">Habitual use of GPS negatively impacts spatial memory during self-guided navigation</a></h3><p><b>Phát hiện:</b> 50 tài xế: ai dùng GPS nhiều hơn trong đời thì trí nhớ không gian kém hơn khi phải tự tìm đường. 13 người được kiểm tra lại khoảng 3 năm sau: ai dùng GPS nhiều hơn trong thời gian đó thì suy giảm nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.</p></article><article class="st hope" id="ev-roediger"><p class="ven">Roediger &amp; Karpicke · Psychological Science · 2006</p><h3><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention</a></h3><p class="big">Tin tốt<small>cố nhớ lại tốt hơn đọc lại</small></p><p><b>Phát hiện:</b> Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.</p><p class="lim"><b>Hạn chế:</b> Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.</p></article><!--/pre--></div>
+    <div class="studies" id="studies"><!--pre--><article class="st" id="ev-kosmyna"><p class="ven">Kosmyna et al. · MIT Media Lab · arXiv 2025</p><h3><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></h3><p class="big">Yếu nhất<small>kết nối não ở nhóm dùng ChatGPT, đo bằng EEG</small></p><p><b>Phát hiện:</b> 54 người viết bài luận theo ba nhóm: tự viết, dùng công cụ tìm kiếm, dùng ChatGPT. Nhóm tự viết có mạng kết nối não mạnh và lan rộng nhất; nhóm tìm kiếm ở giữa; nhóm ChatGPT yếu nhất. Người dùng ChatGPT khó trích dẫn lại chính bài mình vừa viết. Ngược lại, người tự viết trước rồi mới dùng ChatGPT cho thấy mức kết nối cao hơn.</p><p class="lim"><b>Hạn chế:</b> Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.</p></article><article class="st" id="ev-bastani"><p class="ven">Bastani et al. · PNAS · 2025</p><h3><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">Generative AI without guardrails can harm learning: Evidence from high school mathematics</a></h3><p class="big">+48% → −17%<small>luyện tập khi có AI → thi khi không có AI</small></p><p><b>Phát hiện:</b> Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.</p><p class="lim"><b>Hạn chế:</b> Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.</p></article><article class="st" id="ev-shen"><p class="ven">Shen &amp; Tamkin · Anthropic · 2026</p><h3><a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">How AI Impacts Skill Formation</a></h3><p class="big">−17%<small>điểm kiểm tra hiểu bài ở nhóm có trợ lý AI</small></p><p><b>Phát hiện:</b> Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.</p></article><article class="st" id="ev-fan"><p class="ven">Fan et al. · British Journal of Educational Technology · 2025</p><h3><a href="https://arxiv.org/abs/2412.09315" target="_blank" rel="noopener">Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance</a></h3><p><b>Phát hiện:</b> Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.</p><p class="lim"><b>Hạn chế:</b> Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.</p></article><article class="st hope" id="ev-kestin"><p class="ven">Kestin et al. · Scientific Reports · 2025</p><h3><a href="https://doi.org/10.1038/s41598-025-97652-6" target="_blank" rel="noopener">AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting</a></h3><p class="big">Hơn gấp đôi<small>mức tiến bộ khi học với gia sư AI được thiết kế kỹ</small></p><p><b>Phát hiện:</b> Thử nghiệm ngẫu nhiên trong môn vật lý nhập môn ở Harvard: sinh viên luân phiên giữa lớp học tích cực và một gia sư AI. Gia sư này được xây dựng theo các nguyên tắc sư phạm — dẫn dắt từng bước thay vì đưa ngay lời giải. Khi học với nó, sinh viên tiến bộ hơn gấp đôi, mất ít thời gian hơn và thấy hứng thú hơn.</p><p class="lim"><b>Hạn chế:</b> Một trường, một môn, hai buổi học, đo ngay sau đó. Và lưu ý: đây không phải chatbot thông thường — nó được thiết kế để bắt bạn tự nghĩ.</p></article><article class="st hope" id="ev-roediger"><p class="ven">Roediger &amp; Karpicke · Psychological Science · 2006</p><h3><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention</a></h3><p class="big">Tin tốt<small>cố nhớ lại tốt hơn đọc lại</small></p><p><b>Phát hiện:</b> Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.</p><p class="lim"><b>Hạn chế:</b> Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.</p></article><!--/pre--></div>
     <p class="note" data-i="enote">Chưa nghiên cứu nào ở đây đo riêng việc học tiếng Nhật. Nhưng cơ chế thì giống nhau: thứ bạn không bao giờ tự lôi ra từ trí nhớ, bạn sẽ không giữ được.</p>
   </div>
 </section>
@@ -394,14 +407,16 @@ details p{padding:0 20px 18px;color:var(--mute)}
     <div class="try">
       <label for="ans" data-i="tryq">Thử ngay, không tra cứu: 「土産」 đọc là gì?</label>
       <p class="hint" data-i="tryhint">Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.</p>
-      <form id="tryForm" autocomplete="off"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button></form>
+      <form id="tryForm" autocomplete="off"><div class="answ"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><span class="ghost" id="ghost" aria-hidden="true"><i></i><b></b></span></div><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button><button class="gtip" type="button" id="gtip" hidden></button></form>
       <output id="tryOut" aria-live="polite"></output>
+      <button class="btn next" type="button" id="tryNext" data-i="trynext" hidden>Từ tiếp theo</button>
     </div>
     <p class="prov"><span data-i="prov"><ruby>塵<rt>ちり</rt></ruby>も<ruby>積<rt>つ</rt></ruby>もれば<ruby>山<rt>やま</rt></ruby>となる</span><small data-i="provt">Bụi tích lại rồi cũng thành núi.</small></p>
     <p class="foot" data-i="foot">Kawari là công ty hư cấu. Các nghiên cứu thì không.</p>
   </div>
 </section>
 
+<div id="twin" aria-hidden="true"><svg viewBox="0 0 16 24" width="16" height="24"><path d="M1 1v19l5-5 3.5 7.5 3-1.4L9 13.6h7z" fill="currentColor" stroke="#0e0a1c" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
 <div class="vig" aria-hidden="true"></div>
 <div id="px" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status"></div>
@@ -467,7 +482,11 @@ away:"Kawari vẫn ở đây.",
 tod_night:"Vẫn còn thức à? Đi ngủ đi, Kawari học thay cho.",tod_late:"Lại thức khuya nữa rồi. Mai hỏi lại cũng được mà.",tod_early:"Dậy sớm thế. Để Kawari học trước giúp bạn nhé.",tod_lunch:"Đang nghỉ trưa à? Để Kawari học thay.",
 jlpt0:"Hôm nay thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt1:"Chủ nhật này thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",jlpt2:"Chỉ còn vài tuần nữa là thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt3:"Sắp thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",
 back_soon:"Quay lại nhanh thế?",back_days:"Mấy hôm rồi nhỉ. Bạn quay lại rồi.",back_long:"Lâu lắm rồi nhỉ. Bạn quay lại rồi.",
-tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",hint_look:"Lần trước bạn đã tra từ này.",hint_quiz:"Lần trước bạn đã gặp từ này ở đây.",
+tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",tryq_t:"Không tra cứu: 「%w」 đọc là gì?",hint_p:"Gợi ý: ",hint_miss:"Lần trước bạn đã trả lời sai từ này.",
+ok_g:"Đúng: {%w|%r}. Bạn vừa tự nhớ ra.",no_g:"Chưa đúng — là {%w|%r}. Lần sau gặp lại, bạn sẽ nhớ.",
+ghost_ok:"Đúng — nhưng là Kawari gõ hộ bạn. Bạn vừa để nó nghĩ thay.",ghost_tip:"Tab ⇥ để Kawari gõ nốt",
+trynext:"Từ tiếp theo",quiz_done:"Hết rồi. Hôm khác quay lại, Kawari sẽ hỏi lại đúng những từ bạn sai.",
+nf_t:"Không tìm thấy trang",nf_h:"Trang này không tồn tại.",nf_p:"Kawari nhớ là có. Bạn thì không.",nf_a:"Về trang chủ",hint_look:"Lần trước bạn đã tra từ này.",hint_quiz:"Lần trước bạn đã gặp từ này ở đây.",
 ok_r:"Đúng: {%w|%r}. Rời đi rồi quay lại mà bạn vẫn nhớ. Đó chính là học.",no_r:"Chưa đúng — là {%w|%r}. Không sao: cố nhớ rồi sai vẫn giúp bạn nhớ lâu hơn là không thử.",
 left:"Bạn vừa rời khỏi tab này. Đi tra 「%w」 à?",
 today:"Hôm nay",look_q:"%w đọc sao",look_a:"{%w|%r}. Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",look_a0:"Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",
@@ -535,7 +554,11 @@ away:"Kawari is still here.",
 tod_night:"Still up? Go to sleep. Kawari will study for you.",tod_late:"Up late again. You can just ask again tomorrow.",tod_early:"Early start. Let Kawari get a head start for you.",tod_lunch:"On your lunch break? Let Kawari study instead.",
 jlpt0:"JLPT is today. You're reading a landing page.",jlpt1:"JLPT is this Sunday. You're reading a landing page.",jlpt2:"JLPT is a couple of weeks away. You're reading a landing page.",jlpt3:"JLPT is close. You're reading a landing page.",
 back_soon:"Back already?",back_days:"It's been a few days. You came back.",back_long:"It's been a while. You came back.",
-tryq_r:"You came back. Without looking it up: how do you read 「%w」?",hint_look:"You looked this one up last time.",hint_quiz:"You saw this one here last time.",
+tryq_r:"You came back. Without looking it up: how do you read 「%w」?",tryq_t:"No looking it up: how do you read 「%w」?",hint_p:"Hint: ",hint_miss:"You missed this one last time.",
+ok_g:"Right: {%w|%r}. You remembered it yourself.",no_g:"Not quite — it's {%w|%r}. Next time you see it, you'll remember.",
+ghost_ok:"Correct — but Kawari typed it for you. You just let it think for you.",ghost_tip:"Tab ⇥ to let Kawari finish",
+trynext:"Next word",quiz_done:"That's all. Come back another day and Kawari will ask the ones you missed.",
+nf_t:"Page not found",nf_h:"This page doesn't exist.",nf_p:"Kawari remembers it did. You don't.",nf_a:"Back to the homepage",hint_look:"You looked this one up last time.",hint_quiz:"You saw this one here last time.",
 ok_r:"Right: {%w|%r}. You left, came back, and still remembered. That's what learning is.",no_r:"Not quite — it's {%w|%r}. That's fine: trying and missing still makes it stick better than not trying.",
 left:"You just left this tab. Looking up 「%w」?",
 today:"Today",look_q:"how do u read %w",look_a:"{%w|%r}. I saw you look that up. Next time, just ask me.",look_a0:"I saw you look that up. Next time, just ask me.",
@@ -563,21 +586,10 @@ const STUDIES=[
 {id:"fan",ven:"Fan et al. · British Journal of Educational Technology · 2025",t:"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance",u:"https://arxiv.org/abs/2412.09315",
  f:{vi:"Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.",en:"A randomized experiment with students on a writing task: the ChatGPT group improved their essay scores, but didn't gain significantly more knowledge or transfer it better. They also planned and self-evaluated less than the group guided by human experts — the authors call it “metacognitive laziness”."},
  l:{vi:"Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.",en:"One writing task, short duration, knowledge measured right after the session."}},
-{id:"lee",ven:"Lee et al. · CHI 2025 · Microsoft Research & Carnegie Mellon",t:"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",u:"https://doi.org/10.1145/3706598.3713778",
- big:{vi:"319",en:"319"},bl:{vi:"người làm việc trí óc, 936 ví dụ thực tế",en:"knowledge workers, 936 real examples"},
- f:{vi:"Càng tin vào AI, người ta càng ít tư duy phản biện. Càng tự tin vào năng lực của chính mình, người ta càng tư duy phản biện nhiều hơn.",en:"The more people trusted the AI, the less critical thinking they did. The more confident they were in their own ability, the more critical thinking they did."},
- l:{vi:"Số liệu tự báo cáo, khảo sát cắt ngang: cho thấy mối liên hệ, không chứng minh nhân quả.",en:"Self-reported, cross-sectional survey: shows an association, doesn't prove cause."}},
-{id:"gerlich",ven:"Gerlich · Societies · 2025",t:"AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",u:"https://doi.org/10.3390/soc15010006",
- big:{vi:"666",en:"666"},bl:{vi:"người tham gia (con số thật, không phải chúng tôi chọn)",en:"participants (real number, we didn't pick it)"},
- f:{vi:"Người dùng AI thường xuyên có điểm tư duy phản biện thấp hơn, phần lớn thông qua việc “giao” suy nghĩ cho công cụ. Người trẻ phụ thuộc vào AI nhiều hơn và có điểm thấp hơn.",en:"Frequent AI users scored lower on critical thinking, largely through offloading their thinking to the tool. Younger participants depended on AI more and scored lower."},
- l:{vi:"Nghiên cứu tương quan, không chứng minh nhân quả. Bài báo đã được đính chính vào tháng 9/2025.",en:"Correlational, doesn't prove cause. The paper received a correction in September 2025."}},
-{id:"budzyn",ven:"Budzyń et al. · The Lancet Gastroenterology & Hepatology · 2025",t:"Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy",u:"https://doi.org/10.1016/S2468-1253(25)00133-5",
- big:{vi:"28,4% → 22,4%",en:"28.4% → 22.4%"},bl:{vi:"tỉ lệ phát hiện u tuyến khi không có AI",en:"adenoma detection rate without AI"},
- f:{vi:"19 bác sĩ nội soi giàu kinh nghiệm ở Ba Lan. Sau khi quen làm việc với AI phát hiện polyp, tỉ lệ phát hiện của họ ở những ca không có AI giảm rõ rệt. Đây là chuyên gia, không phải người mới học.",en:"19 experienced endoscopists in Poland. After getting used to an AI polyp detector, their detection rate in exams done without it dropped. These were experts, not beginners."},
- l:{vi:"Nghiên cứu quan sát, hồi cứu và đang bị tranh luận; một nghiên cứu tiến cứu ở Na Uy năm 2026 không thấy thay đổi đáng kể sau khi bỏ AI.",en:"Observational, retrospective, and contested; a 2026 prospective study in Norway found no significant change after the AI was removed."}},
-{id:"dahmani",ven:"Dahmani & Bohbot · Scientific Reports · 2020",t:"Habitual use of GPS negatively impacts spatial memory during self-guided navigation",u:"https://doi.org/10.1038/s41598-020-62877-0",
- f:{vi:"50 tài xế: ai dùng GPS nhiều hơn trong đời thì trí nhớ không gian kém hơn khi phải tự tìm đường. 13 người được kiểm tra lại khoảng 3 năm sau: ai dùng GPS nhiều hơn trong thời gian đó thì suy giảm nhiều hơn.",en:"50 drivers: more lifetime GPS use went with worse spatial memory when navigating unaided. 13 were retested about three years later: more GPS use in between went with a steeper decline."},
- l:{vi:"Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.",en:"Very small follow-up sample. It's GPS, not AI — but the same kind of handing the job to a machine."}},
+{id:"kestin",hope:1,ven:"Kestin et al. · Scientific Reports · 2025",t:"AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting",u:"https://doi.org/10.1038/s41598-025-97652-6",
+ big:{vi:"Hơn gấp đôi",en:"More than double"},bl:{vi:"mức tiến bộ khi học với gia sư AI được thiết kế kỹ",en:"learning gains with a carefully designed AI tutor"},
+ f:{vi:"Thử nghiệm ngẫu nhiên trong môn vật lý nhập môn ở Harvard: sinh viên luân phiên giữa lớp học tích cực và một gia sư AI. Gia sư này được xây dựng theo các nguyên tắc sư phạm — dẫn dắt từng bước thay vì đưa ngay lời giải. Khi học với nó, sinh viên tiến bộ hơn gấp đôi, mất ít thời gian hơn và thấy hứng thú hơn.",en:"A randomized crossover trial in an intro physics course at Harvard: students alternated between an active-learning class and an AI tutor. The tutor was built on teaching best practices — guiding step by step instead of handing over solutions. With it, students' learning gains were more than double, in less time, and they felt more engaged."},
+ l:{vi:"Một trường, một môn, hai buổi học, đo ngay sau đó. Và lưu ý: đây không phải chatbot thông thường — nó được thiết kế để bắt bạn tự nghĩ.",en:"One university, one course, two lessons, measured right after. And note: this wasn't a plain chatbot — it was designed to make you think."}},
 {id:"roediger",hope:1,ven:"Roediger & Karpicke · Psychological Science · 2006",t:"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention",u:"https://doi.org/10.1111/j.1467-9280.2006.01693.x",
  big:{vi:"Tin tốt",en:"The good news"},bl:{vi:"cố nhớ lại tốt hơn đọc lại",en:"trying to recall beats re-reading"},
  f:{vi:"Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.",en:"Re-reading wins if the test comes 5 minutes later. Self-testing — trying to recall without looking — wins when the test comes 2 days or a week later."},
@@ -834,16 +846,19 @@ function say(txt){toast.textContent=txt;toast.classList.add("on");clearTimeout(t
 $$(".pick").forEach(b=>b.addEventListener("click",()=>say(D.sub)));
 $$(".notes a").forEach(x=>x.addEventListener("click",e=>{if(body.classList.contains("locked")){e.preventDefault();V.scrollIntoView({behavior:reduce?"auto":"smooth"})}}));
 $("#tryForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#tryOut");if(!$("#ans").value.trim()){out.innerHTML=rb(D.empty);return}
-  const ok=checkReading($("#ans").value,Q.r);out.innerHTML=rb(Q.ret?tmpl(ok?D.ok_r:D.no_r,Q):ok?D.ok:D.no);
-  if(Q.from==="look")MEM.look=(MEM.look||[]).filter(x=>x.w!==Q.w);
-  MEM.quiz={w:Q.w,r:Q.r};saveMem()});
+  const ok=checkReading($("#ans").value,Q.r),o=qv();hideGhost();
+  out.innerHTML=rb(ok&&assisted?tmpl(D.ghost_ok,o):Q.ret?tmpl(ok?D.ok_r:D.no_r,o):Q.h?tmpl(ok?D.ok_g:D.no_g,o):ok?D.ok:D.no);
+  /* misses and Kawari-typed answers come back on the next visit */
+  if(Q.from==="look")MEM.look=MEM.look.filter(x=>x.w!==Q.w);
+  MEM.miss=MEM.miss.filter(x=>x.w!==Q.w);if(!ok||assisted)MEM.miss=MEM.miss.concat([o]).slice(-10);
+  MEM.quiz=o;saveMem();$("#tryNext").hidden=false});
 
 /* state */
 let maxD=0,residue=false,idleShown=false,kanji=0,lastScroll=performance.now(),last=performance.now(),wasTop=true;
 addEventListener("scroll",()=>{lastScroll=lastAct=performance.now()},{passive:true});
 function resetAll(){
   maxD=0;residue=false;idleShown=false;kanji=0;warpReset();
-  $$("details:not(#lastQ)").forEach(x=>x.open=false);toast.classList.remove("on");$("#ans").value="";$("#tryOut").textContent="";
+  $$("details:not(#lastQ)").forEach(x=>x.open=false);toast.classList.remove("on");setQ(0);
   hp=0;holding=false;ripped=false;unlocked=false;body.classList.add("locked");P.forEach(p=>spawn(p,false));stick.classList.remove("shake");
   scatterEyes();
 }
@@ -872,7 +887,7 @@ function frame(now){
   const lk=eff>=.5?"代わり":"Kawari";if(lk!==logoKey){logoKey=lk;logoTxt.textContent=lk}
   const tk=d<.5?D.title0:d<.85?D.title1:"代わり";if(tk!==titleKey){titleKey=tk;document.title=tk}
 
-  warpTick(dt);
+  warpTick(dt);twinTick(now);
 
   for(const o of MS){const r=o.svg.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)continue;const sc=r.width/120;
     [[o.p1,42],[o.p2,78]].forEach(([p,cx])=>{const ex=r.left+cx*sc,ey=r.top+60*sc,dx=ptr.x-ex,dy=ptr.y-ey,dist=Math.hypot(dx,dy)||1,k=Math.min(1,dist/160)*4.2;p.setAttribute("cx",(cx+dx/dist*k).toFixed(2));p.setAttribute("cy",(61+dy/dist*k).toFixed(2))});
@@ -909,7 +924,11 @@ function frame(now){
    All local. Nothing leaves the browser. Never print a time or a date: hint, so the reader infers we looked. */
 
 /* memory between visits: one localStorage key */
-const MEM=(()=>{try{return JSON.parse(localStorage.getItem("kawari"))||{}}catch(_){return{}}})();
+const MEM=(()=>{let o;try{o=JSON.parse(localStorage.getItem("kawari"))}catch(_){}
+  if(!o||typeof o!=="object"||Array.isArray(o))o={};
+  const ok=e=>e&&typeof e.w==="string"&&typeof e.r==="string";
+  o.look=Array.isArray(o.look)?o.look.filter(ok):[];o.miss=Array.isArray(o.miss)?o.miss.filter(ok):[];if(!ok(o.quiz))delete o.quiz;
+  return o})();
 function saveMem(){try{localStorage.setItem("kawari",JSON.stringify(MEM))}catch(_){}}
 /* time since the last visit, as a mood. Fixed for the session so a reload doesn't say "back already?" */
 let back=null;
@@ -920,8 +939,22 @@ try{const s=sessionStorage.getItem("kawari-back");
     sessionStorage.setItem("kawari-back",back||"");MEM.last=now;MEM.n=(MEM.n||0)+1;saveMem()}}catch(_){}
 const backAt=performance.now()+2500;
 
-/* readings we can quiz on: every {kanji|kana} on the page, plus the bare ones */
-const READ=(()=>{const m={"山葵":"わさび","紫陽花":"あじさい","土産":"みやげ"};
+/* the quiz: all 熟字訓, read by meaning, so there is nothing to work out, only to remember */
+const QUIZ=[
+  {w:"土産",r:["みやげ"]},
+  {w:"大人",r:["おとな"],h:{vi:"Ngược lại với trẻ con.",en:"The opposite of a child."}},
+  {w:"今日",r:["きょう"],h:{vi:"Không phải hôm qua, cũng không phải ngày mai.",en:"Not yesterday, not tomorrow."}},
+  {w:"明日",r:["あした","あす"],h:{vi:"Ngày sau hôm nay.",en:"The day after today."}},
+  {w:"時計",r:["とけい"],h:{vi:"Thứ bạn nhìn để biết giờ. Kawari thì đã nhìn rồi.",en:"What you look at to know the time. Kawari already looked."}},
+  {w:"眼鏡",r:["めがね"],h:{vi:"Đeo trên mũi để nhìn rõ hơn.",en:"You wear them on your nose to see better."}},
+  {w:"果物",r:["くだもの"],h:{vi:"Táo, cam, chuối.",en:"Apples, oranges, bananas."}},
+  {w:"山葵",r:["わさび"],h:{vi:"Thứ màu xanh, cay xè, ăn kèm sushi.",en:"The green, painfully spicy thing next to your sushi."}},
+  {w:"紫陽花",r:["あじさい"],h:{vi:"Loài hoa nở vào mùa mưa ở Nhật.",en:"The flower of Japan's rainy season."}},
+  {w:"薔薇",r:["ばら"],h:{vi:"Loài hoa có gai. Người Nhật cũng ngại viết chữ này.",en:"A flower with thorns. Even native speakers avoid writing it."}}
+];
+
+/* readings we can quiz on: every {kanji|kana} on the page, plus the quiz words */
+const READ=(()=>{const m={};for(const q of QUIZ)m[q.w]=q.r[0];
   for(const x of JSON.stringify(T).matchAll(/\{([^|{}]+)\|([^{}]+)\}(.)?/g)){const k=x[1];
     if(!/^[㐀-鿿々]{2,}$/.test(k)||/[ぁ-ゖ]/.test(x[3]||"")||k==="代替")continue; /* skip okurigana splits and the 代替→かわり pun */
     m[k]||(m[k]=x[2])}
@@ -944,14 +977,49 @@ const normRom=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace
   .replace(/si/g,"shi").replace(/ti/g,"chi").replace(/tu/g,"tsu").replace(/(?<![sc])hu/g,"fu").replace(/[zd]i/g,"ji").replace(/du/g,"zu")
   .replace(/sy([auo])/g,"sh$1").replace(/ty([auo])/g,"ch$1").replace(/[zj]y([auo])/g,"j$1")
   .replace(/ou/g,"o").replace(/([aiueo])\1+/g,"$1").replace(/nn/g,"n");
-function checkReading(v,r){const s=kata2hira(v.replace(/\s+/g,"")),ok=[r,"お"+r];
+function checkReading(v,rs){const s=kata2hira(v.replace(/\s+/g,"")),ok=[].concat(rs).flatMap(r=>[r,"お"+r]);
   if(ok.includes(s))return true;const n=normRom(s);return!!n&&ok.some(x=>normRom(toRomaji(x))===n)}
 
-/* the quiz: on a return visit, ask again what they looked up or answered last time */
-let Q={w:"土産",r:"みやげ",ret:false,from:null};
-if(back){const lk=(MEM.look||[]).filter(x=>x.r).slice(-1)[0];
-  if(lk)Q={w:lk.w,r:lk.r,ret:true,from:"look"};else if(MEM.quiz&&MEM.quiz.r)Q={w:MEM.quiz.w,r:MEM.quiz.r,ret:true,from:"quiz"}}
-function renderQuiz(){if(!Q.ret)return;$("[data-i=tryq]").innerHTML=rb(tmpl(D.tryq_r,Q));$("[data-i=tryhint]").textContent=Q.from==="look"?D.hint_look:D.hint_quiz}
+/* quiz order: on a return visit, first re-ask what they looked up, missed, or answered last time */
+let retQ=null;
+if(back){const lk=MEM.look.slice(-1)[0],ms=MEM.miss.slice(-1)[0],pk=lk?[lk,"look"]:ms?[ms,"miss"]:MEM.quiz?[MEM.quiz,"quiz"]:null;
+  if(pk)retQ={w:pk[0].w,r:[pk[0].r],ret:true,from:pk[1]}}
+const QSEQ=(retQ?[retQ]:[]).concat(QUIZ.filter(q=>!retQ||q.w!==retQ.w));
+let qi=0,Q=QSEQ[0],assisted=false;
+const qv=()=>({w:Q.w,r:Q.r[0]});
+function renderQuiz(){const lab=$("[data-i=tryq]"),hint=$("[data-i=tryhint]");
+  if(Q.ret){lab.innerHTML=rb(tmpl(D.tryq_r,qv()));hint.textContent=D["hint_"+Q.from]}
+  else if(Q.h){lab.innerHTML=rb(tmpl(D.tryq_t,qv()));hint.textContent=D.hint_p+Q.h[lang]}
+  $("#gtip").textContent=D.ghost_tip}
+function setQ(i){qi=i;Q=QSEQ[i];assisted=false;$("#ans").value="";$("#tryOut").textContent="";$("#tryNext").hidden=true;hideGhost();renderQuiz()}
+$("#tryNext").addEventListener("click",()=>{if(qi+1<QSEQ.length){setQ(qi+1);$("#ans").focus()}else{$("#tryOut").innerHTML=rb(D.quiz_done);$("#tryNext").hidden=true}});
+
+/* ghost autocomplete: Kawari offers the rest of the answer. Taking it doesn't count */
+const ansEl=$("#ans"),ghostEl=$("#ghost"),gtip=$("#gtip");let gT=0,gText="",composing=false;
+function ghostFor(v){const r=Q.r[0];if(!v)return r;const h=kata2hira(v);
+  if(r.startsWith(h)&&h.length<r.length)return r.slice(h.length);
+  const rm=toRomaji(r),lv=v.toLowerCase();if(/^[a-z]+$/.test(lv)&&rm.startsWith(lv)&&lv.length<rm.length)return rm.slice(lv.length);
+  return""}
+function hideGhost(){clearTimeout(gT);gText="";ghostEl.classList.remove("on");gtip.hidden=true}
+function armGhost(){hideGhost();if(composing)return;const v=ansEl.value,g=ghostFor(v);if(!g)return;
+  gT=setTimeout(()=>{if(ansEl.value!==v||composing||document.activeElement!==ansEl)return;
+    gText=g;ghostEl.firstChild.textContent=v;ghostEl.lastChild.textContent=g;ghostEl.classList.add("on");gtip.hidden=false},v?900:3500)}
+function takeGhost(){if(!gText)return false;ansEl.value+=gText;assisted=true;hideGhost();return true}
+ansEl.addEventListener("input",armGhost);ansEl.addEventListener("focus",armGhost);
+ansEl.addEventListener("blur",()=>setTimeout(()=>{if(document.activeElement!==ansEl)hideGhost()},150));
+ansEl.addEventListener("compositionstart",()=>{composing=true;hideGhost()});
+ansEl.addEventListener("compositionend",()=>{composing=false;armGhost()});
+ansEl.addEventListener("keydown",e=>{if(e.isComposing)return;
+  if((e.key==="Tab"&&!e.shiftKey)||(e.key==="ArrowRight"&&ansEl.selectionStart===ansEl.value.length)){if(takeGhost())e.preventDefault()}});
+gtip.addEventListener("mousedown",e=>e.preventDefault());
+gtip.addEventListener("click",()=>{takeGhost();ansEl.focus()});
+
+/* the twin: after the rip, a second cursor follows yours, half a second behind */
+const twin=$("#twin"),fineP=matchMedia("(pointer:fine)").matches,TR=[];
+if(fineP&&!reduce)addEventListener("pointermove",e=>{TR.push([performance.now(),e.clientX,e.clientY]);if(TR.length>240)TR.shift()},{passive:true});
+function twinTick(now){const on=fineP&&!reduce&&unlocked&&now-ripT>2500&&TR.length>0;twin.classList.toggle("on",on);if(!on)return;
+  const t=now-450;let p=TR[0];for(const q of TR){if(q[0]>t)break;p=q}
+  twin.style.transform=`translate(${p[1]+14}px,${p[2]+6}px)`}
 
 /* clock: Kawari adds one line to the hero chat, worded by the hour, never stating it */
 const tod=(h=>h<5?"tod_night":h<8?"tod_early":h===12?"tod_lunch":h>=23?"tod_late":null)(new Date().getHours());
@@ -970,7 +1038,7 @@ function jlptKey(){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n
 let quizAway=false,leftShown=false;
 document.addEventListener("visibilitychange",()=>{
   if(document.hidden){document.title=D.away;if(!leftShown&&$("#tryForm").contains(document.activeElement))quizAway=true}
-  else{titleKey="";if(quizAway){quizAway=false;leftShown=true;$("#tryOut").innerHTML=rb(tmpl(D.left,Q))}}
+  else{titleKey="";if(quizAway){quizAway=false;leftShown=true;$("#tryOut").innerHTML=rb(tmpl(D.left,qv()))}}
 });
 
 /* lookups: pop-up dictionaries (Yomitan etc.) select the word under the cursor with no click or drag.
@@ -987,7 +1055,7 @@ function onSelect(){
   const t=f.textContent.replace(/\s+/g,"");
   if(!t||t.length>12||!/[㐀-鿿]/.test(t)||t===lastSel)return;
   lastSel=t;const e=lookupWord(t);
-  if(e.r){MEM.look=(MEM.look||[]).filter(x=>x.w!==e.w).concat([e]).slice(-20);saveMem()}
+  if(e.r){MEM.look=MEM.look.filter(x=>x.w!==e.w).concat([e]).slice(-20);saveMem()}
   if(!unlocked){LOOKS.push(e);if(LOOKS.length>3)LOOKS.shift();renderLog();scatterEyes();if(!lookToast){lookToast=true;say(D.look_saved)}}
   else if(!lookEv){lookEv=true;say(tmpl(D.look_ev,e))}
 }
