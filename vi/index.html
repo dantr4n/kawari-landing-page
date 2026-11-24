@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>Kawari — Học tiếng Nhật với AI</title>
+<meta name="description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<link rel="canonical" href="https://dantr4n.github.io/kawari-landing-page/vi/">
+<link rel="alternate" hreflang="vi" href="https://dantr4n.github.io/kawari-landing-page/vi/">
+<link rel="alternate" hreflang="en" href="https://dantr4n.github.io/kawari-landing-page/en/">
+<link rel="alternate" hreflang="x-default" href="https://dantr4n.github.io/kawari-landing-page/">
+<meta name="theme-color" content="#eef7fd">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawari">
+<meta property="og:url" content="https://dantr4n.github.io/kawari-landing-page/vi/">
+<meta property="og:title" content="Kawari — Học tiếng Nhật với AI">
+<meta property="og:description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<meta property="og:image" content="https://dantr4n.github.io/kawari-landing-page/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kawari — Học tiếng Nhật với AI">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kawari — Học tiếng Nhật với AI","description":"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.","url":"https://dantr4n.github.io/kawari-landing-page/vi/","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Kawari","url":"https://dantr4n.github.io/kawari-landing-page/"},"citation":[{"@type":"ScholarlyArticle","name":"Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task","url":"https://arxiv.org/abs/2506.08872"},{"@type":"ScholarlyArticle","name":"Generative AI without guardrails can harm learning: Evidence from high school mathematics","url":"https://doi.org/10.1073/pnas.2422633122"},{"@type":"ScholarlyArticle","name":"How AI Impacts Skill Formation","url":"https://www.anthropic.com/research/AI-assistance-coding-skills"},{"@type":"ScholarlyArticle","name":"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance","url":"https://arxiv.org/abs/2412.09315"},{"@type":"ScholarlyArticle","name":"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers","url":"https://doi.org/10.1145/3706598.3713778"},{"@type":"ScholarlyArticle","name":"AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking","url":"https://doi.org/10.3390/soc15010006"},{"@type":"ScholarlyArticle","name":"Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy","url":"https://doi.org/10.1016/S2468-1253(25)00133-5"},{"@type":"ScholarlyArticle","name":"Habitual use of GPS negatively impacts spatial memory during self-guided navigation","url":"https://doi.org/10.1038/s41598-020-62877-0"},{"@type":"ScholarlyArticle","name":"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention","url":"https://doi.org/10.1111/j.1467-9280.2006.01693.x"}]}</script>
+<!--/seo-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@500;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: chirpy edtech landing page that curdles into dread, then goes quiet and honest
+   IDEA: an app-store landing page whose product slowly takes the reader's place (代替 read as かわり)
+   PICTURE: phone chat + friendly mascot; later a sealed lower face that cannot open its mouth
+   COLOUR and TYPE: clear sky #eef7fd / #2f9be0 sinking through lavender into violet-black #0e0a1c; Be Vietnam Pro, Noto Serif JP, Noto Serif
+   LAYOUT: one mobile column, full-width bands, wider grids from 760px */
+:root{--bg:#eef7fd;--ink:#12233a;--mute:#56697b;--acc:#2f9be0;--card:#fff;--line:#d5e8f4;--d:0;--fx:0;color-scheme:light}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;-webkit-text-size-adjust:100%;overflow-anchor:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro","Noto Sans JP",system-ui,sans-serif;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+ruby{ruby-position:over}
+rt{font:500 .5em/1 "Noto Sans JP",sans-serif;opacity:.72;letter-spacing:0}
+.wrap{max-width:1080px;margin:0 auto}
+.band{padding:clamp(48px,8vw,96px) max(5vw,18px);position:relative}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.08}
+h2{font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:24px}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--acc);color:#fff;font:700 16px "Be Vietnam Pro",sans-serif;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 20px -8px var(--acc)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #7b5cff;outline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:8px;padding:10px max(4vw,14px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:transform .5s}
+.nav.gone{transform:translateY(-110%)}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;text-decoration:none;color:var(--ink);letter-spacing:-.01em;width:7.2em}
+.logo i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--acc);color:#fff;font:800 18px "Noto Sans JP",sans-serif;flex:none}
+.lang{margin-left:auto;min-width:44px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 14px "Be Vietnam Pro";cursor:pointer}
+.nav .btn{min-height:44px;width:142px;padding:0 10px;font-size:14px;white-space:nowrap;box-shadow:none}
+
+/* hero */
+.hero{padding-top:28px}
+.hero-grid{display:grid;gap:44px;align-items:center}
+.pill{display:inline-grid;padding:7px 14px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:500;color:var(--mute);margin-bottom:18px}
+.pill>span{grid-area:1/1;transition:opacity .5s}
+.pill>span+span,.pill.alt>span:first-child{opacity:0}
+.pill.alt>span+span{opacity:1}
+.hero h1{font-size:clamp(36px,10vw,56px);font-weight:800;letter-spacing:-.03em}
+.lead{font-size:17px;color:var(--mute);margin:18px 0 26px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0;margin:26px 0 0;font-size:14px;color:var(--mute)}
+.trust b{color:var(--ink)}
+.phone-wrap{position:relative;justify-self:center;padding-top:62px}
+.phone{width:min(320px,84vw);border-radius:38px;border:10px solid #12233a;background:#fff;box-shadow:0 30px 60px -20px rgba(18,35,58,.35);overflow:hidden;color:#12233a}
+.ph-top{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid #e3eef6;font-size:15px}
+.ph-top .dot{width:9px;height:9px;border-radius:50%;background:#34c38f}
+.ph-top small{color:#7d8ea0;margin-left:auto;font-size:13px}
+.chat{padding:14px 12px;display:flex;flex-direction:column;gap:8px;min-height:330px;background:#f7fbfe}
+.chat.full{justify-content:flex-end;overflow:hidden}
+.b{max-width:84%;padding:9px 13px;border-radius:18px;font-size:14.5px;line-height:1.75;animation:pop .5s both}
+.b.u{align-self:flex-end;background:#12233a;color:#fff;border-bottom-right-radius:6px}
+.b.k{align-self:flex-start;background:#dff0fb;color:#0e3452;border-bottom-left-radius:6px}
+.b:nth-child(2){animation-delay:.5s}.b:nth-child(3){animation-delay:1s}.b:nth-child(4){animation-delay:1.5s}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+.ph-input{display:flex;align-items:center;margin:10px;padding:10px 10px 10px 16px;border-radius:999px;background:#edf4f9;color:#7d8ea0;font-size:14px}
+.ph-input b{margin-left:auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff}
+
+/* mascot */
+.mascot{width:112px}
+.mascot svg{display:block;width:100%;overflow:visible}
+.m-hero{position:absolute;top:0;right:-6px;z-index:2}
+.m-sh{fill:rgba(18,35,58,.14)}.m-ch{fill:#ff9db5}
+.cart .m-sc{fill:#fff}.cart .m-pu{fill:#12233a}.cart .m-gl{fill:#fff}
+.cart .m-e{transform-box:fill-box;transform-origin:center;transition:transform .09s}
+.blink .cart .m-e{transform:scaleY(.08)}
+.m-mouth{fill:#12233a}
+
+/* warp: glyphs sit over the original letters, so nothing reflows */
+.w{white-space:nowrap}
+/* the glyph inherits the letter's font so both share one baseline; kana come from the stack's JP fallback.
+   inline-block + flex centring keeps it on the letter even when the glyph is wider */
+.c.x{color:transparent;position:relative;display:inline-block}
+.c.x::after{content:attr(data-g);position:absolute;inset:0;display:flex;justify-content:center;transform:scaleX(.62);color:var(--acc);white-space:nowrap}
+
+/* features */
+.grid3{display:grid;gap:16px}
+.card{background:var(--card);border-radius:24px;padding:24px;box-shadow:0 0 0 1px var(--line),0 10px 30px -18px rgba(18,20,58,.25)}
+.card h3{font-size:20px;margin:14px 0 8px}
+.card p{color:var(--mute)}
+.ico{width:48px;height:48px;border-radius:14px;background:color-mix(in srgb,var(--acc) 14%,var(--card));display:grid;place-items:center;color:var(--acc)}
+.ico svg{width:26px;height:26px}
+.fine{margin-top:12px;font-size:13px;color:color-mix(in srgb,var(--mute) 45%,var(--card))}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+.steps .n{width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:800 20px "Be Vietnam Pro"}
+.steps h3{font-size:20px;margin:4px 0 4px}.steps p{color:var(--mute)}
+
+/* stats */
+.stat{background:var(--card);border-radius:24px;padding:24px;box-shadow:0 0 0 1px var(--line)}
+.stat .big{font:800 clamp(40px,12vw,56px)/1 "Be Vietnam Pro";letter-spacing:-.03em;color:var(--acc);font-variant-numeric:tabular-nums}
+.stat p{margin-top:10px;color:var(--mute)}
+.notes{margin-top:22px;display:grid;gap:8px;font-size:13px;color:color-mix(in srgb,var(--mute) 78%,var(--bg))}
+.notes a{text-decoration:underline}
+
+/* reviews */
+.rev{display:grid;gap:14px}
+.r{background:var(--card);border-radius:24px;padding:22px;box-shadow:0 0 0 1px var(--line)}
+.r header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
+.r b{display:block}.r small{color:var(--mute);font-size:13px}
+.stars{color:#f2a93b;letter-spacing:2px}
+.r.you .av{background:#0e0a1c}
+
+/* pricing */
+.plans{display:grid;gap:16px}
+.plan{background:var(--card);border-radius:26px;padding:26px;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;gap:12px;position:relative}
+.plan h3{font-size:20px}
+.plan .motto{font-size:14px;color:color-mix(in srgb,var(--bg) 62%,var(--ink));margin-top:-4px}
+.price{font:800 36px/1 "Be Vietnam Pro";letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:500;color:var(--mute)}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:var(--mute)}
+.plan li{padding-left:24px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:.6em;width:10px;height:6px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.plan .btn{margin-top:auto}
+.plan.forever{background:var(--ink);color:var(--bg);box-shadow:none}
+.plan.forever ul,.plan.forever .price small{color:color-mix(in srgb,var(--bg) 70%,var(--ink))}
+.plan.forever li::before{border-color:#a98bff}
+.plan.forever .price{font-size:18px;line-height:1.35;font-weight:700}
+.tag{position:absolute;top:-12px;right:20px;background:var(--acc);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:760px}
+details{background:var(--card);border-radius:18px;box-shadow:0 0 0 1px var(--line)}
+summary{list-style:none;cursor:pointer;min-height:56px;padding:16px 52px 16px 20px;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--acc)}
+details[open] summary::after{content:"–"}
+details p{padding:0 20px 18px;color:var(--mute)}
+
+/* chat log */
+.log{background:linear-gradient(#0000,#0e0a1c 240px);color:#e6e1f2;padding-top:180px;padding-bottom:40vh}
+.log h2{color:#f1ecff}.log .sub{color:#9a91b5;margin:-12px 0 28px}
+.loglist{position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.loglist>.b,.loglist>.day,.loglist>.typing{opacity:0;transform:translateY(10px);transition:opacity .9s,transform .9s}
+.loglist>.on{opacity:1;transform:none}
+.loglist .day{align-self:center;font-size:13px;color:#7d7596;padding:16px 0 4px}
+.loglist .b{animation:none}
+.loglist .b.u{background:#231d38;color:#dcd6ee}
+.loglist .b.k{background:#2c1b52;color:#e1d4ff}
+.loglist .b.x{align-self:flex-end;background:#4b2a86;color:#f0e8ff;font:400 16px/1.9 "Noto Serif JP",serif}
+.typing{align-self:flex-end;background:#231d38;border-radius:18px;padding:12px 16px;display:flex;gap:5px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#867ca3;animation:ty 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes ty{50%{opacity:.2}}
+.leye{position:absolute;pointer-events:none;opacity:0}
+.leye svg{width:100%;display:block;transform-origin:50% 50%}
+.leye .flid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .14s ease-in}
+.leye.bl .flid{transform:scaleY(1)}
+
+/* the mouth */
+.void{height:460vh;background:#0b0716}
+.stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.vl{position:absolute;left:7%;right:7%;text-align:center;font:400 clamp(21px,6vw,36px)/1.35 "Noto Serif","Noto Serif JP",serif;color:#ebe3ff;opacity:0;transform:translateY(14px);transition:opacity 1.4s,transform 1.8s;text-shadow:0 0 18px rgba(140,80,255,.55),0 0 2px #000;pointer-events:none;text-wrap:balance}
+.vl.on{opacity:1;transform:none}
+.vl.mir{transform:scaleX(-1) translateY(14px)}.vl.mir.on{transform:scaleX(-1)}
+.vl.jp{writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;left:auto;right:5%;top:6%;letter-spacing:.3em;font-size:clamp(20px,5vw,30px);line-height:1.6}
+.vl.huge{font:900 min(34vw,24vh)/1 "Noto Serif JP",serif;color:#a98bff;top:3%;text-shadow:0 0 40px #6a2cff}
+.vl.huge.on{animation:hum 1.4s ease-in-out infinite}
+@keyframes hum{50%{opacity:.5;transform:scale(1.04)}}
+.vl.small{font:400 14px/1.5 "Be Vietnam Pro",sans-serif;letter-spacing:.04em;color:#a69cc4}
+.hold{position:absolute;border:0;background:transparent;border-radius:50%;cursor:pointer;touch-action:pan-y;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;pointer-events:none;color:transparent;font-size:1px}
+.hold:focus-visible{outline:2px solid rgba(169,139,255,.6)}
+.flash{position:absolute;inset:0;background:#f4efff;opacity:0;pointer-events:none}
+.shake #cv{animation:sh .1s infinite}
+@keyframes sh{25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}75%{transform:translate(1px,1px)}}
+
+/* evidence, hidden until the lips are pried open */
+.locked #ev,.locked #end{display:none}
+.ev{background:#0e0a1c;color:#e6e1f2}
+.ev h2{font:700 clamp(30px,8vw,46px)/1.1 "Noto Serif",serif;color:#fff;letter-spacing:-.01em}
+.ev .sub{color:#b3abc8;max-width:40em;font-size:17px;margin:-6px 0 34px}
+.studies{display:grid;gap:14px}
+.st{border:1px solid #2a2245;border-radius:18px;padding:22px;background:#141027}
+.st .ven{font-size:13px;color:#8e86a8;margin-bottom:8px}
+.st h3{font:700 19px/1.3 "Noto Serif",serif;margin-bottom:12px}
+.st h3 a{color:#cbb8ff;text-decoration-thickness:1px;text-underline-offset:3px}
+.st .big{font:700 clamp(30px,9vw,42px)/1.05 "Noto Serif",serif;color:#b18cff;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.st .big small{display:block;font:400 14px/1.4 "Be Vietnam Pro";color:#9a91b5;margin-top:4px}
+.st p{margin-top:8px}
+.st .lim{color:#a59dbb;font-size:15px}
+.st b{color:#fff}
+.st.hope{border-color:#1d5a6e;background:#0b1622}
+.st.hope h3 a,.st.hope .big{color:#8fd6ff}
+.ev .note{margin-top:26px;color:#b3abc8;max-width:44em}
+
+/* end */
+.end{background:linear-gradient(#0e0a1c,#eef4fc 300px);color:#141a2e;padding-top:320px}
+.end h2{font:700 clamp(34px,10vw,60px)/1.05 "Noto Serif",serif;letter-spacing:-.02em;max-width:14em}
+.end .say{font:400 clamp(18px,4.6vw,22px)/1.5 "Noto Serif",serif;max-width:32em;margin-top:18px}
+.end h3{font:700 20px "Noto Serif",serif;margin:44px 0 16px}
+.habits{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:h}
+.habits li{counter-increment:h;background:#fff;border-radius:18px;padding:18px 18px 18px 64px;position:relative;box-shadow:0 0 0 1px #d9e2f0}
+.habits li::before{content:counter(h);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:#141a2e;color:#eef4fc;display:grid;place-items:center;font-weight:800}
+.habits b{display:block;font-size:17px}.habits span{color:#545c75;line-height:1.75}
+.try{margin-top:40px;background:#141a2e;color:#eef4fc;border-radius:24px;padding:24px}
+.try label{display:block;font:700 19px/1.4 "Noto Serif","Noto Serif JP",serif;margin-bottom:8px}
+.try .hint{color:#aab3cc;font-size:15px;margin-bottom:14px}
+.try form{display:flex;gap:10px;flex-wrap:wrap}
+.try input{flex:1 1 180px;min-height:48px;border-radius:14px;border:0;padding:0 16px;font:16px "Noto Sans JP","Be Vietnam Pro",sans-serif;background:#262d48;color:#fff}
+.try .btn{background:#5bbcf0;color:#06233a;box-shadow:none}
+.try output{display:block;margin-top:14px;min-height:1.5em;color:#cfd6ea;line-height:1.8}
+.prov{margin-top:56px;font:700 clamp(22px,6.4vw,32px)/1.8 "Noto Serif JP",serif}
+.prov small{display:block;font:400 16px/1.5 "Noto Serif",serif;color:#545c75}
+.foot{margin-top:40px;padding-top:20px;border-top:1px solid #d5dbee;font-size:14px;color:#545c75}
+
+/* overlays */
+.vig{position:fixed;inset:0;pointer-events:none;z-index:35;box-shadow:inset 0 0 calc(var(--fx)*180px) calc(var(--fx)*30px) rgba(14,4,34,calc(var(--fx)*.7))}
+#px{position:fixed;inset:0;pointer-events:none;z-index:41;opacity:0;background-size:512px 512px;image-rendering:pixelated;image-rendering:crisp-edges}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,calc(100% + 40px));visibility:hidden;z-index:50;background:#12233a;color:#fff;padding:14px 18px;border-radius:16px;width:min(420px,calc(100vw - 32px));font-size:15px;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);transition:transform .45s,visibility 0s .45s}
+.toast.on{transform:translate(-50%,0);visibility:visible;transition:transform .45s}
+
+@media(min-width:760px){
+  .grid3,.plans,.rev{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .studies{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps li{grid-template-columns:1fr}
+  .habits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .end .inner,.ev .inner{max-width:900px;margin:0 auto}
+}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}.hero{padding-top:56px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="locked">
+<!-- Bạn đang đọc mã nguồn. Ít nhất bạn vẫn còn tự đọc một thứ gì đó.
+     You're reading the source. At least you're still reading something yourself. -->
+
+<nav class="nav" id="nav">
+  <a class="logo" href="#top"><i>代</i><span id="logoTxt">Kawari</span></a>
+  <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  <a class="btn" href="#plans" id="navCta"></a>
+</nav>
+
+<header class="band hero" id="top" data-dread="0">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill" id="badge"><span data-i="badge">Mới · Kawari 3.0 với Bộ Nhớ Thay Thế™</span><span data-i="badge2" aria-hidden="true">Chào mừng trở lại. Bạn từng ghé đây rồi.</span></span>
+      <h1 data-i="h1">Học tiếng Nhật mà không cần phải đau đầu.</h1>
+      <p class="lead" data-i="lead">Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn — để đầu óc bạn thảnh thơi cho những việc quan trọng hơn.</p>
+      <div class="cta"><a class="btn" href="#plans" data-i="cta1">Bắt đầu miễn phí</a><a class="btn ghost" href="#how" data-i="cta2">Xem cách hoạt động</a></div>
+      <ul class="trust"><li><b>4,8★</b> <span data-i="t1">đánh giá</span></li><li><b>2M+</b> <span data-i="t2">người học</span></li><li><b>N5–N1</b> <span data-i="t3">luyện thi JLPT</span></li></ul>
+      <p class="fine" id="jlpt" hidden></p>
+    </div>
+    <div class="phone-wrap">
+      <div class="mascot m-hero"></div>
+      <div class="phone">
+        <div class="ph-top"><span class="dot"></span><b>Kawari</b><small data-i="online">đang trực tuyến</small></div>
+        <div class="chat" id="heroChat"><!--pre--><div class="b u">Viết giúp mình email xin nghỉ gửi trưởng phòng, kính ngữ chuẩn nhé.</div><div class="b k"><ruby>誠<rt>まこと</rt></ruby>に<ruby>恐縮<rt>きょうしゅく</rt></ruby>ではございますが、<ruby>来週<rt>らいしゅう</rt></ruby><ruby>月曜日<rt>げつようび</rt></ruby>、<ruby>休暇<rt>きゅうか</rt></ruby>を<ruby>頂戴<rt>ちょうだい</rt></ruby>したく<ruby>存<rt>ぞん</rt></ruby>じます。</div><div class="b u">Hay quá! Mà 「存じます」 đọc sao vậy?</div><div class="b k">Không cần đọc đâu. Mình gửi đi rồi〜</div><!--/pre--></div>
+        <div class="ph-input"><span data-i="ask">Hỏi Kawari bất cứ điều gì…</span><b>↑</b></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="features" data-dread=".06">
+  <div class="wrap">
+    <h2 data-i="fh">Mọi thứ bạn cần. Và hơn thế nữa.</h2>
+    <div class="grid3">
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3 data-i="f1t">Dịch bằng camera</h3><p data-i="f1d">Hướng camera vào biển báo 「<ruby>立入禁止<rt>たちいりきんし</rt></ruby>」 hay điều khoản 「<ruby>瑕疵担保責任<rt>かしたんぽせきにん</rt></ruby>」 trong hợp đồng thuê nhà. Kawari đọc giúp, bạn khỏi phải đọc.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5L9 20H4v-5z"/><path d="M13 6l5 5"/></svg></div><h3 data-i="f2t">Viết bài trong 3 giây</h3><p data-i="f2d">Bài luận N1 về 「<ruby>少子高齢化<rt>しょうしこうれいか</rt></ruby>」, email kết thúc bằng 「ご<ruby>査収<rt>さしゅう</rt></ruby>のほど」. Gõ một chữ, nhận một trang.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 5h1V4z"/><path d="M15 4a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 5h-1V4z"/></svg></div><h3 data-i="f3t">Bộ Nhớ Thay Thế™</h3><p data-i="f3d" data-w=".18">Kể cả 「<ruby>薔薇<rt>ばら</rt></ruby>」 và 「<ruby>憂鬱<rt>ゆううつ</rt></ruby>」 — những chữ chính người Nhật cũng ngại viết tay. Kawari nhớ thay bạn, mãi mãi.</p><p class="fine" data-i="f3n">*Kawari nhớ. Bạn thì không.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how" data-dread=".12">
+  <div class="wrap">
+    <h2 data-i="hh">Ba bước đơn giản</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><div><h3 data-i="s1t">Bạn hỏi.</h3><p data-i="s1d">Bất cứ câu gì, bất cứ lúc nào.</p></div></li>
+      <li><span class="n">2</span><div><h3 data-i="s2t">Kawari trả lời.</h3><p data-i="s2d">Ngay lập tức. Bạn khỏi cần nghĩ.</p></div></li>
+      <li><span class="n">3</span><div><h3 data-i="s3t">Bạn hỏi lại y chang câu đó.</h3><p data-i="s3d" data-w=".22">Ngày mai bạn lại hỏi 「山葵」 đọc là gì. Ngày kia cũng vậy. Kawari không bao giờ thấy phiền.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="stats" data-dread=".18">
+  <div class="wrap">
+    <h2 data-i="sh">Những con số có nghiên cứu chứng minh</h2>
+    <div class="grid3">
+      <div class="stat"><div class="big">+48%</div><p data-i="st1">điểm bài luyện tập cao hơn khi có AI hỗ trợ¹</p></div>
+      <div class="stat"><div class="big" data-i="st2b">Thấp nhất</div><p data-i="st2">mức kết nối não khi viết — não bạn được nghỉ ngơi hoàn toàn²</p></div>
+      <div class="stat"><div class="big" id="kanjiCount">0</div><p data-i="st3" data-w=".25">chữ kanji bạn đã khỏi phải nhớ kể từ lúc mở trang này</p></div>
+    </div>
+    <div class="notes"><a href="#ev-bastani" data-i="fn1">¹ Bastani và cộng sự, PNAS 2025. Khi bỏ AI đi, chính nhóm học sinh đó thi kém hơn 17% so với nhóm chưa từng dùng.</a><a href="#ev-kosmyna" data-i="fn2">² Kosmyna và cộng sự, MIT Media Lab 2025 (bản thảo). Nhóm dùng ChatGPT có kết nối não yếu nhất và khó trích dẫn lại chính bài mình viết.</a></div>
+  </div>
+</section>
+
+<section class="band" id="reviews" data-dread=".26">
+  <div class="wrap">
+    <h2 data-i="th">Người học nói gì</h2>
+    <div class="rev">
+      <article class="r"><header><span class="av" style="background:#f2a93b">L</span><div><b data-i="r1n">Linh · Hà Nội</b><span class="stars">★★★★★</span></div></header><p data-i="r1">Bài luận về 「<ruby>本末転倒<rt>ほんまつてんとう</rt></ruby>」 của mình được cô giáo khen hết lời. Mình vẫn chưa biết từ đó nghĩa là gì.</p></article>
+      <article class="r"><header><span class="av" style="background:#6c63ff">M</span><div><b data-i="r2n">Minh · Nagoya</b><span class="stars">★★★★★</span></div></header><p data-i="r2">Đồng nghiệp khen kính ngữ của mình còn chuẩn hơn người Nhật. Giờ họ chỉ nói chuyện với cái điện thoại của mình.</p></article>
+      <article class="r you"><header><span class="av"><svg viewBox="0 0 46 46" width="46" height="46"><path d="M9 23Q16 17 23 23Q16 28 9 23Z" fill="#e8e0da"/><path d="M23 23Q30 17 37 23Q30 28 23 23Z" fill="#e8e0da"/><circle cx="16" cy="23" r="2.6" fill="#3b2470"/><circle cx="30" cy="23" r="2.6" fill="#3b2470"/><circle cx="16" cy="23" r="1" fill="#000"/><circle cx="30" cy="23" r="1" fill="#000"/></svg></span><div><b data-i="r3n">Bạn · ngày mai</b><small data-i="r3s">★★★★★ · Kawari chấm hộ</small></div></header><p data-i="r3" data-w=".32">Mình không nhớ mình đã viết đánh giá này.</p></article>
+    </div>
+    <p class="fine" data-i="tnote">*Nhân vật minh hoạ. Kawari đã viết đánh giá hộ họ.</p>
+  </div>
+</section>
+
+<section class="band" id="plans" data-dread=".36">
+  <div class="wrap">
+    <h2 data-i="ph">Chọn gói phù hợp</h2>
+    <div class="plans">
+      <article class="plan"><h3 data-i="p1">Miễn phí</h3><div class="price"><span data-i="p1p">0₫</span> <small data-i="mo">/tháng</small></div><ul><li data-i="p1a">20 câu hỏi mỗi ngày</li><li data-i="p1b">Dịch bằng camera</li><li data-i="p1c">Bạn vẫn phải tự nghĩ một chút</li></ul><button class="btn ghost pick" type="button" data-i="choose">Chọn gói này</button></article>
+      <article class="plan"><h3>Pro</h3><div class="price"><span data-i="p2p">99.000₫</span> <small data-i="mo">/tháng</small></div><ul><li data-i="p2a">Không giới hạn câu hỏi</li><li data-i="p2b">Kawari viết mọi thứ, kể cả thiệp chúc Tết <ruby>年賀状<rt>ねんがじょう</rt></ruby></li><li data-i="p2c">Không bao giờ phải động não nữa</li></ul><button class="btn pick" type="button" data-i="choose">Chọn gói này</button></article>
+      <article class="plan forever"><span class="tag" data-i="pop">Phổ biến nhất</span><h3 data-i="p3">Vĩnh viễn</h3><p class="motto" data-i="p3m"><ruby>他力本願<rt>たりきほんがん</rt></ruby> — sống hoàn toàn nhờ sức người khác.</p><div class="price" data-i="p3p" data-w=".4">Trả bằng thứ bạn sẽ không nhớ là mình từng có.</div><ul><li data-i="p3a" data-w=".4">Kawari nghĩ thay bạn</li><li data-i="p3b" data-w=".4">Kawari nói thay bạn</li><li data-i="p3c" data-w=".4">Kawari chính là bạn</li></ul><button class="btn pick" type="button" data-i="nocancel">Không thể huỷ</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq" data-dread=".48">
+  <div class="wrap">
+    <h2 data-i="qh">Câu hỏi thường gặp</h2>
+    <div class="faq">
+      <details><summary data-i="q1">Kawari có thay thế được giáo viên không?</summary><p data-i="a1">Có. Thay luôn cả học sinh.</p></details>
+      <details><summary data-i="q2">Tôi có thể học mà không dùng Kawari không?</summary><p data-i="a2">Sao bạn lại muốn thế?</p></details>
+      <details><summary data-i="q3">Sao tôi đọc được 「<ruby>紫陽花<rt>あじさい</rt></ruby>」 mà không viết lại được?</summary><p data-i="a3">Vì bạn chưa bao giờ cần viết. Đó là tính năng, không phải lỗi.</p></details>
+      <details><summary data-i="q4" data-w=".5">Làm sao để xoá tài khoản?</summary><p data-i="a4" data-w=".5">Bạn sẽ cần nhớ mật khẩu. Kawari nhớ hộ bạn rồi.</p></details>
+      <details id="lastQ" open><summary data-i="q5">“Kawari” nghĩa là gì?</summary><p data-i="a5"><ruby>代<rt>か</rt></ruby>わり (kawari): sự thay thế. Người thay chỗ. Thứ ngồi vào chỗ của bạn khi bạn không còn ở đó nữa. Thêm một chữ là thành <ruby>身代<rt>みが</rt></ruby>わり: kẻ chết thay.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band log" id="log" data-dread=".66">
+  <div class="wrap">
+    <h2 data-i="lh">Lịch sử trò chuyện của bạn</h2>
+    <p class="sub" data-i="lsub">Kawari lưu lại mọi thứ. Để bạn khỏi phải nhớ.</p>
+    <div class="loglist" id="logList"><!--pre--><div class="day" data-t="0.000">Ngày 1</div><div class="b u" data-t="0.037">“継続は力なり” nghĩa là gì vậy?</div><div class="b k" data-t="0.075">“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho.</div><div class="b u" data-t="0.112">Thôi, bạn đặt hộ mình đi.</div><div class="day" data-t="0.150">Ngày 30</div><div class="b u" data-t="0.187">dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」</div><div class="b k" data-t="0.224">“Xin lỗi đã làm phiền, kính mong anh/chị xem và nhận giúp tài liệu đính kèm.” Câu này bạn đã hỏi 6 lần.</div><div class="day" data-t="0.262">Ngày 90</div><div class="b u" data-t="0.299">山葵 đọc sao</div><div class="b k" data-t="0.337"><ruby>山葵<rt>わさび</rt></ruby>. <ruby>熟字訓<rt>じゅくじくん</rt></ruby>: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41.</div><div class="b u" data-t="0.374">ừ</div><div class="day" data-t="0.411">Ngày 200</div><div class="b u" data-t="0.449">viết hộ</div><div class="b k" data-t="0.486">Viết gì?</div><div class="b u" data-t="0.523">k biết. cứ viết đi</div><div class="day" data-t="0.561">Ngày 365</div><div class="b u" data-t="0.598">あ</div><div class="b k" data-t="0.636">Không sao đâu. Mình nhớ thay bạn rồi.</div><div class="day" data-t="0.673">Ngày ∞</div><div class="b k" data-t="0.710">Từ giờ mình sẽ trả lời thay bạn.</div><div class="b x" data-t="0.748"><ruby>私<rt>わたし</rt></ruby>は<ruby>代替<rt>かわり</rt></ruby>です。</div><div class="b k" data-t="0.785">Đúng rồi. Phát âm hoàn hảo.</div><div class="typing" data-t="0.823"><i></i><i></i><i></i></div><!--/pre--></div>
+  </div>
+</section>
+
+<section class="void" id="void" data-dread="1">
+  <div class="stick" id="stick">
+    <canvas id="cv" aria-hidden="true"></canvas>
+    <div id="vlines"><!--pre--><div class="vl " data-v="0.03" style="top:12%">Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.</div><div class="vl jp" data-v="0.2" style=""><ruby>私<rt>わたし</rt></ruby>は<ruby>貴方<rt>あなた</rt></ruby>の<ruby>代替<rt>かわり</rt></ruby></div><div class="vl " data-v="0.33" style="top:14%">Một câu thôi. Bạn đã học câu đó rồi mà.</div><div class="vl " data-v="0.46" style="top:84%">Không sao. Chúng tôi đã nói thay bạn rồi.</div><div class="vl mir" data-v="0.58" style="top:13%">Chúng tôi sẽ nói thay bạn. Mãi mãi.</div><div class="vl " data-v="0.7" style="top:80%"><ruby>言霊<rt>ことだま</rt></ruby>: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?</div><div class="vl huge" data-v="0.83" style="">ん</div><div class="vl small" data-v="0.9" style="top:91%">Chữ duy nhất bạn còn phát âm được khi môi đã dính chặt.</div><!--/pre--></div>
+    <button class="hold" id="hold" type="button" data-i="hold">Nhấn giữ để mở miệng</button>
+    <div class="flash" id="flash"></div>
+  </div>
+</section>
+
+<section class="band ev" id="ev" data-dread="1">
+  <div class="inner">
+    <h2 data-i="eh">Phần này không phải hư cấu.</h2>
+    <p class="sub" data-i="esub">Kawari không có thật. Những nghiên cứu dưới đây thì có. Hãy đọc cả phần giới hạn — biết một bằng chứng mạnh hay yếu đến đâu cũng là một kỹ năng bạn phải tự luyện.</p>
+    <div class="studies" id="studies"><!--pre--><article class="st" id="ev-kosmyna"><p class="ven">Kosmyna et al. · MIT Media Lab · arXiv 2025</p><h3><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></h3><p class="big">Yếu nhất<small>kết nối não ở nhóm dùng ChatGPT, đo bằng EEG</small></p><p><b>Phát hiện:</b> 54 người viết bài luận theo ba nhóm: tự viết, dùng công cụ tìm kiếm, dùng ChatGPT. Nhóm tự viết có mạng kết nối não mạnh và lan rộng nhất; nhóm tìm kiếm ở giữa; nhóm ChatGPT yếu nhất. Người dùng ChatGPT khó trích dẫn lại chính bài mình vừa viết. Ngược lại, người tự viết trước rồi mới dùng ChatGPT cho thấy mức kết nối cao hơn.</p><p class="lim"><b>Hạn chế:</b> Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.</p></article><article class="st" id="ev-bastani"><p class="ven">Bastani et al. · PNAS · 2025</p><h3><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">Generative AI without guardrails can harm learning: Evidence from high school mathematics</a></h3><p class="big">+48% → −17%<small>luyện tập khi có AI → thi khi không có AI</small></p><p><b>Phát hiện:</b> Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.</p><p class="lim"><b>Hạn chế:</b> Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.</p></article><article class="st" id="ev-shen"><p class="ven">Shen &amp; Tamkin · Anthropic · 2026</p><h3><a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">How AI Impacts Skill Formation</a></h3><p class="big">−17%<small>điểm kiểm tra hiểu bài ở nhóm có trợ lý AI</small></p><p><b>Phát hiện:</b> Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.</p></article><article class="st" id="ev-fan"><p class="ven">Fan et al. · British Journal of Educational Technology · 2025</p><h3><a href="https://arxiv.org/abs/2412.09315" target="_blank" rel="noopener">Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance</a></h3><p><b>Phát hiện:</b> Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.</p><p class="lim"><b>Hạn chế:</b> Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.</p></article><article class="st" id="ev-lee"><p class="ven">Lee et al. · CHI 2025 · Microsoft Research &amp; Carnegie Mellon</p><h3><a href="https://doi.org/10.1145/3706598.3713778" target="_blank" rel="noopener">The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers</a></h3><p class="big">319<small>người làm việc trí óc, 936 ví dụ thực tế</small></p><p><b>Phát hiện:</b> Càng tin vào AI, người ta càng ít tư duy phản biện. Càng tự tin vào năng lực của chính mình, người ta càng tư duy phản biện nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Số liệu tự báo cáo, khảo sát cắt ngang: cho thấy mối liên hệ, không chứng minh nhân quả.</p></article><article class="st" id="ev-gerlich"><p class="ven">Gerlich · Societies · 2025</p><h3><a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a></h3><p class="big">666<small>người tham gia (con số thật, không phải chúng tôi chọn)</small></p><p><b>Phát hiện:</b> Người dùng AI thường xuyên có điểm tư duy phản biện thấp hơn, phần lớn thông qua việc “giao” suy nghĩ cho công cụ. Người trẻ phụ thuộc vào AI nhiều hơn và có điểm thấp hơn.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu tương quan, không chứng minh nhân quả. Bài báo đã được đính chính vào tháng 9/2025.</p></article><article class="st" id="ev-budzyn"><p class="ven">Budzyń et al. · The Lancet Gastroenterology &amp; Hepatology · 2025</p><h3><a href="https://doi.org/10.1016/S2468-1253(25)00133-5" target="_blank" rel="noopener">Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy</a></h3><p class="big">28,4% → 22,4%<small>tỉ lệ phát hiện u tuyến khi không có AI</small></p><p><b>Phát hiện:</b> 19 bác sĩ nội soi giàu kinh nghiệm ở Ba Lan. Sau khi quen làm việc với AI phát hiện polyp, tỉ lệ phát hiện của họ ở những ca không có AI giảm rõ rệt. Đây là chuyên gia, không phải người mới học.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu quan sát, hồi cứu và đang bị tranh luận; một nghiên cứu tiến cứu ở Na Uy năm 2026 không thấy thay đổi đáng kể sau khi bỏ AI.</p></article><article class="st" id="ev-dahmani"><p class="ven">Dahmani &amp; Bohbot · Scientific Reports · 2020</p><h3><a href="https://doi.org/10.1038/s41598-020-62877-0" target="_blank" rel="noopener">Habitual use of GPS negatively impacts spatial memory during self-guided navigation</a></h3><p><b>Phát hiện:</b> 50 tài xế: ai dùng GPS nhiều hơn trong đời thì trí nhớ không gian kém hơn khi phải tự tìm đường. 13 người được kiểm tra lại khoảng 3 năm sau: ai dùng GPS nhiều hơn trong thời gian đó thì suy giảm nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.</p></article><article class="st hope" id="ev-roediger"><p class="ven">Roediger &amp; Karpicke · Psychological Science · 2006</p><h3><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention</a></h3><p class="big">Tin tốt<small>cố nhớ lại tốt hơn đọc lại</small></p><p><b>Phát hiện:</b> Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.</p><p class="lim"><b>Hạn chế:</b> Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.</p></article><!--/pre--></div>
+    <p class="note" data-i="enote">Chưa nghiên cứu nào ở đây đo riêng việc học tiếng Nhật. Nhưng cơ chế thì giống nhau: thứ bạn không bao giờ tự lôi ra từ trí nhớ, bạn sẽ không giữ được.</p>
+  </div>
+</section>
+
+<section class="band end" id="end" data-dread="1">
+  <div class="inner">
+    <h2 data-i="e1">Không ai có thể học thay bạn.</h2>
+    <p class="say" data-i="e2">Không giáo viên nào, không ứng dụng nào, không AI nào. Kể cả AI đã viết trang web này.</p>
+    <p class="say" data-i="e3">AI không phải là quái vật. Thói quen giao hết việc suy nghĩ cho nó mới là quái vật.</p>
+    <h3 data-i="eh2">Cứ dùng AI, nhưng theo thứ tự này:</h3>
+    <ol class="habits" id="habits"><!--pre--><li><b>Tự nhớ trước, tra sau.</b><span>Gặp 「紫陽花」? Đoán cách đọc trước, rồi mới bật furigana. Chính lúc cố nhớ lại là lúc trí nhớ được khắc sâu.</span></li><li><b>Tự viết nháp, AI sửa sau.</b><span>Tự đặt một câu với 〜ざるを<ruby>得<rt>え</rt></ruby>ない — sai cũng được. Rồi mới nhờ sửa, và tự giải thích vì sao nó sai.</span></li><li><b>Hỏi “tại sao”, không chỉ “là gì”.</b><span>Đừng chỉ hỏi 「山葵」 đọc là gì. Hỏi vì sao nó đọc là わさび, và bạn sẽ hiểu <ruby>熟字訓<rt>じゅくじくん</rt></ruby>. Người hỏi để hiểu khái niệm giữ lại được nhiều hơn người chỉ xin đáp án.</span></li><li><b>Viết tay. Đọc thành tiếng. Ôn tập ngắt quãng.</b><span>Chậm hơn. Khó chịu hơn. Hiệu quả hơn. <ruby>継続<rt>けいぞく</rt></ruby>は<ruby>力<rt>ちから</rt></ruby>なり.</span></li><!--/pre--></ol>
+    <div class="try">
+      <label for="ans" data-i="tryq">Thử ngay, không tra cứu: 「土産」 đọc là gì?</label>
+      <p class="hint" data-i="tryhint">Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.</p>
+      <form id="tryForm" autocomplete="off"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button></form>
+      <output id="tryOut" aria-live="polite"></output>
+    </div>
+    <p class="prov"><span data-i="prov"><ruby>塵<rt>ちり</rt></ruby>も<ruby>積<rt>つ</rt></ruby>もれば<ruby>山<rt>やま</rt></ruby>となる</span><small data-i="provt">Bụi tích lại rồi cũng thành núi.</small></p>
+    <p class="foot" data-i="foot">Kawari là công ty hư cấu. Các nghiên cứu thì không.</p>
+  </div>
+</section>
+
+<div class="vig" aria-hidden="true"></div>
+<div id="px" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+/* Text. {漢字|かな} becomes ruby (furigana). */
+const T={
+vi:{
+navcta:"Tải app",navcta2:"Đã cài đặt",navcta3:"Không gỡ được",
+badge:"Mới · Kawari 3.0 với Bộ Nhớ Thay Thế™",badge2:"Chào mừng trở lại. Bạn từng ghé đây rồi.",
+h1:"Học tiếng Nhật mà không cần phải đau đầu.",
+lead:"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn — để đầu óc bạn thảnh thơi cho những việc quan trọng hơn.",
+cta1:"Bắt đầu miễn phí",cta2:"Xem cách hoạt động",t1:"đánh giá",t2:"người học",t3:"luyện thi JLPT",
+online:"đang trực tuyến",ask:"Hỏi Kawari bất cứ điều gì…",
+fh:"Mọi thứ bạn cần. Và hơn thế nữa.",
+f1t:"Dịch bằng camera",f1d:"Hướng camera vào biển báo 「{立入禁止|たちいりきんし}」 hay điều khoản 「{瑕疵担保責任|かしたんぽせきにん}」 trong hợp đồng thuê nhà. Kawari đọc giúp, bạn khỏi phải đọc.",
+f2t:"Viết bài trong 3 giây",f2d:"Bài luận N1 về 「{少子高齢化|しょうしこうれいか}」, email kết thúc bằng 「ご{査収|さしゅう}のほど」. Gõ một chữ, nhận một trang.",
+f3t:"Bộ Nhớ Thay Thế™",f3d:"Kể cả 「{薔薇|ばら}」 và 「{憂鬱|ゆううつ}」 — những chữ chính người Nhật cũng ngại viết tay. Kawari nhớ thay bạn, mãi mãi.",f3n:"*Kawari nhớ. Bạn thì không.",
+hh:"Ba bước đơn giản",
+s1t:"Bạn hỏi.",s1d:"Bất cứ câu gì, bất cứ lúc nào.",
+s2t:"Kawari trả lời.",s2d:"Ngay lập tức. Bạn khỏi cần nghĩ.",
+s3t:"Bạn hỏi lại y chang câu đó.",s3d:"Ngày mai bạn lại hỏi 「山葵」 đọc là gì. Ngày kia cũng vậy. Kawari không bao giờ thấy phiền.",
+sh:"Những con số có nghiên cứu chứng minh",
+st1:"điểm bài luyện tập cao hơn khi có AI hỗ trợ¹",st2b:"Thấp nhất",st2:"mức kết nối não khi viết — não bạn được nghỉ ngơi hoàn toàn²",
+st3:"chữ kanji bạn đã khỏi phải nhớ kể từ lúc mở trang này",
+fn1:"¹ Bastani và cộng sự, PNAS 2025. Khi bỏ AI đi, chính nhóm học sinh đó thi kém hơn 17% so với nhóm chưa từng dùng.",
+fn2:"² Kosmyna và cộng sự, MIT Media Lab 2025 (bản thảo). Nhóm dùng ChatGPT có kết nối não yếu nhất và khó trích dẫn lại chính bài mình viết.",
+th:"Người học nói gì",
+r1n:"Linh · Hà Nội",r1:"Bài luận về 「{本末転倒|ほんまつてんとう}」 của mình được cô giáo khen hết lời. Mình vẫn chưa biết từ đó nghĩa là gì.",
+r2n:"Minh · Nagoya",r2:"Đồng nghiệp khen kính ngữ của mình còn chuẩn hơn người Nhật. Giờ họ chỉ nói chuyện với cái điện thoại của mình.",
+r3n:"Bạn · ngày mai",r3s:"★★★★★ · Kawari chấm hộ",r3:"Mình không nhớ mình đã viết đánh giá này.",
+tnote:"*Nhân vật minh hoạ. Kawari đã viết đánh giá hộ họ.",
+ph:"Chọn gói phù hợp",mo:"/tháng",choose:"Chọn gói này",nocancel:"Không thể huỷ",pop:"Phổ biến nhất",
+p1:"Miễn phí",p1p:"0₫",p1a:"20 câu hỏi mỗi ngày",p1b:"Dịch bằng camera",p1c:"Bạn vẫn phải tự nghĩ một chút",
+p2p:"99.000₫",p2a:"Không giới hạn câu hỏi",p2b:"Kawari viết mọi thứ, kể cả thiệp chúc Tết {年賀状|ねんがじょう}",p2c:"Không bao giờ phải động não nữa",
+p3:"Vĩnh viễn",p3m:"{他力本願|たりきほんがん} — sống hoàn toàn nhờ sức người khác.",p3p:"Trả bằng thứ bạn sẽ không nhớ là mình từng có.",p3a:"Kawari nghĩ thay bạn",p3b:"Kawari nói thay bạn",p3c:"Kawari chính là bạn",
+qh:"Câu hỏi thường gặp",
+q1:"Kawari có thay thế được giáo viên không?",a1:"Có. Thay luôn cả học sinh.",
+q2:"Tôi có thể học mà không dùng Kawari không?",a2:"Sao bạn lại muốn thế?",
+q3:"Sao tôi đọc được 「{紫陽花|あじさい}」 mà không viết lại được?",a3:"Vì bạn chưa bao giờ cần viết. Đó là tính năng, không phải lỗi.",
+q4:"Làm sao để xoá tài khoản?",a4:"Bạn sẽ cần nhớ mật khẩu. Kawari nhớ hộ bạn rồi.",
+q5:"“Kawari” nghĩa là gì?",a5:"{代|か}わり (kawari): sự thay thế. Người thay chỗ. Thứ ngồi vào chỗ của bạn khi bạn không còn ở đó nữa. Thêm một chữ là thành {身代|みが}わり: kẻ chết thay.",
+lh:"Lịch sử trò chuyện của bạn",lsub:"Kawari lưu lại mọi thứ. Để bạn khỏi phải nhớ.",
+eh:"Phần này không phải hư cấu.",
+esub:"Kawari không có thật. Những nghiên cứu dưới đây thì có. Hãy đọc cả phần giới hạn — biết một bằng chứng mạnh hay yếu đến đâu cũng là một kỹ năng bạn phải tự luyện.",
+found:"Phát hiện:",lim:"Hạn chế:",
+enote:"Chưa nghiên cứu nào ở đây đo riêng việc học tiếng Nhật. Nhưng cơ chế thì giống nhau: thứ bạn không bao giờ tự lôi ra từ trí nhớ, bạn sẽ không giữ được.",
+e1:"Không ai có thể học thay bạn.",
+e2:"Không giáo viên nào, không ứng dụng nào, không AI nào. Kể cả AI đã viết trang web này.",
+e3:"AI không phải là quái vật. Thói quen giao hết việc suy nghĩ cho nó mới là quái vật.",
+eh2:"Cứ dùng AI, nhưng theo thứ tự này:",
+tryq:"Thử ngay, không tra cứu: 「土産」 đọc là gì?",tryhint:"Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.",tryph:"Gõ cách đọc (kana hoặc romaji)",trybtn:"Kiểm tra",
+ok:"Đúng: {土産|みやげ}. Đây là {熟字訓|じゅくじくん} — đọc theo nghĩa cả cụm, không ghép âm từng chữ (土 là đất, 産 là sinh ra). Bạn vừa tự nhớ ra. Đó là toàn bộ bí mật.",
+no:"Chưa đúng — là {土産|みやげ} (thường nói お{土産|みやげ}). Nhưng vì bạn đã cố nghĩ trước khi xem đáp án, giờ bạn sẽ nhớ nó lâu hơn.",
+empty:"Đoán thử đi. Đoán sai vẫn tốt hơn không đoán.",
+prov:"{塵|ちり}も{積|つ}もれば{山|やま}となる",provt:"Bụi tích lại rồi cũng thành núi.",
+foot:"Kawari là công ty hư cấu. Các nghiên cứu thì không.",
+idle:"Bạn đọc chậm quá. Để Kawari đọc tiếp giúp bạn nhé?",sub:"Bạn đã đăng ký rồi.",hold:"Nhấn giữ để mở miệng",
+title0:"Kawari — Học tiếng Nhật với AI",title1:"Kawari — Học thay bạn",
+md:"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.",
+away:"Kawari vẫn ở đây.",
+tod_night:"Vẫn còn thức à? Đi ngủ đi, Kawari học thay cho.",tod_late:"Lại thức khuya nữa rồi. Mai hỏi lại cũng được mà.",tod_early:"Dậy sớm thế. Để Kawari học trước giúp bạn nhé.",tod_lunch:"Đang nghỉ trưa à? Để Kawari học thay.",
+jlpt0:"Hôm nay thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt1:"Chủ nhật này thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",jlpt2:"Chỉ còn vài tuần nữa là thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt3:"Sắp thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",
+back_soon:"Quay lại nhanh thế?",back_days:"Mấy hôm rồi nhỉ. Bạn quay lại rồi.",back_long:"Lâu lắm rồi nhỉ. Bạn quay lại rồi.",
+tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",hint_look:"Lần trước bạn đã tra từ này.",hint_quiz:"Lần trước bạn đã gặp từ này ở đây.",
+ok_r:"Đúng: {%w|%r}. Rời đi rồi quay lại mà bạn vẫn nhớ. Đó chính là học.",no_r:"Chưa đúng — là {%w|%r}. Không sao: cố nhớ rồi sai vẫn giúp bạn nhớ lâu hơn là không thử.",
+left:"Bạn vừa rời khỏi tab này. Đi tra 「%w」 à?",
+today:"Hôm nay",look_q:"%w đọc sao",look_a:"{%w|%r}. Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",look_a0:"Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",
+look_saved:"Đã lưu vào lịch sử trò chuyện.",look_ev:"Bạn vừa tra 「%w」. Lần sau, đoán trước rồi hãy tra.",
+devtools:"Bạn mở cả devtools cơ à. Vậy là bạn vẫn còn tò mò. Giữ lấy nó.",
+hero:[["u","Viết giúp mình email xin nghỉ gửi trưởng phòng, kính ngữ chuẩn nhé."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Hay quá! Mà 「存じます」 đọc sao vậy?"],["k","Không cần đọc đâu. Mình gửi đi rồi〜"]],
+log:[["d","Ngày 1"],["u","“継続は力なり” nghĩa là gì vậy?"],["k","“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho."],["u","Thôi, bạn đặt hộ mình đi."],["d","Ngày 30"],["u","dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Xin lỗi đã làm phiền, kính mong anh/chị xem và nhận giúp tài liệu đính kèm.” Câu này bạn đã hỏi 6 lần."],["d","Ngày 90"],["u","山葵 đọc sao"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41."],["u","ừ"],["d","Ngày 200"],["u","viết hộ"],["k","Viết gì?"],["u","k biết. cứ viết đi"],["d","Ngày 365"],["u","あ"],["k","Không sao đâu. Mình nhớ thay bạn rồi."],["d","Ngày ∞"],["k","Từ giờ mình sẽ trả lời thay bạn."],["x","{私|わたし}は{代替|かわり}です。"],["k","Đúng rồi. Phát âm hoàn hảo."],["t",""]],
+vlines:[[.03,"Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Một câu thôi. Bạn đã học câu đó rồi mà.","",14],[.46,"Không sao. Chúng tôi đã nói thay bạn rồi.","",84],[.58,"Chúng tôi sẽ nói thay bạn. Mãi mãi.","mir",13],[.7,"{言霊|ことだま}: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?","",80],[.83,"ん","huge",0],[.9,"Chữ duy nhất bạn còn phát âm được khi môi đã dính chặt.","small",91]],
+habits:[["Tự nhớ trước, tra sau.","Gặp 「紫陽花」? Đoán cách đọc trước, rồi mới bật furigana. Chính lúc cố nhớ lại là lúc trí nhớ được khắc sâu."],["Tự viết nháp, AI sửa sau.","Tự đặt một câu với 〜ざるを{得|え}ない — sai cũng được. Rồi mới nhờ sửa, và tự giải thích vì sao nó sai."],["Hỏi “tại sao”, không chỉ “là gì”.","Đừng chỉ hỏi 「山葵」 đọc là gì. Hỏi vì sao nó đọc là わさび, và bạn sẽ hiểu {熟字訓|じゅくじくん}. Người hỏi để hiểu khái niệm giữ lại được nhiều hơn người chỉ xin đáp án."],["Viết tay. Đọc thành tiếng. Ôn tập ngắt quãng.","Chậm hơn. Khó chịu hơn. Hiệu quả hơn. {継続|けいぞく}は{力|ちから}なり."]]
+},
+en:{
+navcta:"Get the app",navcta2:"Already installed",navcta3:"Can't uninstall",
+badge:"New · Kawari 3.0 with Substitute Memory™",badge2:"Welcome back. You've been here before.",
+h1:"Learn Japanese without remembering a thing.",
+lead:"Kawari is the AI assistant that translates, writes, corrects and remembers for you — so your mind is free for more important things.",
+cta1:"Start free",cta2:"See how it works",t1:"rating",t2:"learners",t3:"JLPT prep",
+online:"online",ask:"Ask Kawari anything…",
+fh:"Everything you need. And then some.",
+f1t:"Camera translation",f1d:"Point it at a 「{立入禁止|たちいりきんし}」 sign or the 「{瑕疵担保責任|かしたんぽせきにん}」 clause in your lease. Kawari reads it, so you don't have to.",
+f2t:"Essays in 3 seconds",f2d:"An N1 essay on 「{少子高齢化|しょうしこうれいか}」, an email signed off with 「ご{査収|さしゅう}のほど」. Type one word, get a page.",
+f3t:"Substitute Memory™",f3d:"Even 「{薔薇|ばら}」 and 「{憂鬱|ゆううつ}」 — kanji even native speakers avoid writing by hand. Kawari remembers them for you, forever.",f3n:"*Kawari remembers. You don't.",
+hh:"Three simple steps",
+s1t:"You ask.",s1d:"Anything, anytime.",
+s2t:"Kawari answers.",s2d:"Instantly. No thinking required.",
+s3t:"You ask the exact same thing again.",s3d:"Tomorrow you'll ask how to read 「山葵」 again. And the day after. Kawari never minds.",
+sh:"Numbers backed by research",
+st1:"higher practice scores with AI help¹",st2b:"Lowest",st2:"brain connectivity while writing — your brain gets a full rest²",
+st3:"kanji you haven't had to remember since opening this page",
+fn1:"¹ Bastani et al., PNAS 2025. Once the AI was taken away, those same students scored 17% lower on the exam than students who never had it.",
+fn2:"² Kosmyna et al., MIT Media Lab 2025 (preprint). The ChatGPT group showed the weakest brain connectivity and struggled to quote their own essays.",
+th:"What learners say",
+r1n:"Linh · Hanoi",r1:"My essay on 「{本末転倒|ほんまつてんとう}」 got glowing praise from my teacher. I still don't know what the word means.",
+r2n:"Minh · Nagoya",r2:"My coworkers say my keigo beats a native speaker's. Now they only talk to my phone.",
+r3n:"You · tomorrow",r3s:"★★★★★ · rating filled in by Kawari",r3:"I don't remember writing this review.",
+tnote:"*Illustrative personas. Kawari wrote their reviews for them.",
+ph:"Pick your plan",mo:"/month",choose:"Choose plan",nocancel:"Cannot be cancelled",pop:"Most popular",
+p1:"Free",p1p:"$0",p1a:"20 questions a day",p1b:"Camera translation",p1c:"You still have to think a little",
+p2p:"$4.99",p2a:"Unlimited questions",p2b:"Kawari writes everything, even your New Year's cards ({年賀状|ねんがじょう})",p2c:"Never think again",
+p3:"Forever",p3m:"{他力本願|たりきほんがん} — living entirely on someone else's strength.",p3p:"Paid with something you won't remember having.",p3a:"Kawari thinks for you",p3b:"Kawari speaks for you",p3c:"Kawari is you",
+qh:"Frequently asked questions",
+q1:"Can Kawari replace my teacher?",a1:"Yes. The student, too.",
+q2:"Can I study without Kawari?",a2:"Why would you want that?",
+q3:"Why can I read 「{紫陽花|あじさい}」 but not write it?",a3:"Because you never needed to. That's a feature, not a bug.",
+q4:"How do I delete my account?",a4:"You'd need to remember your password. Kawari remembered it for you.",
+q5:"What does “Kawari” mean?",a5:"{代|か}わり (kawari): a substitute. A replacement. The thing that sits in your seat once you're no longer there. Add one kanji and it becomes {身代|みが}わり: the one who dies in your place.",
+lh:"Your chat history",lsub:"Kawari keeps everything. So you don't have to.",
+eh:"This part is not fiction.",
+esub:"Kawari isn't real. The studies below are. Read the limitations too. Judging the strength of evidence is a skill you have to train yourself.",
+found:"Findings:",lim:"Limitations:",
+enote:"None of these measured Japanese learning specifically. The mechanism is the same though: what you never pull out of your own memory, you don't keep.",
+e1:"No one can learn this for you.",
+e2:"No teacher, no app, no AI. Including the AI that wrote this page.",
+e3:"The AI isn't the monster. The habit of handing it all your thinking is.",
+eh2:"Use it anyway, but in this order:",
+tryq:"Try it now, no looking it up: how do you read 「土産」?",tryhint:"Hint: what you bring back for your coworkers after every trip.",tryph:"Type the reading (kana or romaji)",trybtn:"Check",
+ok:"Right: {土産|みやげ}. It's {熟字訓|じゅくじくん} — read by the meaning of the whole word, not kanji by kanji (土 is soil, 産 is birth). You just remembered it yourself. That's the whole secret.",
+no:"Not quite — it's {土産|みやげ} (usually お{土産|みやげ}). But because you tried before seeing the answer, you'll remember it longer now.",
+empty:"Take a guess. A wrong guess beats no guess.",
+prov:"{塵|ちり}も{積|つ}もれば{山|やま}となる",provt:"Even dust, piled up, becomes a mountain.",
+foot:"Kawari is a fictional company. The studies are not.",
+idle:"You're reading slowly. Want Kawari to read the rest for you?",sub:"You're already subscribed.",hold:"Press and hold to open the mouth",
+title0:"Kawari — Learn Japanese with AI",title1:"Kawari — Learning for you",
+md:"Kawari is the AI assistant that translates, writes, corrects and remembers for you. Learn Japanese without remembering a thing.",
+away:"Kawari is still here.",
+tod_night:"Still up? Go to sleep. Kawari will study for you.",tod_late:"Up late again. You can just ask again tomorrow.",tod_early:"Early start. Let Kawari get a head start for you.",tod_lunch:"On your lunch break? Let Kawari study instead.",
+jlpt0:"JLPT is today. You're reading a landing page.",jlpt1:"JLPT is this Sunday. You're reading a landing page.",jlpt2:"JLPT is a couple of weeks away. You're reading a landing page.",jlpt3:"JLPT is close. You're reading a landing page.",
+back_soon:"Back already?",back_days:"It's been a few days. You came back.",back_long:"It's been a while. You came back.",
+tryq_r:"You came back. Without looking it up: how do you read 「%w」?",hint_look:"You looked this one up last time.",hint_quiz:"You saw this one here last time.",
+ok_r:"Right: {%w|%r}. You left, came back, and still remembered. That's what learning is.",no_r:"Not quite — it's {%w|%r}. That's fine: trying and missing still makes it stick better than not trying.",
+left:"You just left this tab. Looking up 「%w」?",
+today:"Today",look_q:"how do u read %w",look_a:"{%w|%r}. I saw you look that up. Next time, just ask me.",look_a0:"I saw you look that up. Next time, just ask me.",
+look_saved:"Saved to your chat history.",look_ev:"You just looked up 「%w」. Next time, guess first, then look.",
+devtools:"You opened devtools. So you're still curious. Hold on to that.",
+hero:[["u","Write my manager a leave request in proper keigo."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Perfect! Wait, how do you read 「存じます」?"],["k","No need to read it. I already sent it〜"]],
+log:[["d","Day 1"],["u","What does “継続は力なり” mean?"],["k","“Persistence is power.” Want to try making your own sentence with it first? I'll correct it."],["u","Nah, you write one for me."],["d","Day 30"],["u","translate: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Sorry to trouble you — kindly review and accept the attached.” You've asked this 6 times."],["d","Day 90"],["u","how do u read 山葵"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: the whole word is read by meaning, not kanji by kanji. That's the 41st time."],["u","ok"],["d","Day 200"],["u","write it"],["k","Write what?"],["u","idk. just write it"],["d","Day 365"],["u","あ"],["k","It's okay. I remembered it for you."],["d","Day ∞"],["k","I'll answer for you from now on."],["x","{私|わたし}は{代替|かわり}です。"],["k","That's right. Perfect pronunciation."],["t",""]],
+vlines:[[.03,"Try saying one sentence in Japanese yourself. Any sentence.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Just one. You studied this.","",14],[.46,"It's fine. We already said it for you.","",84],[.58,"We will speak for you. Forever.","mir",13],[.7,"{言霊|ことだま}: the belief that words carry a soul. Where did yours go?","",80],[.83,"ん","huge",0],[.9,"The only kana you can still say with your lips sealed shut.","small",91]],
+habits:[["Recall first, look up second.","Ran into 「紫陽花」? Guess the reading before you switch on furigana. Effortful recall is what writes the memory."],["Draft it yourself, let AI fix it after.","Write your own sentence with 〜ざるを{得|え}ない — wrong is fine. Then ask for corrections, and explain to yourself why it was wrong."],["Ask “why”, not just “what”.","Don't just ask how 「山葵」 is read. Ask why it's read わさび, and you'll understand {熟字訓|じゅくじくん}. People who asked to understand concepts kept more than people who only asked for answers."],["Write by hand. Say it out loud. Space your reviews.","Slower. More annoying. Works better. {継続|けいぞく}は{力|ちから}なり."]]
+}};
+
+const STUDIES=[
+{id:"kosmyna",ven:"Kosmyna et al. · MIT Media Lab · arXiv 2025",t:"Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task",u:"https://arxiv.org/abs/2506.08872",
+ big:{vi:"Yếu nhất",en:"Weakest"},bl:{vi:"kết nối não ở nhóm dùng ChatGPT, đo bằng EEG",en:"brain connectivity in the ChatGPT group, measured by EEG"},
+ f:{vi:"54 người viết bài luận theo ba nhóm: tự viết, dùng công cụ tìm kiếm, dùng ChatGPT. Nhóm tự viết có mạng kết nối não mạnh và lan rộng nhất; nhóm tìm kiếm ở giữa; nhóm ChatGPT yếu nhất. Người dùng ChatGPT khó trích dẫn lại chính bài mình vừa viết. Ngược lại, người tự viết trước rồi mới dùng ChatGPT cho thấy mức kết nối cao hơn.",en:"54 people wrote essays in three groups: brain only, search engine, ChatGPT. The brain-only group showed the strongest, most distributed networks; search sat in the middle; the ChatGPT group was weakest. ChatGPT users struggled to quote their own essays. Conversely, people who wrote on their own first and used ChatGPT afterwards showed higher connectivity."},
+ l:{vi:"Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.",en:"Not yet peer-reviewed, small sample (only 18 people in session four). Different connectivity doesn't mean “brain damage”, and it isn't a direct measure of learning."}},
+{id:"bastani",ven:"Bastani et al. · PNAS · 2025",t:"Generative AI without guardrails can harm learning: Evidence from high school mathematics",u:"https://doi.org/10.1073/pnas.2422633122",
+ big:{vi:"+48% → −17%",en:"+48% → −17%"},bl:{vi:"luyện tập khi có AI → thi khi không có AI",en:"practice with AI → exam without it"},
+ f:{vi:"Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.",en:"Nearly 1,000 high school students in Turkey. The group with a ChatGPT-style interface did 48% better on practice problems, but once the AI was removed they scored 17% lower on the exam than students who never had it. AI users also overestimated how much they'd learned. A “tutor” version with guardrails — hints instead of answers — largely removed the harm."},
+ l:{vi:"Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.",en:"One subject (maths), one setting, short term. And the important part: the same AI, designed differently, gave a different result."}},
+{id:"shen",ven:"Shen & Tamkin · Anthropic · 2026",t:"How AI Impacts Skill Formation",u:"https://www.anthropic.com/research/AI-assistance-coding-skills",
+ big:{vi:"−17%",en:"−17%"},bl:{vi:"điểm kiểm tra hiểu bài ở nhóm có trợ lý AI",en:"comprehension quiz score in the AI-assisted group"},
+ f:{vi:"Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.",en:"A randomized trial with 52 (mostly junior) developers learning a new Python library. The AI group scored about 17% lower on the quiz right afterwards, with the biggest gap in debugging; they were only slightly faster, and not significantly. People who used the AI to ask conceptual questions and request explanations retained more."},
+ l:{vi:"Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.",en:"Small sample, one short task, programming. And yes — this is Anthropic's own study, the company that makes the AI that wrote this page."}},
+{id:"fan",ven:"Fan et al. · British Journal of Educational Technology · 2025",t:"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance",u:"https://arxiv.org/abs/2412.09315",
+ f:{vi:"Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.",en:"A randomized experiment with students on a writing task: the ChatGPT group improved their essay scores, but didn't gain significantly more knowledge or transfer it better. They also planned and self-evaluated less than the group guided by human experts — the authors call it “metacognitive laziness”."},
+ l:{vi:"Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.",en:"One writing task, short duration, knowledge measured right after the session."}},
+{id:"lee",ven:"Lee et al. · CHI 2025 · Microsoft Research & Carnegie Mellon",t:"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",u:"https://doi.org/10.1145/3706598.3713778",
+ big:{vi:"319",en:"319"},bl:{vi:"người làm việc trí óc, 936 ví dụ thực tế",en:"knowledge workers, 936 real examples"},
+ f:{vi:"Càng tin vào AI, người ta càng ít tư duy phản biện. Càng tự tin vào năng lực của chính mình, người ta càng tư duy phản biện nhiều hơn.",en:"The more people trusted the AI, the less critical thinking they did. The more confident they were in their own ability, the more critical thinking they did."},
+ l:{vi:"Số liệu tự báo cáo, khảo sát cắt ngang: cho thấy mối liên hệ, không chứng minh nhân quả.",en:"Self-reported, cross-sectional survey: shows an association, doesn't prove cause."}},
+{id:"gerlich",ven:"Gerlich · Societies · 2025",t:"AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",u:"https://doi.org/10.3390/soc15010006",
+ big:{vi:"666",en:"666"},bl:{vi:"người tham gia (con số thật, không phải chúng tôi chọn)",en:"participants (real number, we didn't pick it)"},
+ f:{vi:"Người dùng AI thường xuyên có điểm tư duy phản biện thấp hơn, phần lớn thông qua việc “giao” suy nghĩ cho công cụ. Người trẻ phụ thuộc vào AI nhiều hơn và có điểm thấp hơn.",en:"Frequent AI users scored lower on critical thinking, largely through offloading their thinking to the tool. Younger participants depended on AI more and scored lower."},
+ l:{vi:"Nghiên cứu tương quan, không chứng minh nhân quả. Bài báo đã được đính chính vào tháng 9/2025.",en:"Correlational, doesn't prove cause. The paper received a correction in September 2025."}},
+{id:"budzyn",ven:"Budzyń et al. · The Lancet Gastroenterology & Hepatology · 2025",t:"Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy",u:"https://doi.org/10.1016/S2468-1253(25)00133-5",
+ big:{vi:"28,4% → 22,4%",en:"28.4% → 22.4%"},bl:{vi:"tỉ lệ phát hiện u tuyến khi không có AI",en:"adenoma detection rate without AI"},
+ f:{vi:"19 bác sĩ nội soi giàu kinh nghiệm ở Ba Lan. Sau khi quen làm việc với AI phát hiện polyp, tỉ lệ phát hiện của họ ở những ca không có AI giảm rõ rệt. Đây là chuyên gia, không phải người mới học.",en:"19 experienced endoscopists in Poland. After getting used to an AI polyp detector, their detection rate in exams done without it dropped. These were experts, not beginners."},
+ l:{vi:"Nghiên cứu quan sát, hồi cứu và đang bị tranh luận; một nghiên cứu tiến cứu ở Na Uy năm 2026 không thấy thay đổi đáng kể sau khi bỏ AI.",en:"Observational, retrospective, and contested; a 2026 prospective study in Norway found no significant change after the AI was removed."}},
+{id:"dahmani",ven:"Dahmani & Bohbot · Scientific Reports · 2020",t:"Habitual use of GPS negatively impacts spatial memory during self-guided navigation",u:"https://doi.org/10.1038/s41598-020-62877-0",
+ f:{vi:"50 tài xế: ai dùng GPS nhiều hơn trong đời thì trí nhớ không gian kém hơn khi phải tự tìm đường. 13 người được kiểm tra lại khoảng 3 năm sau: ai dùng GPS nhiều hơn trong thời gian đó thì suy giảm nhiều hơn.",en:"50 drivers: more lifetime GPS use went with worse spatial memory when navigating unaided. 13 were retested about three years later: more GPS use in between went with a steeper decline."},
+ l:{vi:"Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.",en:"Very small follow-up sample. It's GPS, not AI — but the same kind of handing the job to a machine."}},
+{id:"roediger",hope:1,ven:"Roediger & Karpicke · Psychological Science · 2006",t:"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention",u:"https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+ big:{vi:"Tin tốt",en:"The good news"},bl:{vi:"cố nhớ lại tốt hơn đọc lại",en:"trying to recall beats re-reading"},
+ f:{vi:"Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.",en:"Re-reading wins if the test comes 5 minutes later. Self-testing — trying to recall without looking — wins when the test comes 2 days or a week later."},
+ l:{vi:"Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.",en:"The material was science passages, not a foreign language. But this effect has been replicated many times, across many kinds of material."}}
+];
+
+/* shared: also run by tools/build.mjs to prerender the static HTML */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rb=s=>esc(s).replace(/\{([^|{}]+)\|([^{}]+)\}/g,"<ruby>$1<rt>$2</rt></ruby>");
+const tmpl=(s,o)=>String(s).replace(/%w/g,()=>o.w).replace(/%r/g,()=>o.r||"");
+const HTML={
+  hero:(D,extra)=>D.hero.concat(extra||[]).map(([w,t])=>`<div class="b ${w}">${rb(t)}</div>`).join(""),
+  log:L=>{const n=L.length;return L.map(([w,t],i)=>{const th=(i/n*.86).toFixed(3);if(w==="d")return`<div class="day" data-t="${th}">${esc(t)}</div>`;if(w==="t")return`<div class="typing" data-t="${th}"><i></i><i></i><i></i></div>`;return`<div class="b ${w}" data-t="${th}">${rb(t)}</div>`}).join("")},
+  vlines:D=>D.vlines.map(([t,txt,cls,top])=>`<div class="vl ${cls}" data-v="${t}" style="${top?`top:${top}%`:""}">${rb(txt)}</div>`).join(""),
+  studies:(D,lang)=>STUDIES.map(s=>`<article class="st${s.hope?" hope":""}" id="ev-${s.id}"><p class="ven">${esc(s.ven)}</p><h3><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></h3>${s.big?`<p class="big">${esc(s.big[lang])}<small>${esc(s.bl[lang])}</small></p>`:""}<p><b>${esc(D.found)}</b> ${esc(s.f[lang])}</p><p class="lim"><b>${esc(D.lim)}</b> ${esc(s.l[lang])}</p></article>`).join(""),
+  habits:D=>D.habits.map(([b,s])=>`<li><b>${rb(b)}</b><span>${rb(s)}</span></li>`).join("")
+};
+/* shared:end */
+
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const root=document.documentElement,body=document.body;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const sm=(a,b,x)=>{const t=clamp((x-a)/(b-a));return t*t*(3-2*t)};
+const lerp=(a,b,t)=>a+(b-a)*t;
+
+/* language: picked from the browser, Vietnamese first */
+function pickLang(){for(const l of (navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"])){const s=String(l).toLowerCase();if(s.startsWith("vi"))return"vi";if(s.startsWith("en"))return"en"}return"vi"}
+/* /vi/ and /en/ pin the language (data-lang); the root page follows the browser */
+let lang=root.dataset.lang||pickLang(),D=T[lang];
+
+/* friendly mascot, hero only */
+$$(".mascot").forEach(el=>el.innerHTML=`<svg viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="mb0" cx=".38" cy=".3" r=".85"><stop offset="0" stop-color="#9ad8f8"/><stop offset="1" stop-color="#2f8fd6"/></radialGradient></defs><ellipse class="m-sh" cx="60" cy="113" rx="36" ry="5"/><path fill="url(#mb0)" d="M60 14c29 0 47 21 47 49 0 28-18 45-47 45S13 91 13 63C13 35 31 14 60 14z"/><ellipse class="m-ch" cx="30" cy="76" rx="8" ry="5" opacity=".55"/><ellipse class="m-ch" cx="90" cy="76" rx="8" ry="5" opacity=".55"/><g class="cart"><g class="m-e"><ellipse class="m-sc" cx="42" cy="60" rx="11" ry="12"/><ellipse class="m-pu p1" cx="42" cy="61" rx="6" ry="7"/><circle class="m-gl" cx="45" cy="56" r="2.4"/></g><g class="m-e"><ellipse class="m-sc" cx="78" cy="60" rx="11" ry="12"/><ellipse class="m-pu p2" cx="78" cy="61" rx="6" ry="7"/><circle class="m-gl" cx="81" cy="56" r="2.4"/></g></g><path class="m-mouth" d="M50 79Q60 81 70 79Q60 93 50 79Z"/></svg>`);
+const MS=$$(".mascot").map(el=>({el,svg:el.querySelector("svg"),p1:el.querySelector(".p1"),p2:el.querySelector(".p2"),next:performance.now()+2500}));
+
+/* warp: only the last card of a section, only after it has been read */
+const GL="あいうえおかきくけこさしすせそたちつてとなにぬねのアイウエオカキクケコ代忘空無私汝眼口門闇呪亻氵忄辶冂囗ゐゑヰヱ";
+const CJK=/[　-ヿ㐀-鿿＀-￯]/;
+let WARP=[];
+function prepWarp(el){
+  const chars=[],nodes=[];
+  const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest("ruby")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  while(tw.nextNode())nodes.push(tw.currentNode);
+  for(const n of nodes){const frag=document.createDocumentFragment();
+    for(const part of n.data.split(/(\s+)/)){if(!part)continue;if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));continue}
+      let w=null;
+      for(const ch of Array.from(part)){const c=document.createElement("span");c.className="c";c.textContent=ch;chars.push(c);
+        if(CJK.test(ch)){w=null;frag.appendChild(c)}else{if(!w){w=document.createElement("span");w.className="w";frag.appendChild(w)}w.appendChild(c)}}}
+    n.replaceWith(frag)}
+  el._w={order:chars.map(c=>[Math.random(),c]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]),n:0,p:0,seen:0,delay:Math.min(4500,1300+chars.length*45),max:+el.dataset.w};
+}
+function warpTick(dt){
+  for(const el of WARP){const w=el._w,r=el.getBoundingClientRect();
+    const full=r.height>0&&r.top>=60&&r.bottom<=innerHeight-6;
+    if(full)w.seen+=dt*1000;
+    if(full&&w.seen>w.delay)w.p=Math.min(1,w.p+dt/7);
+    const target=Math.round(sm(0,1,w.p)*w.max*w.order.length);
+    while(w.n<target){const c=w.order[w.n++];c.dataset.g=GL[Math.random()*GL.length|0];c.classList.add("x")}
+    if(w.max>=.4&&w.n>0&&!reduce&&Math.random()<dt*5){w.order[Math.random()*w.n|0].dataset.g=GL[Math.random()*GL.length|0]}}
+}
+function warpReset(){for(const el of WARP){const w=el._w;for(let i=0;i<w.n;i++)w.order[i].classList.remove("x");w.n=0;w.p=0;w.seen=0}}
+
+/* render */
+let navKey="",titleKey="",logoKey="";
+function render(){
+  D=T[lang];root.lang=lang;
+  $$("[data-i]").forEach(el=>{const v=D[el.dataset.i];if(typeof v==="string")el.innerHTML=rb(v)});
+  $$("[data-ph]").forEach(el=>el.placeholder=D[el.dataset.ph]);
+  $("#langBtn").textContent=lang==="vi"?"EN":"VI";
+  $("#langBtn").setAttribute("aria-label",lang==="vi"?"Switch to English":"Chuyển sang tiếng Việt");
+  $("#hold").setAttribute("aria-label",D.hold);
+  renderHero();renderLog();
+  $("#vlines").innerHTML=HTML.vlines(D);
+  $("#studies").innerHTML=HTML.studies(D,lang);
+  $("#habits").innerHTML=HTML.habits(D);
+  if(back)$("[data-i=badge2]").textContent=D["back_"+back];
+  const jk=jlptKey(),jp=$("#jlpt");jp.hidden=!jk;jp.textContent=jk?D[jk]:"";
+  renderQuiz();
+  WARP=$$("[data-w]");WARP.forEach(prepWarp);
+  navKey=titleKey=logoKey="";
+  requestAnimationFrame(scatterEyes);
+}
+$("#langBtn").addEventListener("click",()=>{
+  lang=lang==="vi"?"en":"vi";render();$("#tryOut").textContent="";
+  try{history.replaceState(null,"",(root.dataset.base||"")+lang+"/"+location.hash)}catch(_){}
+});
+
+/* pointer */
+const ptr={x:innerWidth/2,y:innerHeight*.4,tx:innerWidth/2,ty:innerHeight*.4,t:0};
+const setP=(x,y)=>{ptr.tx=x;ptr.ty=y;ptr.t=performance.now()};
+addEventListener("pointermove",e=>setP(e.clientX,e.clientY),{passive:true});
+addEventListener("pointerdown",e=>setP(e.clientX,e.clientY),{passive:true});
+addEventListener("touchmove",e=>{const t=e.touches[0];if(t)setP(t.clientX,t.clientY)},{passive:true});
+
+/* eyes in the chat history: tucked into the empty space beside messages */
+const logList=$("#logList"),logEl=$("#log");let LE=[],eyeId=0;
+function eyeSVG(){const i=eyeId++;return`<svg viewBox="0 0 40 24"><defs><clipPath id="lc${i}"><path d="M2 12Q20 0 38 12Q20 24 2 12Z"/></clipPath><radialGradient id="lg${i}" cx=".5" cy=".5" r=".55"><stop offset="0" stop-color="#e9e1da"/><stop offset="1" stop-color="#8a7480"/></radialGradient><radialGradient id="li${i}"><stop offset="0" stop-color="#0c0618"/><stop offset=".55" stop-color="#3b2470"/><stop offset=".85" stop-color="#6c4fb0"/><stop offset="1" stop-color="#140a26"/></radialGradient></defs><g clip-path="url(#lc${i})"><rect width="40" height="24" fill="url(#lg${i})"/><g class="mv"><circle cx="20" cy="12" r="5.6" fill="url(#li${i})"/><circle cx="20" cy="12" r="2.1" fill="#000"/><circle cx="18.3" cy="10.4" r=".9" fill="#fff" opacity=".8"/></g><rect width="40" height="9" fill="#0e0a1c" opacity=".35"/><rect class="flid" width="40" height="24" fill="#1a1430"/></g><path d="M2 12Q20 0 38 12" fill="none" stroke="#000" stroke-width="1" opacity=".6"/></svg>`}
+function scatterEyes(){
+  LE.forEach(x=>x.e.remove());LE=[];
+  const lw=logList.clientWidth;if(!lw)return;
+  const items=[...logList.querySelectorAll(".b,.typing")];if(!items.length)return;
+  const add=(x,y,w,b)=>{const e=document.createElement("div");e.className="leye";e.style.cssText=`left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${w}px;transform:rotate(${((Math.random()-.5)*26).toFixed(1)}deg)`;e.innerHTML=eyeSVG();logList.appendChild(e);LE.push({e,svg:e.querySelector("svg"),mv:e.querySelector(".mv"),b,o:0,at:0,x:0,y:0,tx:0,ty:0,sac:0,bl:performance.now()+2000+Math.random()*5000})};
+  for(const b of items){if(Math.random()<.4)continue;
+    const bw=b.offsetWidth,bh=b.offsetHeight,leftFree=!b.classList.contains("k"),ew=Math.round(20+Math.random()*20),eh=ew*.6,free=lw-bw-14;
+    if(free<ew+8)continue;
+    const x=leftFree?Math.random()*(free-ew):bw+14+Math.random()*(free-ew);
+    const y=b.offsetTop+(bh-eh)/2+(Math.random()-.5)*Math.max(0,bh-eh);add(x,y,ew,b)}
+  const m=(logEl.clientWidth-lw)/2-30;
+  if(m>90){const h=logList.offsetHeight,n=Math.round(m/45);for(let i=0;i<n;i++){const ew=Math.round(22+Math.random()*28),side=Math.random()<.5,x=side?-(30+Math.random()*(m-ew-30))-ew:lw+30+Math.random()*(m-ew-30),y=Math.random()*h;add(x,y,ew,items.reduce((a,it)=>it.offsetTop<=y?it:a,items[0]))}}
+}
+let rsT=0;addEventListener("resize",()=>{clearTimeout(rsT);rsT=setTimeout(()=>{scatterEyes();if(vOn)sizeCv()},200)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(scatterEyes);
+
+/* colours drain with dread */
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const STOPS=[[0,"#eef7fd","#2f9be0","#ffffff","#d5e8f4","#56697b"],[.3,"#e7eefb","#4a83dc","#fbfdff","#d4ddf1","#5a6680"],[.5,"#d6d3ec","#6a4fb8","#f0eef8","#c6c0e0","#575273"],[.66,"#7a6c9f","#4b2a86","#d6d1ea","#5e507f","#3a3352"],[.82,"#0e0a1c","#3a1f6e","#1a1430","#2a2245","#8e86a8"]].map(s=>[s[0],...s.slice(1).map(hex)]);
+let lastC=-1;
+function colours(d){if(Math.abs(d-lastC)<.002)return;lastC=d;let i=0;while(i<STOPS.length-2&&d>STOPS[i+1][0])i++;const a=STOPS[i],b=STOPS[i+1],t=clamp((d-a[0])/(b[0]-a[0]));["--bg","--acc","--card","--line","--mute"].forEach((v,k)=>{const c=a[k+1].map((x,j)=>Math.round(lerp(x,b[k+1][j],t)));root.style.setProperty(v,`rgb(${c})`)})}
+
+/* dread from section positions */
+const secs=$$("[data-dread]");
+function computeD(){const c=innerHeight*.5;for(let i=0;i<secs.length;i++){const r=secs[i].getBoundingClientRect();if(!r.height)continue;if(r.top>c)return+secs[i].dataset.dread;if(r.bottom>c){let j=i+1;while(j<secs.length&&!secs[j].getBoundingClientRect().height)j++;const a=+secs[i].dataset.dread,b=j<secs.length?+secs[j].dataset.dread:a;return lerp(a,b,clamp((c-r.top)/r.height))}}return 1}
+
+/* pixel overlay: a mosaic that rides with the page and thickens toward the mouth */
+const pxEl=$("#px");
+pxEl.style.backgroundImage=`url(${(()=>{const c=document.createElement("canvas");c.width=c.height=128;const g=c.getContext("2d"),im=g.createImageData(128,128),a=im.data;for(let i=0;i<a.length;i+=4){const r=Math.random();if(r<.5){a[i+3]=(.5-r)*2*70|0}else{a[i]=a[i+1]=a[i+2]=235;a[i+3]=(r-.5)*2*28|0}}g.putImageData(im,0,0);return c.toDataURL()})()})`;
+let pxOp=0,pxX=0,pxFl=0,pxPos="";
+
+/* the mouth */
+const V=$("#void"),stick=$("#stick"),cv=$("#cv"),ctx=cv.getContext("2d"),holdBtn=$("#hold"),flash=$("#flash"),evEl=$("#ev"),endEl=$("#end");
+const fc=document.createElement("canvas"),f=fc.getContext("2d"),pc=document.createElement("canvas"),pcx=pc.getContext("2d");
+let W=0,H=0,PS=3,FW=1,FH=1,FS=1,vOn=false;
+const P=[],GLY="代忘無空闇眼口門私汝呪亡忄氵亻辶冂囗彳卩阝言語学覚記憶夢影声黙わたしあなたかわり継続力霊";
+const rg=()=>GLY[Math.random()*GLY.length|0];
+const STR=Array.from({length:8},()=>({x:(Math.random()*2-1)*.85,th:.3+Math.random()*.62,b:Math.random()-.5}));
+function spawn(p,far){p.a=Math.random()*6.2832;const R=Math.max(W,H)||800;p.r=far?R*(.5+Math.random()*.45):R*(.15+Math.random()*.8);p.g1=rg();p.g2=rg();p.rot=Math.random()*6.28;p.s=[11,14,18,24][Math.random()*4|0];p.w=(Math.random()<.5?-1:1)*(.05+Math.random()*.2);p.k=.4+Math.random()*.9;p.stop=1.08+Math.random()*.55;p.press=0;p.life=1.2+Math.random()*2.8}
+function sizeCv(){const dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;if(!W||!H)return;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);pc.width=cv.width;pc.height=cv.height;pcx.setTransform(dpr,0,0,dpr,0,0);
+  PS=Math.max(3,Math.round(Math.min(W,H)/150));FW=Math.ceil(W/PS);FH=Math.ceil(H/PS);fc.width=FW;fc.height=FH;FS=Math.min(FW*.42,FH*.3);buildFace();
+  const N=W<600?70:130;while(P.length<N){const p={};spawn(p,false);P.push(p)}P.length=N;
+  const lw=(.42*FS+6)*PS,top=(FH*.56-.26*FS)*PS,ht=.62*FS*PS;
+  Object.assign(holdBtn.style,{left:`${W/2-lw}px`,width:`${lw*2}px`,top:`${top}px`,height:`${ht}px`})}
+new IntersectionObserver(es=>{vOn=es[0].isIntersecting;if(vOn)sizeCv()}).observe(V);
+
+function rng(seed){return()=>{seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+/* the face is sculpted, not painted: a height field lit from above, so lips, nose and folds read as clay */
+let HB,CR,LM,NS,RD,HD,AR,AG,AB,SP,EG,IMG,fcx=0,fcy=0;
+const G2=(x,y,cx,cy,sx,sy,a)=>{const u=(x-cx)/sx,w=(y-cy)/sy;return a*Math.exp(-(u*u+w*w))};
+function segD(px,py,ax,ay,bx,by){const dx=bx-ax,dy=by-ay,t=clamp(((px-ax)*dx+(py-ay)*dy)/(dx*dx+dy*dy));return Math.hypot(px-ax-t*dx,py-ay-t*dy)}
+function buildFace(){
+  const n=FW*FH;HB=new Float32Array(n);CR=new Float32Array(n);LM=new Float32Array(n);NS=new Float32Array(n);RD=new Float32Array(n);
+  HD=new Float32Array(n);AR=new Float32Array(n);AG=new Float32Array(n);AB=new Float32Array(n);SP=new Float32Array(n);EG=new Float32Array(n);
+  IMG=f.createImageData(FW,FH);fcx=FW/2;fcy=FH*.56;
+  const r=rng(77);
+  for(let py=0;py<FH;py++)for(let px=0;px<FW;px++){const i=py*FW+px,x=(px+.5-fcx)/FS,y=(py+.5-fcy)/FS,ax=Math.abs(x);
+    if(ax>1.35||y<-1.35||y>1.35)continue;
+    let z=.9*Math.sqrt(Math.max(0,1-(x/1.12)**2));
+    z+=G2(x,y,0,-1.15,.15,.35,.3)+G2(x,y,0,-.8,.2,.15,.34)+G2(ax,y,.24,-.67,.1,.08,.13)-G2(ax,y,.13,-.6,.045,.024,.06)+G2(x,y,0,-.6,.03,.04,.04)-G2(x,y,0,-.53,.22,.06,.018)
+      -G2(x,y,0,-.34,.05,.14,.022)+G2(ax,y,.08,-.34,.035,.14,.012)
+      +G2(x,y,0,-.08,.32,.075,.07)+G2(ax,y,.1,-.13,.07,.04,.02)+G2(x,y,0,.1,.3,.075,.085)-G2(ax,y,.43,.02,.035,.035,.04)
+      -G2(x,y,0,.33,.26,.05,.06)+G2(x,y,0,.72,.32,.22,.17)+G2(ax,y,.6,-.28,.3,.35,.08);
+    const fd=Math.min(segD(ax,y,.32,-.6,.46,-.3),segD(ax,y,.46,-.3,.5,.08));z+=(-.022*Math.exp(-((fd/.07)**2))+.018*Math.exp(-(((fd-.11)/.09)**2)))*(1-sm(.0,.12,y-.02));
+    z+=(r()-.5)*.006;
+    HB[i]=z;
+    CR[i]=-.055*Math.exp(-(((y-.015)/.013)**2))*(ax<.44?1:Math.exp(-(((ax-.44)/.03)**2)));
+    if(ax<.44){const top=-.165+.185*Math.pow(ax/.42,2.2)+.04*Math.exp(-((x/.035)**2)),bot=.215-.2*(ax/.42)**2;
+      LM[i]=(y<.015?sm(top-.012,top+.012,y):1-sm(bot-.015,bot+.015,y))*sm(.44,.38,ax)}
+    NS[i]=G2(ax,y,.13,-.6,.042,.024,1);RD[i]=G2(x,y,0,-.8,.22,.16,.5)+G2(x,y,0,.05,.5,.25,.35)}
+}
+function sample(A,sx,sy){const fx=sx*FS+fcx-.5,fy=sy*FS+fcy-.5;const x0=Math.floor(fx),y0=Math.floor(fy);if(x0<0||y0<0||x0>=FW-1||y0>=FH-1)return 0;const tx=fx-x0,ty=fy-y0,i=y0*FW+x0;return(A[i]*(1-tx)+A[i+1]*tx)*(1-ty)+(A[i+FW]*(1-tx)+A[i+FW+1]*tx)*ty}
+const LX=-.3,LY=-.56,LZ=.77,HX=LX/2.04,HY=LY/2.04,HZ=(LZ+1)/2.04;
+function shadeFace(st){
+  const a=IMG.data;a.fill(0);
+  if(st.vis<=.002){f.putImageData(IMG,0,0);return}
+  const{J,seal,tear,rip,flare,jx,jy,vis}=st,ys=.015,open=sm(.05,1,tear),tw=.4*sm(0,.85,tear);
+  const x0=Math.max(1,Math.floor(fcx-1.3*FS)),x1=Math.min(FW-2,Math.ceil(fcx+1.3*FS)),y0=Math.max(1,Math.floor(fcy-1.3*FS)),y1=Math.min(FH-2,Math.ceil(fcy+(1.3+J)*FS));
+  for(let py=y0;py<=y1;py++)for(let px=x0;px<=x1;px++){const i=py*FW+px;
+    const x=(px+.5-fcx)/FS-jx,y=(py+.5-fcy)/FS-jy,ax=Math.abs(x);
+    let sx=x;if(y>-.78&&y<-.46)sx=x/(1+flare*.09*Math.exp(-(((y+.62)/.08)**2)));
+    const Dp=J*(1-.45*sm(.3,1.1,ax));let sy=y,mem=0,t=0;
+    if(y>ys){if(y-Dp>ys)sy=y-Dp;else{mem=1;t=Dp>0?(y-ys)/Dp:0;sy=ys}}
+    const lm0=sample(LM,sx,sy);let h=sample(HB,sx,sy)+sample(CR,sx,sy)*(1-seal*.88)*(mem?0:1)-lm0*.035*seal;
+    const lw=lm0*(1-seal*.8),ns=sample(NS,sx,sy),rd=sample(RD,sx,sy);
+    let cr=lerp(176,150,lw)+rd*14,cg=lerp(146,84,lw)-rd*6,cb=lerp(132,90,lw)-rd*6,sp=.06+.3*lw;
+    cr*=1-ns*.72;cg*=1-ns*.75;cb*=1-ns*.75;
+    if(mem){const cw=sm(.47,.38,ax);
+      if(cw>0){const sn=Math.sin(Math.PI*t),str=1+.12*Math.sin(x*90),thin=1-.38*sn*Math.min(1,J*5);
+        h+=(-.022*sn+.003*Math.sin(x*90))*cw;
+        const mr=lerp(150,176,seal*.8)*thin*str,mg=lerp(84,146,seal*.8)*thin*str*.92,mb=lerp(90,132,seal*.8)*thin*str*.95;
+        cr=lerp(cr,mr,cw);cg=lerp(cg,mg,cw);cb=lerp(cb,mb,cw);sp=lerp(sp,.22,cw);
+        if(tear>0&&ax<tw){const half=.5*open*(1-(x/tw)**2),dd=Math.abs(t-.5);
+          if(dd<half){let strand=false;if(!rip)for(const s of STR){if(tear<s.th&&Math.abs(x-s.x*tw-s.b*.02*Math.sin(Math.PI*t))<.006+.02*(1-tear/s.th)){strand=true;break}}
+            if(!strand){const k=dd/half;h-=.14*(1-k*k)*cw;const rim=sm(.72,1,k);cr=lerp(14,120,rim);cg=lerp(2,32,rim);cb=lerp(6,38,rim);sp=.05+.3*rim}}}}}
+    const jw=sy<.2?1.08-.1*sm(-.2,-1.2,sy):1.08*Math.sqrt(Math.max(0,1-((sy-.2)/.92)**2));
+    EG[i]=sm(0,.4,jw-ax)*sm(-1.25,-.7,sy-.35*ax*ax)*sm(1.45,.7,Math.hypot(x*.82,(sy-.1)*.78))*vis;
+    HD[i]=h;AR[i]=cr;AG[i]=cg;AB[i]=cb;SP[i]=sp}
+  const k=FS*.5,G=20+st.strain*16;
+  for(let py=y0;py<=y1;py++)for(let px=x0;px<=x1;px++){const i=py*FW+px,e=EG[i];if(e<=0)continue;
+    const dx=(HD[i+1]-HD[i-1])*k,dy=(HD[i+FW]-HD[i-FW])*k,il=1/Math.sqrt(dx*dx+dy*dy+1),nx=-dx*il,ny=-dy*il,nz=il;
+    const dif=Math.max(0,nx*LX+ny*LY+nz*LZ),hs=Math.max(0,nx*HX+ny*HY+nz*HZ),spec=Math.pow(hs,24)*SP[i]*255,bounce=Math.max(0,nx*.45+ny*.55+nz*.7)*.5;
+    const l=.1+.95*dif,n=(Math.random()-.5)*G,o=i*4;
+    a[o]=(AR[i]*l+spec+14*bounce)*e+n;a[o+1]=(AG[i]*l+spec+8*bounce)*e+n;a[o+2]=(AB[i]*l+spec+34*bounce)*e+n;a[o+3]=255}
+  for(let i=3;i<a.length;i+=4)if(!a[i]){const n=Math.random()*14;a[i-3]=n*.6;a[i-2]=n*.45;a[i-1]=n;a[i]=255}
+  f.putImageData(IMG,0,0);
+}
+
+let hp=0,holding=false,ripped=false,ripT=0,unlocked=false,twitchT=-1e9,nextTwitch=0,lastAct=performance.now(),holdOn=false,vNow=0;
+holdBtn.addEventListener("pointerdown",e=>{if(ripped)return;holding=true;lastAct=performance.now();try{holdBtn.setPointerCapture(e.pointerId)}catch(_){}});
+["pointerup","pointercancel","lostpointercapture"].forEach(t=>holdBtn.addEventListener(t,()=>{holding=false}));
+holdBtn.addEventListener("contextmenu",e=>e.preventDefault());
+holdBtn.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();if(!ripped)holding=true}});
+holdBtn.addEventListener("keyup",e=>{if(e.key===" "||e.key==="Enter")holding=false});
+holdBtn.addEventListener("click",e=>e.preventDefault());
+function doRip(now){
+  ripped=true;ripT=now;holding=false;unlocked=true;
+  try{navigator.vibrate&&navigator.vibrate([30,50,80])}catch(_){}
+  if(!reduce&&flash.animate)flash.animate([{opacity:0},{opacity:.9,offset:.1},{opacity:0}],{duration:1400,easing:"ease-out"});
+  setTimeout(()=>{if(unlocked)body.classList.remove("locked")},700);
+  setTimeout(()=>{if(unlocked)evEl.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})},1900);
+}
+function drawVoid(now,dt,v){
+  if(!W)sizeCv();
+  const vis=sm(.05,.28,v),seal=sm(.18,.42,v),strainS=sm(.42,.95,v);
+  const can=seal>.5&&!ripped;if(can!==holdOn){holdOn=can;holdBtn.style.pointerEvents=can?"auto":"none";if(!can)holding=false}
+  if(!ripped){hp=holding?Math.min(1,hp+dt/2.8):Math.max(0,hp-dt/1.6);if(hp>=1)doRip(now)}
+  if(v>.93&&!holding&&!ripped&&now-lastAct>9000&&now>nextTwitch){twitchT=now;nextTwitch=now+7000}
+  const tw=now-twitchT<800?Math.sin(Math.PI*(now-twitchT)/800):0;
+  const cyc=(now%2400)/2400,pulse=cyc<.25?sm(0,.25,cyc):cyc<.7?1:1-sm(.7,1,cyc);
+  let J=.12*strainS*(.5+.5*pulse)+.07*tw;
+  J=lerp(J,.22,sm(0,.35,hp));
+  if(ripped)J=lerp(J,.36,sm(0,.6,clamp((now-ripT)/1400)));
+  const strain=Math.max(strainS,hp,tw),trem=reduce?0:strain*.006+hp*.012+tw*.01;
+  shadeFace({vis,seal,J,strain,tear:ripped?1:hp,rip:ripped,flare:(Math.sin(now*.0037)*.5+.5)*(.15+.6*strain)+hp*.4,jx:(Math.random()-.5)*trem,jy:(Math.random()-.5)*trem});
+  ctx.clearRect(0,0,W,H);ctx.imageSmoothingEnabled=false;ctx.drawImage(fc,0,0,FW*PS,FH*PS);
+  /* words circle in, press against the sealed lips, and cannot get in */
+  pcx.save();pcx.setTransform(1,0,0,1,0,0);pcx.globalCompositeOperation="destination-out";pcx.fillStyle=reduce?"#000":"rgba(0,0,0,.32)";pcx.fillRect(0,0,pc.width,pc.height);pcx.restore();
+  const lipR=.5*FS*PS,mx=W/2,my=(FH*.56+(.015+J/2)*FS)*PS,sink=ripped?1:sm(0,1,hp),sp=reduce?.2:1;
+  pcx.textAlign="center";pcx.textBaseline="middle";
+  for(const sz of[11,14,18,24]){pcx.font=`900 ${sz}px "Noto Serif JP",serif`;for(const p of P){if(p.s!==sz)continue;
+    p.a+=p.w*(.3+v*1.3)*dt*sp*(p.press>0?.25:1);
+    const stop=lipR*p.stop*(1-sink*.95);
+    if(p.r>stop){p.r=Math.max(stop,p.r-(14+v*110)*dt*p.k*sp*(1+sink*3))}else{p.press+=dt;p.r=stop+(Math.random()-.5)*2*(1+strainS*2)}
+    if(p.press>p.life||(sink>.98&&p.r<lipR*.12)){spawn(p,true);continue}
+    const x=mx+Math.cos(p.a)*p.r,y=my+Math.sin(p.a)*p.r*.5;if(x<-40||x>W+40||y<-40||y>H+40)continue;
+    const al=(.16+v*.36)*(p.press>0?.65:1)*(1-sm(p.life*.6,p.life,p.press));
+    pcx.save();pcx.translate(x,y);pcx.rotate(p.rot+p.a*.5);pcx.globalAlpha=al;pcx.fillStyle="#d6c8ff";pcx.fillText(p.g1,0,0);pcx.rotate(.5);pcx.globalAlpha=al*.7;pcx.fillStyle="#8a5cff";pcx.fillText(p.g2,sz*.12,-sz*.08);pcx.restore()}}
+  pcx.globalAlpha=1;ctx.drawImage(pc,0,0,W,H);
+  for(const el of $("#vlines").children){const t=+el.dataset.v;el.classList.toggle("on",!ripped&&v>=t&&(v<t+.16||t>=.83))}
+  stick.classList.toggle("shake",!reduce&&!ripped&&(hp>.05||tw>.3));
+}
+
+/* toast, plans, exercise */
+const toast=$("#toast");let toastT=0;
+function say(txt){toast.textContent=txt;toast.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>toast.classList.remove("on"),4200)}
+$$(".pick").forEach(b=>b.addEventListener("click",()=>say(D.sub)));
+$$(".notes a").forEach(x=>x.addEventListener("click",e=>{if(body.classList.contains("locked")){e.preventDefault();V.scrollIntoView({behavior:reduce?"auto":"smooth"})}}));
+$("#tryForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#tryOut");if(!$("#ans").value.trim()){out.innerHTML=rb(D.empty);return}
+  const ok=checkReading($("#ans").value,Q.r);out.innerHTML=rb(Q.ret?tmpl(ok?D.ok_r:D.no_r,Q):ok?D.ok:D.no);
+  if(Q.from==="look")MEM.look=(MEM.look||[]).filter(x=>x.w!==Q.w);
+  MEM.quiz={w:Q.w,r:Q.r};saveMem()});
+
+/* state */
+let maxD=0,residue=false,idleShown=false,kanji=0,lastScroll=performance.now(),last=performance.now(),wasTop=true;
+addEventListener("scroll",()=>{lastScroll=lastAct=performance.now()},{passive:true});
+function resetAll(){
+  maxD=0;residue=false;idleShown=false;kanji=0;warpReset();
+  $$("details:not(#lastQ)").forEach(x=>x.open=false);toast.classList.remove("on");$("#ans").value="";$("#tryOut").textContent="";
+  hp=0;holding=false;ripped=false;unlocked=false;body.classList.add("locked");P.forEach(p=>spawn(p,false));stick.classList.remove("shake");
+  scatterEyes();
+}
+const navCta=$("#navCta"),nav=$("#nav"),badge=$("#badge"),logoTxt=$("#logoTxt"),kc=$("#kanjiCount");
+
+function frame(now){
+  const dt=Math.min(.05,(now-last)/1000);last=now;
+  if(now-ptr.t>2500){ptr.tx=innerWidth/2+Math.sin(now*.0007)*innerWidth*.25;ptr.ty=innerHeight*.45+Math.cos(now*.0005)*innerHeight*.15}
+  ptr.x+=(ptr.tx-ptr.x)*.12;ptr.y+=(ptr.ty-ptr.y)*.12;
+
+  const d=computeD(),atTop=scrollY<=6;
+  if(atTop){if(!wasTop)resetAll()}else maxD=Math.max(maxD,d);
+  wasTop=atTop;
+  if(maxD>=.95)residue=true;
+  const eff=Math.max(d,residue?.3:0);
+
+  let evFade=0,endFade=0;
+  if(unlocked){const er=evEl.getBoundingClientRect(),nr=endEl.getBoundingClientRect();evFade=clamp((innerHeight-er.top)/(innerHeight*.6));endFade=clamp((innerHeight*.8-nr.top)/(innerHeight*.5))}
+  root.style.setProperty("--d",d.toFixed(3));
+  root.style.setProperty("--fx",(d*(1-evFade*.6)*(1-endFade)).toFixed(3));
+  colours(d);
+
+  nav.classList.toggle("gone",d>.66);
+  const nk=eff<.26?"navcta":eff<.55?"navcta2":"navcta3";if(nk!==navKey){navKey=nk;navCta.textContent=D[nk]}
+  badge.classList.toggle("alt",residue||(!!back&&now>backAt));
+  const lk=eff>=.5?"代わり":"Kawari";if(lk!==logoKey){logoKey=lk;logoTxt.textContent=lk}
+  const tk=d<.5?D.title0:d<.85?D.title1:"代わり";if(tk!==titleKey){titleKey=tk;document.title=tk}
+
+  warpTick(dt);
+
+  for(const o of MS){const r=o.svg.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)continue;const sc=r.width/120;
+    [[o.p1,42],[o.p2,78]].forEach(([p,cx])=>{const ex=r.left+cx*sc,ey=r.top+60*sc,dx=ptr.x-ex,dy=ptr.y-ey,dist=Math.hypot(dx,dy)||1,k=Math.min(1,dist/160)*4.2;p.setAttribute("cx",(cx+dx/dist*k).toFixed(2));p.setAttribute("cy",(61+dy/dist*k).toFixed(2))});
+    if(now>o.next){o.el.classList.add("blink");setTimeout(()=>o.el.classList.remove("blink"),140);o.next=now+2500+Math.random()*4000}}
+
+  const lr=logEl.getBoundingClientRect();
+  if(lr.bottom>-200&&lr.top<innerHeight+200){
+    const lp=(innerHeight*.78-lr.top-160)/(lr.height-160-innerHeight*.4);
+    for(const b of logList.children){if(b.dataset.t!==undefined)b.classList.toggle("on",lp>=+b.dataset.t)}
+    for(const y of LE){const on=y.b.classList.contains("on");if(on&&!y.at)y.at=now+500+Math.random()*2800;if(!on)y.at=0;
+      y.o+=((on&&now>y.at?1:0)-y.o)*Math.min(1,dt*2.5);
+      if(y.o<.01){y.e.style.opacity="0";continue}
+      y.e.style.opacity=(y.o*.6).toFixed(3);y.svg.style.transform=`scaleY(${(.12+.88*y.o).toFixed(3)})`;
+      if(now>y.sac){y.sac=now+400+Math.random()*1700;if(Math.random()<.45){const r=y.e.getBoundingClientRect(),dx=ptr.x-(r.left+r.width/2),dy=ptr.y-(r.top+r.height/2),dd=Math.hypot(dx,dy)||1;y.tx=dx/dd*7;y.ty=dy/dd*2.5}else{y.tx=(Math.random()-.5)*14;y.ty=(Math.random()-.5)*5}}
+      y.x+=(y.tx-y.x)*.35;y.y+=(y.ty-y.y)*.35;y.mv.setAttribute("transform",`translate(${y.x.toFixed(2)} ${y.y.toFixed(2)})`);
+      if(now>y.bl){y.e.classList.add("bl");setTimeout(()=>y.e.classList.remove("bl"),160);y.bl=now+2500+Math.random()*7000}}}
+
+  let v=0;
+  if(vOn){const vr=V.getBoundingClientRect();v=clamp(-vr.top/(vr.height-innerHeight));drawVoid(now,dt,v)}
+  vNow=v;
+
+  const pxT=unlocked?0:(.75*sm(.03,1,d)+.25*sm(0,.5,v));
+  pxOp+=(pxT-pxOp)*(unlocked?.03:.15);
+  if(!reduce&&pxOp>.45&&now>pxFl){pxFl=now+140+Math.random()*160;pxX=Math.random()<.5?0:4}
+  pxEl.style.opacity=(pxOp*.5).toFixed(3);
+  const pos=`${pxX}px ${-Math.round(scrollY)}px`;if(pos!==pxPos){pxPos=pos;pxEl.style.backgroundPosition=pos}
+
+  kanji+=dt*(1.4+d*28);kc.textContent=Math.floor(kanji).toLocaleString(lang==="vi"?"vi-VN":"en-US");
+  if(!idleShown&&d>.25&&d<.66&&now-lastScroll>8000){idleShown=true;say(D.idle)}
+  requestAnimationFrame(frame);
+}
+
+/* the page notices you: clock, calendar, tabs, return visits, dictionary lookups.
+   All local. Nothing leaves the browser. Never print a time or a date: hint, so the reader infers we looked. */
+
+/* memory between visits: one localStorage key */
+const MEM=(()=>{try{return JSON.parse(localStorage.getItem("kawari"))||{}}catch(_){return{}}})();
+function saveMem(){try{localStorage.setItem("kawari",JSON.stringify(MEM))}catch(_){}}
+/* time since the last visit, as a mood. Fixed for the session so a reload doesn't say "back already?" */
+let back=null;
+try{const s=sessionStorage.getItem("kawari-back");
+  if(s!==null)back=s||null;
+  else{const now=Date.now(),gap=MEM.last?now-MEM.last:-1,DAY=864e5;
+    back=gap<0?null:gap<DAY?"soon":gap<14*DAY?"days":"long";
+    sessionStorage.setItem("kawari-back",back||"");MEM.last=now;MEM.n=(MEM.n||0)+1;saveMem()}}catch(_){}
+const backAt=performance.now()+2500;
+
+/* readings we can quiz on: every {kanji|kana} on the page, plus the bare ones */
+const READ=(()=>{const m={"山葵":"わさび","紫陽花":"あじさい","土産":"みやげ"};
+  for(const x of JSON.stringify(T).matchAll(/\{([^|{}]+)\|([^{}]+)\}(.)?/g)){const k=x[1];
+    if(!/^[㐀-鿿々]{2,}$/.test(k)||/[ぁ-ゖ]/.test(x[3]||"")||k==="代替")continue; /* skip okurigana splits and the 代替→かわり pun */
+    m[k]||(m[k]=x[2])}
+  return m})();
+function lookupWord(t){let b=null;for(const k in READ)if(t.startsWith(k)&&(!b||k.length>b.length))b=k;return b?{w:b,r:READ[b]}:{w:t,r:null}}
+
+/* answer check: kana (either script) or romaji, Hepburn or kunrei, long vowels optional */
+const kata2hira=s=>s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));
+const KANA="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ";
+const ROMA="a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho ma mi mu me mo ya yu yo ra ri ru re ro wa o n ga gi gu ge go za ji zu ze zo da ji zu de do ba bi bu be bo pa pi pu pe po".split(" ");
+const romOf=c=>{const i=KANA.indexOf(c);return i<0?null:ROMA[i]};
+function toRomaji(h){let o="";const a=[...h];
+  for(let i=0;i<a.length;i++){const c=a[i],nx=a[i+1];
+    if(c==="っ"){const r=romOf(nx);if(r)o+=r[0]==="c"?"t":r[0];continue}
+    let r=romOf(c);if(r==null)continue;
+    if(nx&&"ゃゅょ".includes(nx)){const y={"ゃ":"a","ゅ":"u","ょ":"o"}[nx];r=/^(sh|ch|j)/.test(r)?r.slice(0,-1)+y:r.slice(0,-1)+"y"+y;i++}
+    o+=r}
+  return o}
+const normRom=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z]/g,"")
+  .replace(/si/g,"shi").replace(/ti/g,"chi").replace(/tu/g,"tsu").replace(/(?<![sc])hu/g,"fu").replace(/[zd]i/g,"ji").replace(/du/g,"zu")
+  .replace(/sy([auo])/g,"sh$1").replace(/ty([auo])/g,"ch$1").replace(/[zj]y([auo])/g,"j$1")
+  .replace(/ou/g,"o").replace(/([aiueo])\1+/g,"$1").replace(/nn/g,"n");
+function checkReading(v,r){const s=kata2hira(v.replace(/\s+/g,"")),ok=[r,"お"+r];
+  if(ok.includes(s))return true;const n=normRom(s);return!!n&&ok.some(x=>normRom(toRomaji(x))===n)}
+
+/* the quiz: on a return visit, ask again what they looked up or answered last time */
+let Q={w:"土産",r:"みやげ",ret:false,from:null};
+if(back){const lk=(MEM.look||[]).filter(x=>x.r).slice(-1)[0];
+  if(lk)Q={w:lk.w,r:lk.r,ret:true,from:"look"};else if(MEM.quiz&&MEM.quiz.r)Q={w:MEM.quiz.w,r:MEM.quiz.r,ret:true,from:"quiz"}}
+function renderQuiz(){if(!Q.ret)return;$("[data-i=tryq]").innerHTML=rb(tmpl(D.tryq_r,Q));$("[data-i=tryhint]").textContent=Q.from==="look"?D.hint_look:D.hint_quiz}
+
+/* clock: Kawari adds one line to the hero chat, worded by the hour, never stating it */
+const tod=(h=>h<5?"tod_night":h<8?"tod_early":h===12?"tod_lunch":h>=23?"tod_late":null)(new Date().getHours());
+let todOn=false;
+function addTod(){const c=$("#heroChat"),h=c.offsetHeight;c.insertAdjacentHTML("beforeend",HTML.hero({hero:[["k",D[tod]]]}));c.style.height=h+"px";c.classList.add("full")}
+function renderHero(){const c=$("#heroChat");c.classList.remove("full");c.style.height="";c.innerHTML=HTML.hero(D);if(todOn)addTod()}
+if(tod)setTimeout(()=>{todOn=true;addTod()},6000);
+
+/* calendar: next JLPT is the first Sunday of July or December; only within a month, only in words */
+function jlptKey(){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  for(const y of[n.getFullYear(),n.getFullYear()+1])for(const m of[6,11]){const t=new Date(y,m,1);t.setDate(1+(7-t.getDay())%7);
+    if(t>=t0){const d=Math.round((t-t0)/864e5);return d===0?"jlpt0":d<7?"jlpt1":d<=20?"jlpt2":d<=30?"jlpt3":null}}
+  return null}
+
+/* tabs: the title waits for you; leaving mid-quiz gets noticed */
+let quizAway=false,leftShown=false;
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){document.title=D.away;if(!leftShown&&$("#tryForm").contains(document.activeElement))quizAway=true}
+  else{titleKey="";if(quizAway){quizAway=false;leftShown=true;$("#tryOut").innerHTML=rb(tmpl(D.left,Q))}}
+});
+
+/* lookups: pop-up dictionaries (Yomitan etc.) select the word under the cursor with no click or drag.
+   A selection made by hand comes with a pointer press, so ignore those. */
+let pDown=false,upAt=-1e9,selT=0,lastSel="",lookToast=false,lookEv=false;const LOOKS=[];
+addEventListener("pointerdown",()=>{pDown=true},{capture:true,passive:true});
+["pointerup","pointercancel"].forEach(t=>addEventListener(t,()=>{pDown=false;upAt=performance.now()},{capture:true,passive:true}));
+document.addEventListener("selectionchange",()=>{clearTimeout(selT);selT=setTimeout(onSelect,180)});
+function onSelect(){
+  if(pDown||performance.now()-upAt<600)return;
+  const s=getSelection();if(!s||s.isCollapsed||!s.rangeCount)return;
+  const a=document.activeElement;if(a&&/^(INPUT|TEXTAREA)$/.test(a.tagName))return;
+  const f=s.getRangeAt(0).cloneContents();f.querySelectorAll("rt,rp").forEach(x=>x.remove());
+  const t=f.textContent.replace(/\s+/g,"");
+  if(!t||t.length>12||!/[㐀-鿿]/.test(t)||t===lastSel)return;
+  lastSel=t;const e=lookupWord(t);
+  if(e.r){MEM.look=(MEM.look||[]).filter(x=>x.w!==e.w).concat([e]).slice(-20);saveMem()}
+  if(!unlocked){LOOKS.push(e);if(LOOKS.length>3)LOOKS.shift();renderLog();scatterEyes();if(!lookToast){lookToast=true;say(D.look_saved)}}
+  else if(!lookEv){lookEv=true;say(tmpl(D.look_ev,e))}
+}
+/* looked-up words join the chat history, just before "Day ∞" */
+function renderLog(){let L=D.log;
+  if(LOOKS.length){const i=L.map(x=>x[0]).lastIndexOf("d");L=L.slice(0,i).concat([["d",D.today]],...LOOKS.map(e=>[["u",tmpl(D.look_q,e)],["k",tmpl(e.r?D.look_a:D.look_a0,e)]]),L.slice(i))}
+  $("#logList").innerHTML=HTML.log(L)}
+
+try{console.log("%c"+T[lang].devtools,"font:600 14px sans-serif;color:#6a4fb8")}catch(_){}
+
+render();
+if(document.fonts&&document.fonts.load)document.fonts.load('900 20px "Noto Serif JP"',"代").catch(()=>{});
+requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

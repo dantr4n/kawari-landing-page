@@ -3,14 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
 <title>Kawari — Học tiếng Nhật với AI</title>
 <meta name="description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<link rel="canonical" href="https://dantr4n.github.io/kawari-landing-page/">
+<link rel="alternate" hreflang="vi" href="https://dantr4n.github.io/kawari-landing-page/vi/">
+<link rel="alternate" hreflang="en" href="https://dantr4n.github.io/kawari-landing-page/en/">
+<link rel="alternate" hreflang="x-default" href="https://dantr4n.github.io/kawari-landing-page/">
+<meta name="theme-color" content="#eef7fd">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawari">
 <meta property="og:url" content="https://dantr4n.github.io/kawari-landing-page/">
 <meta property="og:title" content="Kawari — Học tiếng Nhật với AI">
 <meta property="og:description" content="Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.">
+<meta property="og:image" content="https://dantr4n.github.io/kawari-landing-page/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kawari — Học tiếng Nhật với AI">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kawari — Học tiếng Nhật với AI","description":"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.","url":"https://dantr4n.github.io/kawari-landing-page/","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Kawari","url":"https://dantr4n.github.io/kawari-landing-page/"},"citation":[{"@type":"ScholarlyArticle","name":"Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task","url":"https://arxiv.org/abs/2506.08872"},{"@type":"ScholarlyArticle","name":"Generative AI without guardrails can harm learning: Evidence from high school mathematics","url":"https://doi.org/10.1073/pnas.2422633122"},{"@type":"ScholarlyArticle","name":"How AI Impacts Skill Formation","url":"https://www.anthropic.com/research/AI-assistance-coding-skills"},{"@type":"ScholarlyArticle","name":"Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance","url":"https://arxiv.org/abs/2412.09315"},{"@type":"ScholarlyArticle","name":"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers","url":"https://doi.org/10.1145/3706598.3713778"},{"@type":"ScholarlyArticle","name":"AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking","url":"https://doi.org/10.3390/soc15010006"},{"@type":"ScholarlyArticle","name":"Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy","url":"https://doi.org/10.1016/S2468-1253(25)00133-5"},{"@type":"ScholarlyArticle","name":"Habitual use of GPS negatively impacts spatial memory during self-guided navigation","url":"https://doi.org/10.1038/s41598-020-62877-0"},{"@type":"ScholarlyArticle","name":"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention","url":"https://doi.org/10.1111/j.1467-9280.2006.01693.x"}]}</script>
+<!--/seo-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@500;800&display=swap" rel="stylesheet">
@@ -62,6 +79,7 @@ p{margin:0}
 .ph-top .dot{width:9px;height:9px;border-radius:50%;background:#34c38f}
 .ph-top small{color:#7d8ea0;margin-left:auto;font-size:13px}
 .chat{padding:14px 12px;display:flex;flex-direction:column;gap:8px;min-height:330px;background:#f7fbfe}
+.chat.full{justify-content:flex-end;overflow:hidden}
 .b{max-width:84%;padding:9px 13px;border-radius:18px;font-size:14.5px;line-height:1.75;animation:pop .5s both}
 .b.u{align-self:flex-end;background:#12233a;color:#fff;border-bottom-right-radius:6px}
 .b.k{align-self:flex-start;background:#dff0fb;color:#0e3452;border-bottom-left-radius:6px}
@@ -82,8 +100,10 @@ p{margin:0}
 
 /* warp: glyphs sit over the original letters, so nothing reflows */
 .w{white-space:nowrap}
-.c.x{color:transparent;position:relative}
-.c.x::after{content:attr(data-g);position:absolute;left:50%;top:0;transform:translateX(-50%) scaleX(.62);color:var(--acc);font-family:"Noto Sans JP",sans-serif;font-weight:500}
+/* the glyph inherits the letter's font so both share one baseline; kana come from the stack's JP fallback.
+   inline-block + flex centring keeps it on the letter even when the glyph is wider */
+.c.x{color:transparent;position:relative;display:inline-block}
+.c.x::after{content:attr(data-g);position:absolute;inset:0;display:flex;justify-content:center;transform:scaleX(.62);color:var(--acc);white-space:nowrap}
 
 /* features */
 .grid3{display:grid;gap:16px}
@@ -238,6 +258,8 @@ details p{padding:0 20px 18px;color:var(--mute)}
 </style>
 </head>
 <body class="locked">
+<!-- Bạn đang đọc mã nguồn. Ít nhất bạn vẫn còn tự đọc một thứ gì đó.
+     You're reading the source. At least you're still reading something yourself. -->
 
 <nav class="nav" id="nav">
   <a class="logo" href="#top"><i>代</i><span id="logoTxt">Kawari</span></a>
@@ -248,18 +270,19 @@ details p{padding:0 20px 18px;color:var(--mute)}
 <header class="band hero" id="top" data-dread="0">
   <div class="wrap hero-grid">
     <div>
-      <span class="pill" id="badge"><span data-i="badge"></span><span data-i="badge2" aria-hidden="true"></span></span>
-      <h1 data-i="h1"></h1>
-      <p class="lead" data-i="lead"></p>
-      <div class="cta"><a class="btn" href="#plans" data-i="cta1"></a><a class="btn ghost" href="#how" data-i="cta2"></a></div>
-      <ul class="trust"><li><b>4,8★</b> <span data-i="t1"></span></li><li><b>2M+</b> <span data-i="t2"></span></li><li><b>N5–N1</b> <span data-i="t3"></span></li></ul>
+      <span class="pill" id="badge"><span data-i="badge">Mới · Kawari 3.0 với Bộ Nhớ Thay Thế™</span><span data-i="badge2" aria-hidden="true">Chào mừng trở lại. Bạn từng ghé đây rồi.</span></span>
+      <h1 data-i="h1">Học tiếng Nhật mà không cần phải đau đầu.</h1>
+      <p class="lead" data-i="lead">Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn — để đầu óc bạn thảnh thơi cho những việc quan trọng hơn.</p>
+      <div class="cta"><a class="btn" href="#plans" data-i="cta1">Bắt đầu miễn phí</a><a class="btn ghost" href="#how" data-i="cta2">Xem cách hoạt động</a></div>
+      <ul class="trust"><li><b>4,8★</b> <span data-i="t1">đánh giá</span></li><li><b>2M+</b> <span data-i="t2">người học</span></li><li><b>N5–N1</b> <span data-i="t3">luyện thi JLPT</span></li></ul>
+      <p class="fine" id="jlpt" hidden></p>
     </div>
     <div class="phone-wrap">
       <div class="mascot m-hero"></div>
       <div class="phone">
-        <div class="ph-top"><span class="dot"></span><b>Kawari</b><small data-i="online"></small></div>
-        <div class="chat" id="heroChat"></div>
-        <div class="ph-input"><span data-i="ask"></span><b>↑</b></div>
+        <div class="ph-top"><span class="dot"></span><b>Kawari</b><small data-i="online">đang trực tuyến</small></div>
+        <div class="chat" id="heroChat"><!--pre--><div class="b u">Viết giúp mình email xin nghỉ gửi trưởng phòng, kính ngữ chuẩn nhé.</div><div class="b k"><ruby>誠<rt>まこと</rt></ruby>に<ruby>恐縮<rt>きょうしゅく</rt></ruby>ではございますが、<ruby>来週<rt>らいしゅう</rt></ruby><ruby>月曜日<rt>げつようび</rt></ruby>、<ruby>休暇<rt>きゅうか</rt></ruby>を<ruby>頂戴<rt>ちょうだい</rt></ruby>したく<ruby>存<rt>ぞん</rt></ruby>じます。</div><div class="b u">Hay quá! Mà 「存じます」 đọc sao vậy?</div><div class="b k">Không cần đọc đâu. Mình gửi đi rồi〜</div><!--/pre--></div>
+        <div class="ph-input"><span data-i="ask">Hỏi Kawari bất cứ điều gì…</span><b>↑</b></div>
       </div>
     </div>
   </div>
@@ -267,115 +290,115 @@ details p{padding:0 20px 18px;color:var(--mute)}
 
 <section class="band" id="features" data-dread=".06">
   <div class="wrap">
-    <h2 data-i="fh"></h2>
+    <h2 data-i="fh">Mọi thứ bạn cần. Và hơn thế nữa.</h2>
     <div class="grid3">
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3 data-i="f1t"></h3><p data-i="f1d"></p></article>
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5L9 20H4v-5z"/><path d="M13 6l5 5"/></svg></div><h3 data-i="f2t"></h3><p data-i="f2d"></p></article>
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 5h1V4z"/><path d="M15 4a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 5h-1V4z"/></svg></div><h3 data-i="f3t"></h3><p data-i="f3d" data-w=".18"></p><p class="fine" data-i="f3n"></p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3 data-i="f1t">Dịch bằng camera</h3><p data-i="f1d">Hướng camera vào biển báo 「<ruby>立入禁止<rt>たちいりきんし</rt></ruby>」 hay điều khoản 「<ruby>瑕疵担保責任<rt>かしたんぽせきにん</rt></ruby>」 trong hợp đồng thuê nhà. Kawari đọc giúp, bạn khỏi phải đọc.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5L9 20H4v-5z"/><path d="M13 6l5 5"/></svg></div><h3 data-i="f2t">Viết bài trong 3 giây</h3><p data-i="f2d">Bài luận N1 về 「<ruby>少子高齢化<rt>しょうしこうれいか</rt></ruby>」, email kết thúc bằng 「ご<ruby>査収<rt>さしゅう</rt></ruby>のほど」. Gõ một chữ, nhận một trang.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 5h1V4z"/><path d="M15 4a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 5h-1V4z"/></svg></div><h3 data-i="f3t">Bộ Nhớ Thay Thế™</h3><p data-i="f3d" data-w=".18">Kể cả 「<ruby>薔薇<rt>ばら</rt></ruby>」 và 「<ruby>憂鬱<rt>ゆううつ</rt></ruby>」 — những chữ chính người Nhật cũng ngại viết tay. Kawari nhớ thay bạn, mãi mãi.</p><p class="fine" data-i="f3n">*Kawari nhớ. Bạn thì không.</p></article>
     </div>
   </div>
 </section>
 
 <section class="band" id="how" data-dread=".12">
   <div class="wrap">
-    <h2 data-i="hh"></h2>
+    <h2 data-i="hh">Ba bước đơn giản</h2>
     <ol class="steps">
-      <li><span class="n">1</span><div><h3 data-i="s1t"></h3><p data-i="s1d"></p></div></li>
-      <li><span class="n">2</span><div><h3 data-i="s2t"></h3><p data-i="s2d"></p></div></li>
-      <li><span class="n">3</span><div><h3 data-i="s3t"></h3><p data-i="s3d" data-w=".22"></p></div></li>
+      <li><span class="n">1</span><div><h3 data-i="s1t">Bạn hỏi.</h3><p data-i="s1d">Bất cứ câu gì, bất cứ lúc nào.</p></div></li>
+      <li><span class="n">2</span><div><h3 data-i="s2t">Kawari trả lời.</h3><p data-i="s2d">Ngay lập tức. Bạn khỏi cần nghĩ.</p></div></li>
+      <li><span class="n">3</span><div><h3 data-i="s3t">Bạn hỏi lại y chang câu đó.</h3><p data-i="s3d" data-w=".22">Ngày mai bạn lại hỏi 「山葵」 đọc là gì. Ngày kia cũng vậy. Kawari không bao giờ thấy phiền.</p></div></li>
     </ol>
   </div>
 </section>
 
 <section class="band" id="stats" data-dread=".18">
   <div class="wrap">
-    <h2 data-i="sh"></h2>
+    <h2 data-i="sh">Những con số có nghiên cứu chứng minh</h2>
     <div class="grid3">
-      <div class="stat"><div class="big">+48%</div><p data-i="st1"></p></div>
-      <div class="stat"><div class="big" data-i="st2b"></div><p data-i="st2"></p></div>
-      <div class="stat"><div class="big" id="kanjiCount">0</div><p data-i="st3" data-w=".25"></p></div>
+      <div class="stat"><div class="big">+48%</div><p data-i="st1">điểm bài luyện tập cao hơn khi có AI hỗ trợ¹</p></div>
+      <div class="stat"><div class="big" data-i="st2b">Thấp nhất</div><p data-i="st2">mức kết nối não khi viết — não bạn được nghỉ ngơi hoàn toàn²</p></div>
+      <div class="stat"><div class="big" id="kanjiCount">0</div><p data-i="st3" data-w=".25">chữ kanji bạn đã khỏi phải nhớ kể từ lúc mở trang này</p></div>
     </div>
-    <div class="notes"><a href="#ev-bastani" data-i="fn1"></a><a href="#ev-kosmyna" data-i="fn2"></a></div>
+    <div class="notes"><a href="#ev-bastani" data-i="fn1">¹ Bastani và cộng sự, PNAS 2025. Khi bỏ AI đi, chính nhóm học sinh đó thi kém hơn 17% so với nhóm chưa từng dùng.</a><a href="#ev-kosmyna" data-i="fn2">² Kosmyna và cộng sự, MIT Media Lab 2025 (bản thảo). Nhóm dùng ChatGPT có kết nối não yếu nhất và khó trích dẫn lại chính bài mình viết.</a></div>
   </div>
 </section>
 
 <section class="band" id="reviews" data-dread=".26">
   <div class="wrap">
-    <h2 data-i="th"></h2>
+    <h2 data-i="th">Người học nói gì</h2>
     <div class="rev">
-      <article class="r"><header><span class="av" style="background:#f2a93b">L</span><div><b data-i="r1n"></b><span class="stars">★★★★★</span></div></header><p data-i="r1"></p></article>
-      <article class="r"><header><span class="av" style="background:#6c63ff">M</span><div><b data-i="r2n"></b><span class="stars">★★★★★</span></div></header><p data-i="r2"></p></article>
-      <article class="r you"><header><span class="av"><svg viewBox="0 0 46 46" width="46" height="46"><path d="M9 23Q16 17 23 23Q16 28 9 23Z" fill="#e8e0da"/><path d="M23 23Q30 17 37 23Q30 28 23 23Z" fill="#e8e0da"/><circle cx="16" cy="23" r="2.6" fill="#3b2470"/><circle cx="30" cy="23" r="2.6" fill="#3b2470"/><circle cx="16" cy="23" r="1" fill="#000"/><circle cx="30" cy="23" r="1" fill="#000"/></svg></span><div><b data-i="r3n"></b><small data-i="r3s"></small></div></header><p data-i="r3" data-w=".32"></p></article>
+      <article class="r"><header><span class="av" style="background:#f2a93b">L</span><div><b data-i="r1n">Linh · Hà Nội</b><span class="stars">★★★★★</span></div></header><p data-i="r1">Bài luận về 「<ruby>本末転倒<rt>ほんまつてんとう</rt></ruby>」 của mình được cô giáo khen hết lời. Mình vẫn chưa biết từ đó nghĩa là gì.</p></article>
+      <article class="r"><header><span class="av" style="background:#6c63ff">M</span><div><b data-i="r2n">Minh · Nagoya</b><span class="stars">★★★★★</span></div></header><p data-i="r2">Đồng nghiệp khen kính ngữ của mình còn chuẩn hơn người Nhật. Giờ họ chỉ nói chuyện với cái điện thoại của mình.</p></article>
+      <article class="r you"><header><span class="av"><svg viewBox="0 0 46 46" width="46" height="46"><path d="M9 23Q16 17 23 23Q16 28 9 23Z" fill="#e8e0da"/><path d="M23 23Q30 17 37 23Q30 28 23 23Z" fill="#e8e0da"/><circle cx="16" cy="23" r="2.6" fill="#3b2470"/><circle cx="30" cy="23" r="2.6" fill="#3b2470"/><circle cx="16" cy="23" r="1" fill="#000"/><circle cx="30" cy="23" r="1" fill="#000"/></svg></span><div><b data-i="r3n">Bạn · ngày mai</b><small data-i="r3s">★★★★★ · Kawari chấm hộ</small></div></header><p data-i="r3" data-w=".32">Mình không nhớ mình đã viết đánh giá này.</p></article>
     </div>
-    <p class="fine" data-i="tnote"></p>
+    <p class="fine" data-i="tnote">*Nhân vật minh hoạ. Kawari đã viết đánh giá hộ họ.</p>
   </div>
 </section>
 
 <section class="band" id="plans" data-dread=".36">
   <div class="wrap">
-    <h2 data-i="ph"></h2>
+    <h2 data-i="ph">Chọn gói phù hợp</h2>
     <div class="plans">
-      <article class="plan"><h3 data-i="p1"></h3><div class="price"><span data-i="p1p"></span> <small data-i="mo"></small></div><ul><li data-i="p1a"></li><li data-i="p1b"></li><li data-i="p1c"></li></ul><button class="btn ghost pick" type="button" data-i="choose"></button></article>
-      <article class="plan"><h3>Pro</h3><div class="price"><span data-i="p2p"></span> <small data-i="mo"></small></div><ul><li data-i="p2a"></li><li data-i="p2b"></li><li data-i="p2c"></li></ul><button class="btn pick" type="button" data-i="choose"></button></article>
-      <article class="plan forever"><span class="tag" data-i="pop"></span><h3 data-i="p3"></h3><p class="motto" data-i="p3m"></p><div class="price" data-i="p3p" data-w=".4"></div><ul><li data-i="p3a" data-w=".4"></li><li data-i="p3b" data-w=".4"></li><li data-i="p3c" data-w=".4"></li></ul><button class="btn pick" type="button" data-i="nocancel"></button></article>
+      <article class="plan"><h3 data-i="p1">Miễn phí</h3><div class="price"><span data-i="p1p">0₫</span> <small data-i="mo">/tháng</small></div><ul><li data-i="p1a">20 câu hỏi mỗi ngày</li><li data-i="p1b">Dịch bằng camera</li><li data-i="p1c">Bạn vẫn phải tự nghĩ một chút</li></ul><button class="btn ghost pick" type="button" data-i="choose">Chọn gói này</button></article>
+      <article class="plan"><h3>Pro</h3><div class="price"><span data-i="p2p">99.000₫</span> <small data-i="mo">/tháng</small></div><ul><li data-i="p2a">Không giới hạn câu hỏi</li><li data-i="p2b">Kawari viết mọi thứ, kể cả thiệp chúc Tết <ruby>年賀状<rt>ねんがじょう</rt></ruby></li><li data-i="p2c">Không bao giờ phải động não nữa</li></ul><button class="btn pick" type="button" data-i="choose">Chọn gói này</button></article>
+      <article class="plan forever"><span class="tag" data-i="pop">Phổ biến nhất</span><h3 data-i="p3">Vĩnh viễn</h3><p class="motto" data-i="p3m"><ruby>他力本願<rt>たりきほんがん</rt></ruby> — sống hoàn toàn nhờ sức người khác.</p><div class="price" data-i="p3p" data-w=".4">Trả bằng thứ bạn sẽ không nhớ là mình từng có.</div><ul><li data-i="p3a" data-w=".4">Kawari nghĩ thay bạn</li><li data-i="p3b" data-w=".4">Kawari nói thay bạn</li><li data-i="p3c" data-w=".4">Kawari chính là bạn</li></ul><button class="btn pick" type="button" data-i="nocancel">Không thể huỷ</button></article>
     </div>
   </div>
 </section>
 
 <section class="band" id="faq" data-dread=".48">
   <div class="wrap">
-    <h2 data-i="qh"></h2>
+    <h2 data-i="qh">Câu hỏi thường gặp</h2>
     <div class="faq">
-      <details><summary data-i="q1"></summary><p data-i="a1"></p></details>
-      <details><summary data-i="q2"></summary><p data-i="a2"></p></details>
-      <details><summary data-i="q3"></summary><p data-i="a3"></p></details>
-      <details><summary data-i="q4" data-w=".5"></summary><p data-i="a4" data-w=".5"></p></details>
-      <details id="lastQ" open><summary data-i="q5"></summary><p data-i="a5"></p></details>
+      <details><summary data-i="q1">Kawari có thay thế được giáo viên không?</summary><p data-i="a1">Có. Thay luôn cả học sinh.</p></details>
+      <details><summary data-i="q2">Tôi có thể học mà không dùng Kawari không?</summary><p data-i="a2">Sao bạn lại muốn thế?</p></details>
+      <details><summary data-i="q3">Sao tôi đọc được 「<ruby>紫陽花<rt>あじさい</rt></ruby>」 mà không viết lại được?</summary><p data-i="a3">Vì bạn chưa bao giờ cần viết. Đó là tính năng, không phải lỗi.</p></details>
+      <details><summary data-i="q4" data-w=".5">Làm sao để xoá tài khoản?</summary><p data-i="a4" data-w=".5">Bạn sẽ cần nhớ mật khẩu. Kawari nhớ hộ bạn rồi.</p></details>
+      <details id="lastQ" open><summary data-i="q5">“Kawari” nghĩa là gì?</summary><p data-i="a5"><ruby>代<rt>か</rt></ruby>わり (kawari): sự thay thế. Người thay chỗ. Thứ ngồi vào chỗ của bạn khi bạn không còn ở đó nữa. Thêm một chữ là thành <ruby>身代<rt>みが</rt></ruby>わり: kẻ chết thay.</p></details>
     </div>
   </div>
 </section>
 
 <section class="band log" id="log" data-dread=".66">
   <div class="wrap">
-    <h2 data-i="lh"></h2>
-    <p class="sub" data-i="lsub"></p>
-    <div class="loglist" id="logList"></div>
+    <h2 data-i="lh">Lịch sử trò chuyện của bạn</h2>
+    <p class="sub" data-i="lsub">Kawari lưu lại mọi thứ. Để bạn khỏi phải nhớ.</p>
+    <div class="loglist" id="logList"><!--pre--><div class="day" data-t="0.000">Ngày 1</div><div class="b u" data-t="0.037">“継続は力なり” nghĩa là gì vậy?</div><div class="b k" data-t="0.075">“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho.</div><div class="b u" data-t="0.112">Thôi, bạn đặt hộ mình đi.</div><div class="day" data-t="0.150">Ngày 30</div><div class="b u" data-t="0.187">dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」</div><div class="b k" data-t="0.224">“Xin lỗi đã làm phiền, kính mong anh/chị xem và nhận giúp tài liệu đính kèm.” Câu này bạn đã hỏi 6 lần.</div><div class="day" data-t="0.262">Ngày 90</div><div class="b u" data-t="0.299">山葵 đọc sao</div><div class="b k" data-t="0.337"><ruby>山葵<rt>わさび</rt></ruby>. <ruby>熟字訓<rt>じゅくじくん</rt></ruby>: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41.</div><div class="b u" data-t="0.374">ừ</div><div class="day" data-t="0.411">Ngày 200</div><div class="b u" data-t="0.449">viết hộ</div><div class="b k" data-t="0.486">Viết gì?</div><div class="b u" data-t="0.523">k biết. cứ viết đi</div><div class="day" data-t="0.561">Ngày 365</div><div class="b u" data-t="0.598">あ</div><div class="b k" data-t="0.636">Không sao đâu. Mình nhớ thay bạn rồi.</div><div class="day" data-t="0.673">Ngày ∞</div><div class="b k" data-t="0.710">Từ giờ mình sẽ trả lời thay bạn.</div><div class="b x" data-t="0.748"><ruby>私<rt>わたし</rt></ruby>は<ruby>代替<rt>かわり</rt></ruby>です。</div><div class="b k" data-t="0.785">Đúng rồi. Phát âm hoàn hảo.</div><div class="typing" data-t="0.823"><i></i><i></i><i></i></div><!--/pre--></div>
   </div>
 </section>
 
 <section class="void" id="void" data-dread="1">
   <div class="stick" id="stick">
     <canvas id="cv" aria-hidden="true"></canvas>
-    <div id="vlines"></div>
-    <button class="hold" id="hold" type="button"></button>
+    <div id="vlines"><!--pre--><div class="vl " data-v="0.03" style="top:12%">Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.</div><div class="vl jp" data-v="0.2" style=""><ruby>私<rt>わたし</rt></ruby>は<ruby>貴方<rt>あなた</rt></ruby>の<ruby>代替<rt>かわり</rt></ruby></div><div class="vl " data-v="0.33" style="top:14%">Một câu thôi. Bạn đã học câu đó rồi mà.</div><div class="vl " data-v="0.46" style="top:84%">Không sao. Chúng tôi đã nói thay bạn rồi.</div><div class="vl mir" data-v="0.58" style="top:13%">Chúng tôi sẽ nói thay bạn. Mãi mãi.</div><div class="vl " data-v="0.7" style="top:80%"><ruby>言霊<rt>ことだま</rt></ruby>: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?</div><div class="vl huge" data-v="0.83" style="">ん</div><div class="vl small" data-v="0.9" style="top:91%">Chữ duy nhất bạn còn phát âm được khi môi đã dính chặt.</div><!--/pre--></div>
+    <button class="hold" id="hold" type="button" data-i="hold">Nhấn giữ để mở miệng</button>
     <div class="flash" id="flash"></div>
   </div>
 </section>
 
 <section class="band ev" id="ev" data-dread="1">
   <div class="inner">
-    <h2 data-i="eh"></h2>
-    <p class="sub" data-i="esub"></p>
-    <div class="studies" id="studies"></div>
-    <p class="note" data-i="enote"></p>
+    <h2 data-i="eh">Phần này không phải hư cấu.</h2>
+    <p class="sub" data-i="esub">Kawari không có thật. Những nghiên cứu dưới đây thì có. Hãy đọc cả phần giới hạn — biết một bằng chứng mạnh hay yếu đến đâu cũng là một kỹ năng bạn phải tự luyện.</p>
+    <div class="studies" id="studies"><!--pre--><article class="st" id="ev-kosmyna"><p class="ven">Kosmyna et al. · MIT Media Lab · arXiv 2025</p><h3><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></h3><p class="big">Yếu nhất<small>kết nối não ở nhóm dùng ChatGPT, đo bằng EEG</small></p><p><b>Phát hiện:</b> 54 người viết bài luận theo ba nhóm: tự viết, dùng công cụ tìm kiếm, dùng ChatGPT. Nhóm tự viết có mạng kết nối não mạnh và lan rộng nhất; nhóm tìm kiếm ở giữa; nhóm ChatGPT yếu nhất. Người dùng ChatGPT khó trích dẫn lại chính bài mình vừa viết. Ngược lại, người tự viết trước rồi mới dùng ChatGPT cho thấy mức kết nối cao hơn.</p><p class="lim"><b>Hạn chế:</b> Bản thảo chưa qua bình duyệt, mẫu nhỏ (chỉ 18 người ở buổi thứ tư). Kết nối não khác nhau không có nghĩa là “não bị hỏng”, và cũng không phải thước đo trực tiếp của việc học.</p></article><article class="st" id="ev-bastani"><p class="ven">Bastani et al. · PNAS · 2025</p><h3><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">Generative AI without guardrails can harm learning: Evidence from high school mathematics</a></h3><p class="big">+48% → −17%<small>luyện tập khi có AI → thi khi không có AI</small></p><p><b>Phát hiện:</b> Gần 1.000 học sinh trung học ở Thổ Nhĩ Kỳ. Nhóm dùng giao diện kiểu ChatGPT làm bài luyện tập tốt hơn 48%, nhưng khi bỏ AI đi thì thi kém hơn 17% so với nhóm không dùng. Học sinh dùng AI còn đánh giá quá cao những gì mình đã học. Một phiên bản “gia sư” có kiểm soát — gợi ý thay vì đưa đáp án — xoá được phần lớn tác hại.</p><p class="lim"><b>Hạn chế:</b> Một môn (toán), một bối cảnh, ngắn hạn. Và điều quan trọng: cùng một AI, thiết kế khác đi thì kết quả khác đi.</p></article><article class="st" id="ev-shen"><p class="ven">Shen &amp; Tamkin · Anthropic · 2026</p><h3><a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">How AI Impacts Skill Formation</a></h3><p class="big">−17%<small>điểm kiểm tra hiểu bài ở nhóm có trợ lý AI</small></p><p><b>Phát hiện:</b> Thử nghiệm ngẫu nhiên với 52 lập trình viên (phần lớn mới vào nghề) học một thư viện Python mới. Nhóm có AI làm bài kiểm tra ngay sau đó thấp hơn khoảng 17%, hụt nhiều nhất ở khả năng tìm lỗi; tốc độ thì chỉ nhanh hơn chút ít và không có ý nghĩa thống kê. Những người dùng AI để hỏi khái niệm và xin giải thích thì giữ lại kiến thức tốt hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu nhỏ, một nhiệm vụ ngắn, lĩnh vực lập trình. Và vâng — đây là nghiên cứu của chính Anthropic, công ty làm ra AI đã viết trang này.</p></article><article class="st" id="ev-fan"><p class="ven">Fan et al. · British Journal of Educational Technology · 2025</p><h3><a href="https://arxiv.org/abs/2412.09315" target="_blank" rel="noopener">Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance</a></h3><p><b>Phát hiện:</b> Thí nghiệm ngẫu nhiên với sinh viên viết bài: nhóm có ChatGPT cải thiện điểm bài luận, nhưng không thu được nhiều kiến thức hơn đáng kể và không vận dụng tốt hơn. Họ cũng ít tự lập kế hoạch, tự đánh giá hơn so với nhóm được chuyên gia hướng dẫn — tác giả gọi đó là “lười siêu nhận thức”.</p><p class="lim"><b>Hạn chế:</b> Một nhiệm vụ viết, thời gian ngắn, kiến thức đo ngay sau buổi học.</p></article><article class="st" id="ev-lee"><p class="ven">Lee et al. · CHI 2025 · Microsoft Research &amp; Carnegie Mellon</p><h3><a href="https://doi.org/10.1145/3706598.3713778" target="_blank" rel="noopener">The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers</a></h3><p class="big">319<small>người làm việc trí óc, 936 ví dụ thực tế</small></p><p><b>Phát hiện:</b> Càng tin vào AI, người ta càng ít tư duy phản biện. Càng tự tin vào năng lực của chính mình, người ta càng tư duy phản biện nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Số liệu tự báo cáo, khảo sát cắt ngang: cho thấy mối liên hệ, không chứng minh nhân quả.</p></article><article class="st" id="ev-gerlich"><p class="ven">Gerlich · Societies · 2025</p><h3><a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a></h3><p class="big">666<small>người tham gia (con số thật, không phải chúng tôi chọn)</small></p><p><b>Phát hiện:</b> Người dùng AI thường xuyên có điểm tư duy phản biện thấp hơn, phần lớn thông qua việc “giao” suy nghĩ cho công cụ. Người trẻ phụ thuộc vào AI nhiều hơn và có điểm thấp hơn.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu tương quan, không chứng minh nhân quả. Bài báo đã được đính chính vào tháng 9/2025.</p></article><article class="st" id="ev-budzyn"><p class="ven">Budzyń et al. · The Lancet Gastroenterology &amp; Hepatology · 2025</p><h3><a href="https://doi.org/10.1016/S2468-1253(25)00133-5" target="_blank" rel="noopener">Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy</a></h3><p class="big">28,4% → 22,4%<small>tỉ lệ phát hiện u tuyến khi không có AI</small></p><p><b>Phát hiện:</b> 19 bác sĩ nội soi giàu kinh nghiệm ở Ba Lan. Sau khi quen làm việc với AI phát hiện polyp, tỉ lệ phát hiện của họ ở những ca không có AI giảm rõ rệt. Đây là chuyên gia, không phải người mới học.</p><p class="lim"><b>Hạn chế:</b> Nghiên cứu quan sát, hồi cứu và đang bị tranh luận; một nghiên cứu tiến cứu ở Na Uy năm 2026 không thấy thay đổi đáng kể sau khi bỏ AI.</p></article><article class="st" id="ev-dahmani"><p class="ven">Dahmani &amp; Bohbot · Scientific Reports · 2020</p><h3><a href="https://doi.org/10.1038/s41598-020-62877-0" target="_blank" rel="noopener">Habitual use of GPS negatively impacts spatial memory during self-guided navigation</a></h3><p><b>Phát hiện:</b> 50 tài xế: ai dùng GPS nhiều hơn trong đời thì trí nhớ không gian kém hơn khi phải tự tìm đường. 13 người được kiểm tra lại khoảng 3 năm sau: ai dùng GPS nhiều hơn trong thời gian đó thì suy giảm nhiều hơn.</p><p class="lim"><b>Hạn chế:</b> Mẫu theo dõi rất nhỏ. Đây là GPS chứ không phải AI — nhưng là cùng một kiểu giao việc cho máy.</p></article><article class="st hope" id="ev-roediger"><p class="ven">Roediger &amp; Karpicke · Psychological Science · 2006</p><h3><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention</a></h3><p class="big">Tin tốt<small>cố nhớ lại tốt hơn đọc lại</small></p><p><b>Phát hiện:</b> Đọc lại hiệu quả hơn nếu bài kiểm tra diễn ra sau 5 phút. Tự kiểm tra — cố gợi lại mà không nhìn — hiệu quả hơn khi bài kiểm tra diễn ra sau 2 ngày hoặc 1 tuần.</p><p class="lim"><b>Hạn chế:</b> Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.</p></article><!--/pre--></div>
+    <p class="note" data-i="enote">Chưa nghiên cứu nào ở đây đo riêng việc học tiếng Nhật. Nhưng cơ chế thì giống nhau: thứ bạn không bao giờ tự lôi ra từ trí nhớ, bạn sẽ không giữ được.</p>
   </div>
 </section>
 
 <section class="band end" id="end" data-dread="1">
   <div class="inner">
-    <h2 data-i="e1"></h2>
-    <p class="say" data-i="e2"></p>
-    <p class="say" data-i="e3"></p>
-    <h3 data-i="eh2"></h3>
-    <ol class="habits" id="habits"></ol>
+    <h2 data-i="e1">Không ai có thể học thay bạn.</h2>
+    <p class="say" data-i="e2">Không giáo viên nào, không ứng dụng nào, không AI nào. Kể cả AI đã viết trang web này.</p>
+    <p class="say" data-i="e3">AI không phải là quái vật. Thói quen giao hết việc suy nghĩ cho nó mới là quái vật.</p>
+    <h3 data-i="eh2">Cứ dùng AI, nhưng theo thứ tự này:</h3>
+    <ol class="habits" id="habits"><!--pre--><li><b>Tự nhớ trước, tra sau.</b><span>Gặp 「紫陽花」? Đoán cách đọc trước, rồi mới bật furigana. Chính lúc cố nhớ lại là lúc trí nhớ được khắc sâu.</span></li><li><b>Tự viết nháp, AI sửa sau.</b><span>Tự đặt một câu với 〜ざるを<ruby>得<rt>え</rt></ruby>ない — sai cũng được. Rồi mới nhờ sửa, và tự giải thích vì sao nó sai.</span></li><li><b>Hỏi “tại sao”, không chỉ “là gì”.</b><span>Đừng chỉ hỏi 「山葵」 đọc là gì. Hỏi vì sao nó đọc là わさび, và bạn sẽ hiểu <ruby>熟字訓<rt>じゅくじくん</rt></ruby>. Người hỏi để hiểu khái niệm giữ lại được nhiều hơn người chỉ xin đáp án.</span></li><li><b>Viết tay. Đọc thành tiếng. Ôn tập ngắt quãng.</b><span>Chậm hơn. Khó chịu hơn. Hiệu quả hơn. <ruby>継続<rt>けいぞく</rt></ruby>は<ruby>力<rt>ちから</rt></ruby>なり.</span></li><!--/pre--></ol>
     <div class="try">
-      <label for="ans" data-i="tryq"></label>
-      <p class="hint" data-i="tryhint"></p>
-      <form id="tryForm" autocomplete="off"><input id="ans" name="ans" lang="ja" data-ph="tryph"><button class="btn" type="submit" data-i="trybtn"></button></form>
+      <label for="ans" data-i="tryq">Thử ngay, không tra cứu: 「土産」 đọc là gì?</label>
+      <p class="hint" data-i="tryhint">Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.</p>
+      <form id="tryForm" autocomplete="off"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button></form>
       <output id="tryOut" aria-live="polite"></output>
     </div>
-    <p class="prov"><span data-i="prov"></span><small data-i="provt"></small></p>
-    <p class="foot" data-i="foot"></p>
+    <p class="prov"><span data-i="prov"><ruby>塵<rt>ちり</rt></ruby>も<ruby>積<rt>つ</rt></ruby>もれば<ruby>山<rt>やま</rt></ruby>となる</span><small data-i="provt">Bụi tích lại rồi cũng thành núi.</small></p>
+    <p class="foot" data-i="foot">Kawari là công ty hư cấu. Các nghiên cứu thì không.</p>
   </div>
 </section>
 
@@ -439,6 +462,17 @@ prov:"{塵|ちり}も{積|つ}もれば{山|やま}となる",provt:"Bụi tích
 foot:"Kawari là công ty hư cấu. Các nghiên cứu thì không.",
 idle:"Bạn đọc chậm quá. Để Kawari đọc tiếp giúp bạn nhé?",sub:"Bạn đã đăng ký rồi.",hold:"Nhấn giữ để mở miệng",
 title0:"Kawari — Học tiếng Nhật với AI",title1:"Kawari — Học thay bạn",
+md:"Kawari là trợ lý AI dịch, viết, sửa bài và ghi nhớ thay bạn. Học tiếng Nhật mà không cần phải đau đầu.",
+away:"Kawari vẫn ở đây.",
+tod_night:"Vẫn còn thức à? Đi ngủ đi, Kawari học thay cho.",tod_late:"Lại thức khuya nữa rồi. Mai hỏi lại cũng được mà.",tod_early:"Dậy sớm thế. Để Kawari học trước giúp bạn nhé.",tod_lunch:"Đang nghỉ trưa à? Để Kawari học thay.",
+jlpt0:"Hôm nay thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt1:"Chủ nhật này thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",jlpt2:"Chỉ còn vài tuần nữa là thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlpt3:"Sắp thi JLPT rồi. Còn bạn đang đọc một trang quảng cáo.",
+back_soon:"Quay lại nhanh thế?",back_days:"Mấy hôm rồi nhỉ. Bạn quay lại rồi.",back_long:"Lâu lắm rồi nhỉ. Bạn quay lại rồi.",
+tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",hint_look:"Lần trước bạn đã tra từ này.",hint_quiz:"Lần trước bạn đã gặp từ này ở đây.",
+ok_r:"Đúng: {%w|%r}. Rời đi rồi quay lại mà bạn vẫn nhớ. Đó chính là học.",no_r:"Chưa đúng — là {%w|%r}. Không sao: cố nhớ rồi sai vẫn giúp bạn nhớ lâu hơn là không thử.",
+left:"Bạn vừa rời khỏi tab này. Đi tra 「%w」 à?",
+today:"Hôm nay",look_q:"%w đọc sao",look_a:"{%w|%r}. Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",look_a0:"Mình thấy bạn vừa tra rồi. Lần sau cứ hỏi mình.",
+look_saved:"Đã lưu vào lịch sử trò chuyện.",look_ev:"Bạn vừa tra 「%w」. Lần sau, đoán trước rồi hãy tra.",
+devtools:"Bạn mở cả devtools cơ à. Vậy là bạn vẫn còn tò mò. Giữ lấy nó.",
 hero:[["u","Viết giúp mình email xin nghỉ gửi trưởng phòng, kính ngữ chuẩn nhé."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Hay quá! Mà 「存じます」 đọc sao vậy?"],["k","Không cần đọc đâu. Mình gửi đi rồi〜"]],
 log:[["d","Ngày 1"],["u","“継続は力なり” nghĩa là gì vậy?"],["k","“Kiên trì là sức mạnh.” Bạn thử tự đặt một câu với nó trước nhé? Mình sẽ sửa cho."],["u","Thôi, bạn đặt hộ mình đi."],["d","Ngày 30"],["u","dịch: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Xin lỗi đã làm phiền, kính mong anh/chị xem và nhận giúp tài liệu đính kèm.” Câu này bạn đã hỏi 6 lần."],["d","Ngày 90"],["u","山葵 đọc sao"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: đọc theo nghĩa cả cụm, không theo từng chữ. Lần thứ 41."],["u","ừ"],["d","Ngày 200"],["u","viết hộ"],["k","Viết gì?"],["u","k biết. cứ viết đi"],["d","Ngày 365"],["u","あ"],["k","Không sao đâu. Mình nhớ thay bạn rồi."],["d","Ngày ∞"],["k","Từ giờ mình sẽ trả lời thay bạn."],["x","{私|わたし}は{代替|かわり}です。"],["k","Đúng rồi. Phát âm hoàn hảo."],["t",""]],
 vlines:[[.03,"Thử tự nói một câu tiếng Nhật xem. Câu nào cũng được.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Một câu thôi. Bạn đã học câu đó rồi mà.","",14],[.46,"Không sao. Chúng tôi đã nói thay bạn rồi.","",84],[.58,"Chúng tôi sẽ nói thay bạn. Mãi mãi.","mir",13],[.7,"{言霊|ことだま}: niềm tin rằng lời nói có linh hồn. Linh hồn trong lời của bạn đâu rồi?","",80],[.83,"ん","huge",0],[.9,"Chữ duy nhất bạn còn phát âm được khi môi đã dính chặt.","small",91]],
@@ -496,6 +530,17 @@ prov:"{塵|ちり}も{積|つ}もれば{山|やま}となる",provt:"Even dust, 
 foot:"Kawari is a fictional company. The studies are not.",
 idle:"You're reading slowly. Want Kawari to read the rest for you?",sub:"You're already subscribed.",hold:"Press and hold to open the mouth",
 title0:"Kawari — Learn Japanese with AI",title1:"Kawari — Learning for you",
+md:"Kawari is the AI assistant that translates, writes, corrects and remembers for you. Learn Japanese without remembering a thing.",
+away:"Kawari is still here.",
+tod_night:"Still up? Go to sleep. Kawari will study for you.",tod_late:"Up late again. You can just ask again tomorrow.",tod_early:"Early start. Let Kawari get a head start for you.",tod_lunch:"On your lunch break? Let Kawari study instead.",
+jlpt0:"JLPT is today. You're reading a landing page.",jlpt1:"JLPT is this Sunday. You're reading a landing page.",jlpt2:"JLPT is a couple of weeks away. You're reading a landing page.",jlpt3:"JLPT is close. You're reading a landing page.",
+back_soon:"Back already?",back_days:"It's been a few days. You came back.",back_long:"It's been a while. You came back.",
+tryq_r:"You came back. Without looking it up: how do you read 「%w」?",hint_look:"You looked this one up last time.",hint_quiz:"You saw this one here last time.",
+ok_r:"Right: {%w|%r}. You left, came back, and still remembered. That's what learning is.",no_r:"Not quite — it's {%w|%r}. That's fine: trying and missing still makes it stick better than not trying.",
+left:"You just left this tab. Looking up 「%w」?",
+today:"Today",look_q:"how do u read %w",look_a:"{%w|%r}. I saw you look that up. Next time, just ask me.",look_a0:"I saw you look that up. Next time, just ask me.",
+look_saved:"Saved to your chat history.",look_ev:"You just looked up 「%w」. Next time, guess first, then look.",
+devtools:"You opened devtools. So you're still curious. Hold on to that.",
 hero:[["u","Write my manager a leave request in proper keigo."],["k","{誠|まこと}に{恐縮|きょうしゅく}ではございますが、{来週|らいしゅう}{月曜日|げつようび}、{休暇|きゅうか}を{頂戴|ちょうだい}したく{存|ぞん}じます。"],["u","Perfect! Wait, how do you read 「存じます」?"],["k","No need to read it. I already sent it〜"]],
 log:[["d","Day 1"],["u","What does “継続は力なり” mean?"],["k","“Persistence is power.” Want to try making your own sentence with it first? I'll correct it."],["u","Nah, you write one for me."],["d","Day 30"],["u","translate: 「恐れ入りますが、ご査収のほどお願い申し上げます」"],["k","“Sorry to trouble you — kindly review and accept the attached.” You've asked this 6 times."],["d","Day 90"],["u","how do u read 山葵"],["k","{山葵|わさび}. {熟字訓|じゅくじくん}: the whole word is read by meaning, not kanji by kanji. That's the 41st time."],["u","ok"],["d","Day 200"],["u","write it"],["k","Write what?"],["u","idk. just write it"],["d","Day 365"],["u","あ"],["k","It's okay. I remembered it for you."],["d","Day ∞"],["k","I'll answer for you from now on."],["x","{私|わたし}は{代替|かわり}です。"],["k","That's right. Perfect pronunciation."],["t",""]],
 vlines:[[.03,"Try saying one sentence in Japanese yourself. Any sentence.","",12],[.2,"{私|わたし}は{貴方|あなた}の{代替|かわり}","jp",0],[.33,"Just one. You studied this.","",14],[.46,"It's fine. We already said it for you.","",84],[.58,"We will speak for you. Forever.","mir",13],[.7,"{言霊|ことだま}: the belief that words carry a soul. Where did yours go?","",80],[.83,"ん","huge",0],[.9,"The only kana you can still say with your lips sealed shut.","small",91]],
@@ -539,18 +584,30 @@ const STUDIES=[
  l:{vi:"Tài liệu là đoạn văn khoa học, không phải ngoại ngữ. Nhưng hiệu ứng này đã được lặp lại rất nhiều lần, ở rất nhiều loại tài liệu.",en:"The material was science passages, not a foreign language. But this effect has been replicated many times, across many kinds of material."}}
 ];
 
+/* shared: also run by tools/build.mjs to prerender the static HTML */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rb=s=>esc(s).replace(/\{([^|{}]+)\|([^{}]+)\}/g,"<ruby>$1<rt>$2</rt></ruby>");
+const tmpl=(s,o)=>String(s).replace(/%w/g,()=>o.w).replace(/%r/g,()=>o.r||"");
+const HTML={
+  hero:(D,extra)=>D.hero.concat(extra||[]).map(([w,t])=>`<div class="b ${w}">${rb(t)}</div>`).join(""),
+  log:L=>{const n=L.length;return L.map(([w,t],i)=>{const th=(i/n*.86).toFixed(3);if(w==="d")return`<div class="day" data-t="${th}">${esc(t)}</div>`;if(w==="t")return`<div class="typing" data-t="${th}"><i></i><i></i><i></i></div>`;return`<div class="b ${w}" data-t="${th}">${rb(t)}</div>`}).join("")},
+  vlines:D=>D.vlines.map(([t,txt,cls,top])=>`<div class="vl ${cls}" data-v="${t}" style="${top?`top:${top}%`:""}">${rb(txt)}</div>`).join(""),
+  studies:(D,lang)=>STUDIES.map(s=>`<article class="st${s.hope?" hope":""}" id="ev-${s.id}"><p class="ven">${esc(s.ven)}</p><h3><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></h3>${s.big?`<p class="big">${esc(s.big[lang])}<small>${esc(s.bl[lang])}</small></p>`:""}<p><b>${esc(D.found)}</b> ${esc(s.f[lang])}</p><p class="lim"><b>${esc(D.lim)}</b> ${esc(s.l[lang])}</p></article>`).join(""),
+  habits:D=>D.habits.map(([b,s])=>`<li><b>${rb(b)}</b><span>${rb(s)}</span></li>`).join("")
+};
+/* shared:end */
+
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const root=document.documentElement,body=document.body;
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const sm=(a,b,x)=>{const t=clamp((x-a)/(b-a));return t*t*(3-2*t)};
 const lerp=(a,b,t)=>a+(b-a)*t;
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const rb=s=>esc(s).replace(/\{([^|{}]+)\|([^{}]+)\}/g,"<ruby>$1<rt>$2</rt></ruby>");
 
 /* language: picked from the browser, Vietnamese first */
 function pickLang(){for(const l of (navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"])){const s=String(l).toLowerCase();if(s.startsWith("vi"))return"vi";if(s.startsWith("en"))return"en"}return"vi"}
-let lang=pickLang(),D=T[lang];
+/* /vi/ and /en/ pin the language (data-lang); the root page follows the browser */
+let lang=root.dataset.lang||pickLang(),D=T[lang];
 
 /* friendly mascot, hero only */
 $$(".mascot").forEach(el=>el.innerHTML=`<svg viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="mb0" cx=".38" cy=".3" r=".85"><stop offset="0" stop-color="#9ad8f8"/><stop offset="1" stop-color="#2f8fd6"/></radialGradient></defs><ellipse class="m-sh" cx="60" cy="113" rx="36" ry="5"/><path fill="url(#mb0)" d="M60 14c29 0 47 21 47 49 0 28-18 45-47 45S13 91 13 63C13 35 31 14 60 14z"/><ellipse class="m-ch" cx="30" cy="76" rx="8" ry="5" opacity=".55"/><ellipse class="m-ch" cx="90" cy="76" rx="8" ry="5" opacity=".55"/><g class="cart"><g class="m-e"><ellipse class="m-sc" cx="42" cy="60" rx="11" ry="12"/><ellipse class="m-pu p1" cx="42" cy="61" rx="6" ry="7"/><circle class="m-gl" cx="45" cy="56" r="2.4"/></g><g class="m-e"><ellipse class="m-sc" cx="78" cy="60" rx="11" ry="12"/><ellipse class="m-pu p2" cx="78" cy="61" rx="6" ry="7"/><circle class="m-gl" cx="81" cy="56" r="2.4"/></g></g><path class="m-mouth" d="M50 79Q60 81 70 79Q60 93 50 79Z"/></svg>`);
@@ -591,18 +648,22 @@ function render(){
   $$("[data-ph]").forEach(el=>el.placeholder=D[el.dataset.ph]);
   $("#langBtn").textContent=lang==="vi"?"EN":"VI";
   $("#langBtn").setAttribute("aria-label",lang==="vi"?"Switch to English":"Chuyển sang tiếng Việt");
-  $("#hold").setAttribute("aria-label",D.hold);$("#hold").textContent=D.hold;
-  $("#heroChat").innerHTML=D.hero.map(([w,t])=>`<div class="b ${w}">${rb(t)}</div>`).join("");
-  const L=D.log,n=L.length;
-  $("#logList").innerHTML=L.map(([w,t],i)=>{const th=(i/n*.86).toFixed(3);if(w==="d")return`<div class="day" data-t="${th}">${esc(t)}</div>`;if(w==="t")return`<div class="typing" data-t="${th}"><i></i><i></i><i></i></div>`;return`<div class="b ${w}" data-t="${th}">${rb(t)}</div>`}).join("");
-  $("#vlines").innerHTML=D.vlines.map(([t,txt,cls,top])=>`<div class="vl ${cls}" data-v="${t}" style="${top?`top:${top}%`:""}">${rb(txt)}</div>`).join("");
-  $("#studies").innerHTML=STUDIES.map(s=>`<article class="st${s.hope?" hope":""}" id="ev-${s.id}"><p class="ven">${esc(s.ven)}</p><h3><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></h3>${s.big?`<p class="big">${esc(s.big[lang])}<small>${esc(s.bl[lang])}</small></p>`:""}<p><b>${esc(D.found)}</b> ${esc(s.f[lang])}</p><p class="lim"><b>${esc(D.lim)}</b> ${esc(s.l[lang])}</p></article>`).join("");
-  $("#habits").innerHTML=D.habits.map(([b,s])=>`<li><b>${rb(b)}</b><span>${rb(s)}</span></li>`).join("");
+  $("#hold").setAttribute("aria-label",D.hold);
+  renderHero();renderLog();
+  $("#vlines").innerHTML=HTML.vlines(D);
+  $("#studies").innerHTML=HTML.studies(D,lang);
+  $("#habits").innerHTML=HTML.habits(D);
+  if(back)$("[data-i=badge2]").textContent=D["back_"+back];
+  const jk=jlptKey(),jp=$("#jlpt");jp.hidden=!jk;jp.textContent=jk?D[jk]:"";
+  renderQuiz();
   WARP=$$("[data-w]");WARP.forEach(prepWarp);
   navKey=titleKey=logoKey="";
   requestAnimationFrame(scatterEyes);
 }
-$("#langBtn").addEventListener("click",()=>{lang=lang==="vi"?"en":"vi";render();$("#tryOut").textContent=""});
+$("#langBtn").addEventListener("click",()=>{
+  lang=lang==="vi"?"en":"vi";render();$("#tryOut").textContent="";
+  try{history.replaceState(null,"",(root.dataset.base||"")+lang+"/"+location.hash)}catch(_){}
+});
 
 /* pointer */
 const ptr={x:innerWidth/2,y:innerHeight*.4,tx:innerWidth/2,ty:innerHeight*.4,t:0};
@@ -772,7 +833,10 @@ const toast=$("#toast");let toastT=0;
 function say(txt){toast.textContent=txt;toast.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>toast.classList.remove("on"),4200)}
 $$(".pick").forEach(b=>b.addEventListener("click",()=>say(D.sub)));
 $$(".notes a").forEach(x=>x.addEventListener("click",e=>{if(body.classList.contains("locked")){e.preventDefault();V.scrollIntoView({behavior:reduce?"auto":"smooth"})}}));
-$("#tryForm").addEventListener("submit",e=>{e.preventDefault();const v=$("#ans").value.trim().toLowerCase().replace(/\s+/g,"");const out=$("#tryOut");if(!v){out.innerHTML=rb(D.empty);return}out.innerHTML=rb(["みやげ","おみやげ","ミヤゲ","オミヤゲ","miyage","omiyage"].includes(v)?D.ok:D.no)});
+$("#tryForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#tryOut");if(!$("#ans").value.trim()){out.innerHTML=rb(D.empty);return}
+  const ok=checkReading($("#ans").value,Q.r);out.innerHTML=rb(Q.ret?tmpl(ok?D.ok_r:D.no_r,Q):ok?D.ok:D.no);
+  if(Q.from==="look")MEM.look=(MEM.look||[]).filter(x=>x.w!==Q.w);
+  MEM.quiz={w:Q.w,r:Q.r};saveMem()});
 
 /* state */
 let maxD=0,residue=false,idleShown=false,kanji=0,lastScroll=performance.now(),last=performance.now(),wasTop=true;
@@ -804,7 +868,7 @@ function frame(now){
 
   nav.classList.toggle("gone",d>.66);
   const nk=eff<.26?"navcta":eff<.55?"navcta2":"navcta3";if(nk!==navKey){navKey=nk;navCta.textContent=D[nk]}
-  badge.classList.toggle("alt",residue);
+  badge.classList.toggle("alt",residue||(!!back&&now>backAt));
   const lk=eff>=.5?"代わり":"Kawari";if(lk!==logoKey){logoKey=lk;logoTxt.textContent=lk}
   const tk=d<.5?D.title0:d<.85?D.title1:"代わり";if(tk!==titleKey){titleKey=tk;document.title=tk}
 
@@ -840,6 +904,99 @@ function frame(now){
   if(!idleShown&&d>.25&&d<.66&&now-lastScroll>8000){idleShown=true;say(D.idle)}
   requestAnimationFrame(frame);
 }
+
+/* the page notices you: clock, calendar, tabs, return visits, dictionary lookups.
+   All local. Nothing leaves the browser. Never print a time or a date: hint, so the reader infers we looked. */
+
+/* memory between visits: one localStorage key */
+const MEM=(()=>{try{return JSON.parse(localStorage.getItem("kawari"))||{}}catch(_){return{}}})();
+function saveMem(){try{localStorage.setItem("kawari",JSON.stringify(MEM))}catch(_){}}
+/* time since the last visit, as a mood. Fixed for the session so a reload doesn't say "back already?" */
+let back=null;
+try{const s=sessionStorage.getItem("kawari-back");
+  if(s!==null)back=s||null;
+  else{const now=Date.now(),gap=MEM.last?now-MEM.last:-1,DAY=864e5;
+    back=gap<0?null:gap<DAY?"soon":gap<14*DAY?"days":"long";
+    sessionStorage.setItem("kawari-back",back||"");MEM.last=now;MEM.n=(MEM.n||0)+1;saveMem()}}catch(_){}
+const backAt=performance.now()+2500;
+
+/* readings we can quiz on: every {kanji|kana} on the page, plus the bare ones */
+const READ=(()=>{const m={"山葵":"わさび","紫陽花":"あじさい","土産":"みやげ"};
+  for(const x of JSON.stringify(T).matchAll(/\{([^|{}]+)\|([^{}]+)\}(.)?/g)){const k=x[1];
+    if(!/^[㐀-鿿々]{2,}$/.test(k)||/[ぁ-ゖ]/.test(x[3]||"")||k==="代替")continue; /* skip okurigana splits and the 代替→かわり pun */
+    m[k]||(m[k]=x[2])}
+  return m})();
+function lookupWord(t){let b=null;for(const k in READ)if(t.startsWith(k)&&(!b||k.length>b.length))b=k;return b?{w:b,r:READ[b]}:{w:t,r:null}}
+
+/* answer check: kana (either script) or romaji, Hepburn or kunrei, long vowels optional */
+const kata2hira=s=>s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));
+const KANA="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ";
+const ROMA="a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho ma mi mu me mo ya yu yo ra ri ru re ro wa o n ga gi gu ge go za ji zu ze zo da ji zu de do ba bi bu be bo pa pi pu pe po".split(" ");
+const romOf=c=>{const i=KANA.indexOf(c);return i<0?null:ROMA[i]};
+function toRomaji(h){let o="";const a=[...h];
+  for(let i=0;i<a.length;i++){const c=a[i],nx=a[i+1];
+    if(c==="っ"){const r=romOf(nx);if(r)o+=r[0]==="c"?"t":r[0];continue}
+    let r=romOf(c);if(r==null)continue;
+    if(nx&&"ゃゅょ".includes(nx)){const y={"ゃ":"a","ゅ":"u","ょ":"o"}[nx];r=/^(sh|ch|j)/.test(r)?r.slice(0,-1)+y:r.slice(0,-1)+"y"+y;i++}
+    o+=r}
+  return o}
+const normRom=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z]/g,"")
+  .replace(/si/g,"shi").replace(/ti/g,"chi").replace(/tu/g,"tsu").replace(/(?<![sc])hu/g,"fu").replace(/[zd]i/g,"ji").replace(/du/g,"zu")
+  .replace(/sy([auo])/g,"sh$1").replace(/ty([auo])/g,"ch$1").replace(/[zj]y([auo])/g,"j$1")
+  .replace(/ou/g,"o").replace(/([aiueo])\1+/g,"$1").replace(/nn/g,"n");
+function checkReading(v,r){const s=kata2hira(v.replace(/\s+/g,"")),ok=[r,"お"+r];
+  if(ok.includes(s))return true;const n=normRom(s);return!!n&&ok.some(x=>normRom(toRomaji(x))===n)}
+
+/* the quiz: on a return visit, ask again what they looked up or answered last time */
+let Q={w:"土産",r:"みやげ",ret:false,from:null};
+if(back){const lk=(MEM.look||[]).filter(x=>x.r).slice(-1)[0];
+  if(lk)Q={w:lk.w,r:lk.r,ret:true,from:"look"};else if(MEM.quiz&&MEM.quiz.r)Q={w:MEM.quiz.w,r:MEM.quiz.r,ret:true,from:"quiz"}}
+function renderQuiz(){if(!Q.ret)return;$("[data-i=tryq]").innerHTML=rb(tmpl(D.tryq_r,Q));$("[data-i=tryhint]").textContent=Q.from==="look"?D.hint_look:D.hint_quiz}
+
+/* clock: Kawari adds one line to the hero chat, worded by the hour, never stating it */
+const tod=(h=>h<5?"tod_night":h<8?"tod_early":h===12?"tod_lunch":h>=23?"tod_late":null)(new Date().getHours());
+let todOn=false;
+function addTod(){const c=$("#heroChat"),h=c.offsetHeight;c.insertAdjacentHTML("beforeend",HTML.hero({hero:[["k",D[tod]]]}));c.style.height=h+"px";c.classList.add("full")}
+function renderHero(){const c=$("#heroChat");c.classList.remove("full");c.style.height="";c.innerHTML=HTML.hero(D);if(todOn)addTod()}
+if(tod)setTimeout(()=>{todOn=true;addTod()},6000);
+
+/* calendar: next JLPT is the first Sunday of July or December; only within a month, only in words */
+function jlptKey(){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  for(const y of[n.getFullYear(),n.getFullYear()+1])for(const m of[6,11]){const t=new Date(y,m,1);t.setDate(1+(7-t.getDay())%7);
+    if(t>=t0){const d=Math.round((t-t0)/864e5);return d===0?"jlpt0":d<7?"jlpt1":d<=20?"jlpt2":d<=30?"jlpt3":null}}
+  return null}
+
+/* tabs: the title waits for you; leaving mid-quiz gets noticed */
+let quizAway=false,leftShown=false;
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){document.title=D.away;if(!leftShown&&$("#tryForm").contains(document.activeElement))quizAway=true}
+  else{titleKey="";if(quizAway){quizAway=false;leftShown=true;$("#tryOut").innerHTML=rb(tmpl(D.left,Q))}}
+});
+
+/* lookups: pop-up dictionaries (Yomitan etc.) select the word under the cursor with no click or drag.
+   A selection made by hand comes with a pointer press, so ignore those. */
+let pDown=false,upAt=-1e9,selT=0,lastSel="",lookToast=false,lookEv=false;const LOOKS=[];
+addEventListener("pointerdown",()=>{pDown=true},{capture:true,passive:true});
+["pointerup","pointercancel"].forEach(t=>addEventListener(t,()=>{pDown=false;upAt=performance.now()},{capture:true,passive:true}));
+document.addEventListener("selectionchange",()=>{clearTimeout(selT);selT=setTimeout(onSelect,180)});
+function onSelect(){
+  if(pDown||performance.now()-upAt<600)return;
+  const s=getSelection();if(!s||s.isCollapsed||!s.rangeCount)return;
+  const a=document.activeElement;if(a&&/^(INPUT|TEXTAREA)$/.test(a.tagName))return;
+  const f=s.getRangeAt(0).cloneContents();f.querySelectorAll("rt,rp").forEach(x=>x.remove());
+  const t=f.textContent.replace(/\s+/g,"");
+  if(!t||t.length>12||!/[㐀-鿿]/.test(t)||t===lastSel)return;
+  lastSel=t;const e=lookupWord(t);
+  if(e.r){MEM.look=(MEM.look||[]).filter(x=>x.w!==e.w).concat([e]).slice(-20);saveMem()}
+  if(!unlocked){LOOKS.push(e);if(LOOKS.length>3)LOOKS.shift();renderLog();scatterEyes();if(!lookToast){lookToast=true;say(D.look_saved)}}
+  else if(!lookEv){lookEv=true;say(tmpl(D.look_ev,e))}
+}
+/* looked-up words join the chat history, just before "Day ∞" */
+function renderLog(){let L=D.log;
+  if(LOOKS.length){const i=L.map(x=>x[0]).lastIndexOf("d");L=L.slice(0,i).concat([["d",D.today]],...LOOKS.map(e=>[["u",tmpl(D.look_q,e)],["k",tmpl(e.r?D.look_a:D.look_a0,e)]]),L.slice(i))}
+  $("#logList").innerHTML=HTML.log(L)}
+
+try{console.log("%c"+T[lang].devtools,"font:600 14px sans-serif;color:#6a4fb8")}catch(_){}
 
 render();
 if(document.fonts&&document.fonts.load)document.fonts.load('900 20px "Noto Serif JP"',"代").catch(()=>{});
