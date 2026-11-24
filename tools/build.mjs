@@ -22,7 +22,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
-const SITE = "https://dantr4n.github.io/kawari-landing-page/";
+const SITE = "https://kawari-ai.app/";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const check = process.argv.includes("--check");
 
