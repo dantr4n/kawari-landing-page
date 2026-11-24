@@ -1147,7 +1147,7 @@ function renderLog(){let L=D.log;
   if(LOOKS.length){const i=L.map(x=>x[0]).lastIndexOf("d");L=L.slice(0,i).concat([["d",D.today]],...LOOKS.map(e=>[["u",tmpl(D.look_q,e)],["k",tmpl(e.r?D.look_a:D.look_a0,e)]]),L.slice(i))}
   $("#logList").innerHTML=HTML.log(L)}
 
-/* essay demo: your paragraph and Kawari's Japanese trade places every 5s, decoding like a terminal.
+/* essay demo: your paragraph and Kawari's Japanese trade places every 3s, decoding like a terminal.
    Each letter keeps its box (the glyph is an overlay, hidden letters keep their space), and the
    paragraph box has a fixed height, so nothing reflows. Work only happens during the 1.6s swap. */
 const ES_JP="はじめまして、ミンと申します。三年間、毎日日本語を勉強してまいりました。今では、自分の考えを自分の言葉で伝えることができます。御社で働けることを楽しみにしております。";
@@ -1169,10 +1169,10 @@ new IntersectionObserver(es=>{ES.vis=es[0].isIntersecting;if(!ES.vis&&!ES.plan)E
 const ES_DUR=1600;
 function esTick(now){
   if(!ES.vis&&!ES.plan)return;
-  if(!ES.next){ES.next=now+5000;return}
+  if(!ES.next){ES.next=now+3000;return}
   if(!ES.plan){if(now<ES.next)return;
     const out=ES.L[ES.side],inn=ES.L[1-ES.side],r=Math.random;
-    if(reduce){out.forEach(c=>esSet(c,2));inn.forEach(c=>esSet(c,0));ES.side=1-ES.side;ES.box.classList.toggle("jp",ES.side===1);ES.next=now+5000;return}
+    if(reduce){out.forEach(c=>esSet(c,2));inn.forEach(c=>esSet(c,0));ES.side=1-ES.side;ES.box.classList.toggle("jp",ES.side===1);ES.next=now+3000;return}
     /* outgoing letters scramble then vanish; incoming ones appear scrambled then resolve, sweeping left to right */
     ES.plan={out:out.map((c,i)=>{const a=.42*i/out.length+r()*.18;return[c,a,Math.min(.97,a+.1+r()*.2),PUNCT.test(c.textContent)]}),
              inn:inn.map((c,i)=>{const a=.3+.4*i/inn.length+r()*.15;return[c,a,Math.min(.97,a+.12+r()*.25),PUNCT.test(c.textContent)]})};
@@ -1182,7 +1182,7 @@ function esTick(now){
   for(const[c,a,b,pu]of ES.plan.inn)esSet(c,p<a?2:p<b&&!pu?1:0);
   /* re-roll a few scrambling glyphs at ~16fps: enough flicker for the effect, little paint */
   if(now-ES.roll>60){ES.roll=now;for(const L of ES.L)for(const c of L)if(c._s===1&&Math.random()<.35)c.dataset.g=MX[Math.random()*MX.length|0]}
-  if(p>=1){ES.plan.out.forEach(x=>esSet(x[0],2));ES.plan.inn.forEach(x=>esSet(x[0],0));ES.side=1-ES.side;ES.plan=null;ES.next=now+5000}
+  if(p>=1){ES.plan.out.forEach(x=>esSet(x[0],2));ES.plan.inn.forEach(x=>esSet(x[0],0));ES.side=1-ES.side;ES.plan=null;ES.next=now+3000}
 }
 
 /* camera: the toggle shows what the signs look like to you without Kawari */
