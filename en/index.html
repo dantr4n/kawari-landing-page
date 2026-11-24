@@ -65,7 +65,10 @@ p{margin:0}
 .hero{padding-top:28px}
 .hero-grid{display:grid;gap:44px;align-items:center}
 .pill{display:inline-grid;padding:7px 14px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:500;color:var(--mute);margin-bottom:18px}
+.pill{position:relative}
 .pill>span{grid-area:1/1;transition:opacity .5s}
+.pill>span+span,.pill.alt>span:first-child{position:absolute;white-space:nowrap}
+.pill.alt>span+span{position:static;white-space:normal}
 .pill>span+span,.pill.alt>span:first-child{opacity:0}
 .pill.alt>span+span{opacity:1}
 .hero h1{font-size:clamp(36px,10vw,56px);font-weight:800;letter-spacing:-.03em}
@@ -110,6 +113,49 @@ p{margin:0}
 .card{background:var(--card);border-radius:24px;padding:24px;box-shadow:0 0 0 1px var(--line),0 10px 30px -18px rgba(18,20,58,.25)}
 .card h3{font-size:20px;margin:14px 0 8px}
 .card p{color:var(--mute)}
+/* essay demo: two paragraphs share one grid cell, so swapping them never moves the page */
+.essay{margin-top:16px;padding:12px 14px 14px;border-radius:16px;background:color-mix(in srgb,var(--acc) 6%,var(--card));box-shadow:inset 0 0 0 1px var(--line);contain:layout paint}
+.es-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;font-size:12px;font-weight:700;color:var(--mute)}
+.es-who{display:inline-grid;text-align:right;color:var(--acc);white-space:nowrap}
+.es-who b{grid-area:1/1;transition:opacity .4s}
+.es-who b+b,.essay.jp .es-who b:first-child{opacity:0}
+.essay.jp .es-who b+b{opacity:1}
+.essay .lay{display:grid}
+.essay .lay>p{grid-area:1/1;margin:0;font-size:14.5px;line-height:1.75}
+.essay [lang=ja]{font-family:"Noto Sans JP","Be Vietnam Pro",sans-serif}
+.c.h{visibility:hidden}
+/* camera: a viewfinder over three station signs; the scan line and tags are transform/opacity only */
+.cam{position:relative;margin-top:16px;padding:22px 14px;border-radius:16px;background:linear-gradient(#3a4a5e,#22303f);overflow:hidden;contain:layout paint}
+.vf i{position:absolute;width:16px;height:16px;border:2px solid rgba(255,255,255,.75)}
+.vf i:nth-child(1){left:8px;top:8px;border-right:0;border-bottom:0}.vf i:nth-child(2){right:8px;top:8px;border-left:0;border-bottom:0}
+.vf i:nth-child(3){left:8px;bottom:8px;border-right:0;border-top:0}.vf i:nth-child(4){right:8px;bottom:8px;border-left:0;border-top:0}
+.signs{display:flex;gap:8px}
+.sg{flex:1;position:relative;display:grid;place-items:center;min-height:58px;border-radius:6px;font:800 15px/1.2 "Noto Sans JP",sans-serif;text-align:center;padding:6px 4px}
+.s1{background:#fff;color:#c0262d;box-shadow:inset 0 0 0 3px #c0262d}
+.s2{background:#1f8f4e;color:#fff}
+.s3{background:#f6c445;color:#1b1b1b}
+.sg span{transition:filter .6s,opacity .6s}
+.sg em{position:absolute;left:50%;bottom:-6px;transform:translate(-50%,100%);font:700 11px/1.3 "Be Vietnam Pro",sans-serif;font-style:normal;white-space:nowrap;padding:3px 7px;border-radius:6px;background:#2f9be0;color:#fff;animation:tag 4.2s infinite both}
+.s1 em{animation-delay:.45s}.s2 em{animation-delay:1.25s}.s3 em{animation-delay:2.05s}
+@keyframes tag{0%{opacity:0;transform:translate(-50%,calc(100% + 4px))}6%,72%{opacity:1;transform:translate(-50%,100%)}82%,100%{opacity:0}}
+.signs{margin-bottom:22px}
+.scan{position:absolute;inset:0;pointer-events:none;animation:scan 4.2s linear infinite}
+.scan::before{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;background:#5bbcf0;box-shadow:0 0 12px 3px rgba(91,188,240,.55)}
+@keyframes scan{0%{transform:translateX(0)}70%,100%{transform:translateX(100%)}}
+.cam.off .scan,.cam.off em{display:none}
+.cam.off .sg span{filter:blur(4px);opacity:.75}
+.camt{margin-top:10px;border:0;border-radius:999px;padding:6px 12px;font:700 12px "Be Vietnam Pro",sans-serif;cursor:pointer;background:var(--acc);color:#fff}
+.camt[aria-pressed=false]{background:transparent;color:var(--mute);box-shadow:inset 0 0 0 1px var(--line)}
+.cam-cap{visibility:hidden}.cam.off~.cam-cap{visibility:visible}
+/* substitute memory: a transfer that never asks; fixed-height log, so new lines never push the page */
+.sm{margin-top:16px;padding:12px 14px;border-radius:16px;background:color-mix(in srgb,var(--acc) 6%,var(--card));box-shadow:inset 0 0 0 1px var(--line);contain:layout paint}
+.sm-h{display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:700;color:var(--mute)}
+.sm-h b{color:var(--acc);font-variant-numeric:tabular-nums}
+.sm-bar{height:6px;margin:8px 0 10px;border-radius:9px;background:var(--line);overflow:hidden}
+.sm-bar i{display:block;height:100%;background:var(--acc);transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.sm-log{list-style:none;margin:0;padding:0;height:calc(4 * 1.7em);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;font-size:13px;line-height:1.7;color:var(--mute)}
+.sm-log li{flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:pop .5s both}
+.sm-log li::after{content:" ✓";color:var(--acc);font-weight:700}
 .ico{width:48px;height:48px;border-radius:14px;background:color-mix(in srgb,var(--acc) 14%,var(--card));display:grid;place-items:center;color:var(--acc)}
 .ico svg{width:26px;height:26px}
 .fine{margin-top:12px;font-size:13px;color:color-mix(in srgb,var(--mute) 45%,var(--card))}
@@ -239,10 +285,10 @@ details p{padding:0 20px 18px;color:var(--mute)}
 .answ{position:relative;flex:1 1 180px;display:flex}
 .answ input{flex:1;min-width:0}
 /* Kawari's suggestion, drawn behind the caret in the input's own font */
-.ghost{position:absolute;inset:0;padding:0 16px;display:flex;align-items:center;pointer-events:none;font:16px "Noto Sans JP","Be Vietnam Pro",sans-serif;white-space:pre;overflow:hidden}
-.ghost i{font-style:normal;color:transparent}
-.ghost b{font-weight:400;color:#7d86a8;opacity:0;transition:opacity .8s}
-.ghost.on b{opacity:1}
+.kgh{position:absolute;inset:0;padding:0 16px;display:flex;align-items:center;pointer-events:none;font:16px "Noto Sans JP","Be Vietnam Pro",sans-serif;white-space:pre;overflow:hidden}
+.kgh i{font-style:normal;color:transparent}
+.kgh b{font-weight:400;color:#7d86a8;opacity:0;transition:opacity .8s}
+.kgh.on b{opacity:1}
 .gtip{flex-basis:100%;background:none;border:0;padding:2px 0;text-align:left;color:#7d86a8;font:13px "Be Vietnam Pro",sans-serif;cursor:pointer}
 .try .next{margin-top:12px;background:transparent;color:#5bbcf0;box-shadow:inset 0 0 0 1px #5bbcf0}
 /* after the rip: something follows your cursor, a beat late */
@@ -305,9 +351,9 @@ details p{padding:0 20px 18px;color:var(--mute)}
   <div class="wrap">
     <h2 data-i="fh">Everything you need. And then some.</h2>
     <div class="grid3">
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3 data-i="f1t">Camera translation</h3><p data-i="f1d">Point it at a 「<ruby>立入禁止<rt>たちいりきんし</rt></ruby>」 sign or the 「<ruby>瑕疵担保責任<rt>かしたんぽせきにん</rt></ruby>」 clause in your lease. Kawari reads it, so you don&#39;t have to.</p></article>
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5L9 20H4v-5z"/><path d="M13 6l5 5"/></svg></div><h3 data-i="f2t">Essays in 3 seconds</h3><p data-i="f2d">An N1 essay on 「<ruby>少子高齢化<rt>しょうしこうれいか</rt></ruby>」, an email signed off with 「ご<ruby>査収<rt>さしゅう</rt></ruby>のほど」. Type one word, get a page.</p></article>
-      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 5h1V4z"/><path d="M15 4a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 5h-1V4z"/></svg></div><h3 data-i="f3t">Substitute Memory™</h3><p data-i="f3d" data-w=".18">Even 「<ruby>薔薇<rt>ばら</rt></ruby>」 and 「<ruby>憂鬱<rt>ゆううつ</rt></ruby>」 — kanji even native speakers avoid writing by hand. Kawari remembers them for you, forever.</p><p class="fine" data-i="f3n">*Kawari remembers. You don&#39;t.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3 data-i="f1t">Camera translation</h3><p data-i="f1d">Point it at a 「<ruby>立入禁止<rt>たちいりきんし</rt></ruby>」 sign or the 「<ruby>瑕疵担保責任<rt>かしたんぽせきにん</rt></ruby>」 clause in your lease. Kawari reads it, so you don&#39;t have to.</p><div class="cam" id="cam" aria-hidden="true"><div class="vf"><i></i><i></i><i></i><i></i></div><div class="signs"><div class="sg s1"><span>立入禁止</span><em data-i="cam1">No entry</em></div><div class="sg s2"><span>非常口</span><em data-i="cam2">Emergency exit</em></div><div class="sg s3"><span>出口</span><em data-i="cam3">Exit</em></div></div><div class="scan"></div></div><button class="camt" id="camT" type="button" aria-pressed="true"></button><p class="fine cam-cap" data-i="cam_cap">Turn Kawari off and you can&#39;t read a single sign.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5L9 20H4v-5z"/><path d="M13 6l5 5"/></svg></div><h3 data-i="f2t">Essays in 3 seconds</h3><p data-i="f2d">An N1 essay on 「<ruby>少子高齢化<rt>しょうしこうれいか</rt></ruby>」, an email signed off with 「ご<ruby>査収<rt>さしゅう</rt></ruby>のほど」. Type one word, get a page.</p><div class="essay" id="essay" aria-hidden="true"><div class="es-top"><span data-i="es_topic">Self-introduction · job interview</span><span class="es-who"><b data-i="es_you">You typed</b><b data-i="es_k">Kawari submitted</b></span></div><div class="lay"><p id="esA"></p><p id="esB" lang="ja"></p></div></div></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 5h1V4z"/><path d="M15 4a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 5h-1V4z"/></svg></div><h3 data-i="f3t">Substitute Memory™</h3><p data-i="f3d" data-w=".18">Even 「<ruby>薔薇<rt>ばら</rt></ruby>」 and 「<ruby>憂鬱<rt>ゆううつ</rt></ruby>」 — kanji even native speakers avoid writing by hand. Kawari remembers them for you, forever.</p><div class="sm" id="sm" aria-hidden="true"><div class="sm-h"><span id="smH"></span><b id="smPct">0%</b></div><div class="sm-bar"><i id="smBar"></i></div><ul class="sm-log" id="smLog"></ul></div><p class="fine" data-i="f3n">*Kawari remembers. You don&#39;t.</p></article>
     </div>
   </div>
 </section>
@@ -407,7 +453,7 @@ details p{padding:0 20px 18px;color:var(--mute)}
     <div class="try">
       <label for="ans" data-i="tryq">Try it now, no looking it up: how do you read 「土産」?</label>
       <p class="hint" data-i="tryhint">Hint: what you bring back for your coworkers after every trip.</p>
-      <form id="tryForm" autocomplete="off"><div class="answ"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Type the reading (kana or romaji)"><span class="ghost" id="ghost" aria-hidden="true"><i></i><b></b></span></div><button class="btn" type="submit" data-i="trybtn">Check</button><button class="gtip" type="button" id="gtip" hidden></button></form>
+      <form id="tryForm" autocomplete="off"><div class="answ"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Type the reading (kana or romaji)"><span class="kgh" id="ghost" aria-hidden="true"><i></i><b></b></span></div><button class="btn" type="submit" data-i="trybtn">Check</button><button class="gtip" type="button" id="gtip" hidden></button></form>
       <output id="tryOut" aria-live="polite"></output>
       <button class="btn next" type="button" id="tryNext" data-i="trynext" hidden>Next word</button>
     </div>
@@ -486,6 +532,11 @@ tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",tryq
 ok_g:"Đúng: {%w|%r}. Bạn vừa tự nhớ ra.",no_g:"Chưa đúng — là {%w|%r}. Lần sau gặp lại, bạn sẽ nhớ.",
 ghost_ok:"Đúng — nhưng là Kawari gõ hộ bạn. Bạn vừa để nó nghĩ thay.",ghost_tip:"Tab ⇥ để Kawari gõ nốt",
 trynext:"Từ tiếp theo",quiz_done:"Hết rồi. Hôm khác quay lại, Kawari sẽ hỏi lại đúng những từ bạn sai.",
+es_topic:"Tự giới thiệu · phỏng vấn",
+cam1:"Cấm vào",cam2:"Lối thoát hiểm",cam3:"Lối ra",cam_on:"Kawari: BẬT",cam_off:"Kawari: TẮT",cam_cap:"Tắt Kawari đi, bạn không đọc được biển nào nữa.",
+sm_h:"Đang chuyển trí nhớ sang Kawari…",sm_done:"Chuyển xong. Bạn có thể đi.",sm_prev:"Đã chuyển xong từ lần trước.",
+sm_items:["薔薇","憂鬱","紫陽花","Mật khẩu email của bạn","Sinh nhật mẹ bạn","Tên đứa bạn thân hồi cấp một","Tên của bạn","Bạn"],es_you:"Bạn gõ",es_k:"Kawari nộp",
+es_src:"Xin chào, tôi tên là Minh. Tôi đã học tiếng Nhật mỗi ngày suốt ba năm, và giờ tôi có thể diễn đạt suy nghĩ của mình bằng chính lời của mình. Rất mong được làm việc cùng quý công ty.",
 nf_t:"Không tìm thấy trang",nf_h:"Trang này không tồn tại.",nf_p:"Kawari nhớ là có. Bạn thì không.",nf_a:"Về trang chủ",hint_look:"Lần trước bạn đã tra từ này.",hint_quiz:"Lần trước bạn đã gặp từ này ở đây.",
 ok_r:"Đúng: {%w|%r}. Rời đi rồi quay lại mà bạn vẫn nhớ. Đó chính là học.",no_r:"Chưa đúng — là {%w|%r}. Không sao: cố nhớ rồi sai vẫn giúp bạn nhớ lâu hơn là không thử.",
 left:"Bạn vừa rời khỏi tab này. Đi tra 「%w」 à?",
@@ -558,6 +609,11 @@ tryq_r:"You came back. Without looking it up: how do you read 「%w」?",tryq_t:
 ok_g:"Right: {%w|%r}. You remembered it yourself.",no_g:"Not quite — it's {%w|%r}. Next time you see it, you'll remember.",
 ghost_ok:"Correct — but Kawari typed it for you. You just let it think for you.",ghost_tip:"Tab ⇥ to let Kawari finish",
 trynext:"Next word",quiz_done:"That's all. Come back another day and Kawari will ask the ones you missed.",
+es_topic:"Self-introduction · job interview",
+cam1:"No entry",cam2:"Emergency exit",cam3:"Exit",cam_on:"Kawari: ON",cam_off:"Kawari: OFF",cam_cap:"Turn Kawari off and you can't read a single sign.",
+sm_h:"Transferring your memory to Kawari…",sm_done:"Transfer complete. You may go.",sm_prev:"Already transferred last time.",
+sm_items:["薔薇","憂鬱","紫陽花","Your email password","Your mother's birthday","Your best friend's name from primary school","Your name","You"],es_you:"You typed",es_k:"Kawari submitted",
+es_src:"Hello, my name is Minh. I have studied Japanese every day for three years, and I can now express my thoughts in my own words. I look forward to working with you.",
 nf_t:"Page not found",nf_h:"This page doesn't exist.",nf_p:"Kawari remembers it did. You don't.",nf_a:"Back to the homepage",hint_look:"You looked this one up last time.",hint_quiz:"You saw this one here last time.",
 ok_r:"Right: {%w|%r}. You left, came back, and still remembered. That's what learning is.",no_r:"Not quite — it's {%w|%r}. That's fine: trying and missing still makes it stick better than not trying.",
 left:"You just left this tab. Looking up 「%w」?",
@@ -629,7 +685,7 @@ const MS=$$(".mascot").map(el=>({el,svg:el.querySelector("svg"),p1:el.querySelec
 const GL="あいうえおかきくけこさしすせそたちつてとなにぬねのアイウエオカキクケコ代忘空無私汝眼口門闇呪亻氵忄辶冂囗ゐゑヰヱ";
 const CJK=/[　-ヿ㐀-鿿＀-￯]/;
 let WARP=[];
-function prepWarp(el){
+function spanify(el){
   const chars=[],nodes=[];
   const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest("ruby")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   while(tw.nextNode())nodes.push(tw.currentNode);
@@ -639,6 +695,8 @@ function prepWarp(el){
       for(const ch of Array.from(part)){const c=document.createElement("span");c.className="c";c.textContent=ch;chars.push(c);
         if(CJK.test(ch)){w=null;frag.appendChild(c)}else{if(!w){w=document.createElement("span");w.className="w";frag.appendChild(w)}w.appendChild(c)}}}
     n.replaceWith(frag)}
+  return chars}
+function prepWarp(el){const chars=spanify(el);
   el._w={order:chars.map(c=>[Math.random(),c]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]),n:0,p:0,seen:0,delay:Math.min(4500,1300+chars.length*45),max:+el.dataset.w};
 }
 function warpTick(dt){
@@ -667,7 +725,7 @@ function render(){
   $("#habits").innerHTML=HTML.habits(D);
   if(back)$("[data-i=badge2]").textContent=D["back_"+back];
   const jk=jlptKey(),jp=$("#jlpt");jp.hidden=!jk;jp.textContent=jk?D[jk]:"";
-  renderQuiz();
+  renderQuiz();esBuild();camRender();smRender();
   WARP=$$("[data-w]");WARP.forEach(prepWarp);
   navKey=titleKey=logoKey="";
   requestAnimationFrame(scatterEyes);
@@ -700,7 +758,7 @@ function scatterEyes(){
   const m=(logEl.clientWidth-lw)/2-30;
   if(m>90){const h=logList.offsetHeight,n=Math.round(m/45);for(let i=0;i<n;i++){const ew=Math.round(22+Math.random()*28),side=Math.random()<.5,x=side?-(30+Math.random()*(m-ew-30))-ew:lw+30+Math.random()*(m-ew-30),y=Math.random()*h;add(x,y,ew,items.reduce((a,it)=>it.offsetTop<=y?it:a,items[0]))}}
 }
-let rsT=0;addEventListener("resize",()=>{clearTimeout(rsT);rsT=setTimeout(()=>{scatterEyes();if(vOn)sizeCv()},200)});
+let rsT=0;addEventListener("resize",()=>{clearTimeout(rsT);rsT=setTimeout(()=>{scatterEyes();if(vOn)sizeCv();esFit()},200)});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(scatterEyes);
 
 /* colours drain with dread */
@@ -887,7 +945,7 @@ function frame(now){
   const lk=eff>=.5?"代わり":"Kawari";if(lk!==logoKey){logoKey=lk;logoTxt.textContent=lk}
   const tk=d<.5?D.title0:d<.85?D.title1:"代わり";if(tk!==titleKey){titleKey=tk;document.title=tk}
 
-  warpTick(dt);twinTick(now);
+  warpTick(dt);twinTick(now);esTick(now);smTick(now);
 
   for(const o of MS){const r=o.svg.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)continue;const sc=r.width/120;
     [[o.p1,42],[o.p2,78]].forEach(([p,cx])=>{const ex=r.left+cx*sc,ey=r.top+60*sc,dx=ptr.x-ex,dy=ptr.y-ey,dist=Math.hypot(dx,dy)||1,k=Math.min(1,dist/160)*4.2;p.setAttribute("cx",(cx+dx/dist*k).toFixed(2));p.setAttribute("cy",(61+dy/dist*k).toFixed(2))});
@@ -1063,6 +1121,65 @@ function onSelect(){
 function renderLog(){let L=D.log;
   if(LOOKS.length){const i=L.map(x=>x[0]).lastIndexOf("d");L=L.slice(0,i).concat([["d",D.today]],...LOOKS.map(e=>[["u",tmpl(D.look_q,e)],["k",tmpl(e.r?D.look_a:D.look_a0,e)]]),L.slice(i))}
   $("#logList").innerHTML=HTML.log(L)}
+
+/* essay demo: your paragraph and Kawari's Japanese trade places every 5s, decoding like a terminal.
+   Each letter keeps its box (the glyph is an overlay, hidden letters keep their space), and the
+   paragraph box has a fixed height, so nothing reflows. Work only happens during the 1.6s swap. */
+const ES_JP="はじめまして、ミンと申します。三年間、毎日日本語を勉強してまいりました。今では、自分の考えを自分の言葉で伝えることができます。御社で働けることを楽しみにしております。";
+const MX="ｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789"+GL;
+const PUNCT=/[、。，．！？「」『』（）・ー.,!?;:'"()\-—]/;
+const ES={box:$("#essay"),lay:null,L:[[],[]],side:0,next:0,t0:0,plan:null,vis:false,roll:0};
+const esSet=(c,st)=>{if(c._s===st)return;c._s=st;
+  if(st===1){c.dataset.g=MX[Math.random()*MX.length|0];c.classList.add("x");c.classList.remove("h")}
+  else if(st===2){c.classList.add("h");c.classList.remove("x")}
+  else c.classList.remove("x","h")};
+function esFit(){const l=ES.lay;if(!l)return;l.style.height="";l.style.height=l.offsetHeight+"px"}
+function esBuild(){
+  const a=$("#esA"),b=$("#esB");a.textContent=D.es_src;b.textContent=ES_JP;
+  ES.L=[spanify(a),spanify(b)];ES.lay=a.parentElement;ES.plan=null;
+  ES.L[ES.side].forEach(c=>esSet(c,0));ES.L[1-ES.side].forEach(c=>esSet(c,2));
+  ES.box.classList.toggle("jp",ES.side===1);esFit();
+}
+new IntersectionObserver(es=>{ES.vis=es[0].isIntersecting;if(!ES.vis&&!ES.plan)ES.next=0}).observe(ES.box);
+const ES_DUR=1600;
+function esTick(now){
+  if(!ES.vis&&!ES.plan)return;
+  if(!ES.next){ES.next=now+5000;return}
+  if(!ES.plan){if(now<ES.next)return;
+    const out=ES.L[ES.side],inn=ES.L[1-ES.side],r=Math.random;
+    if(reduce){out.forEach(c=>esSet(c,2));inn.forEach(c=>esSet(c,0));ES.side=1-ES.side;ES.box.classList.toggle("jp",ES.side===1);ES.next=now+5000;return}
+    /* outgoing letters scramble then vanish; incoming ones appear scrambled then resolve, sweeping left to right */
+    ES.plan={out:out.map((c,i)=>{const a=.42*i/out.length+r()*.18;return[c,a,Math.min(.97,a+.1+r()*.2),PUNCT.test(c.textContent)]}),
+             inn:inn.map((c,i)=>{const a=.3+.4*i/inn.length+r()*.15;return[c,a,Math.min(.97,a+.12+r()*.25),PUNCT.test(c.textContent)]})};
+    ES.t0=now;ES.box.classList.toggle("jp",ES.side===0)}
+  const p=(now-ES.t0)/ES_DUR;
+  for(const[c,a,b,pu]of ES.plan.out)esSet(c,p<a?0:p<b&&!pu?1:2);
+  for(const[c,a,b,pu]of ES.plan.inn)esSet(c,p<a?2:p<b&&!pu?1:0);
+  /* re-roll a few scrambling glyphs at ~16fps: enough flicker for the effect, little paint */
+  if(now-ES.roll>60){ES.roll=now;for(const L of ES.L)for(const c of L)if(c._s===1&&Math.random()<.35)c.dataset.g=MX[Math.random()*MX.length|0]}
+  if(p>=1){ES.plan.out.forEach(x=>esSet(x[0],2));ES.plan.inn.forEach(x=>esSet(x[0],0));ES.side=1-ES.side;ES.plan=null;ES.next=now+5000}
+}
+
+/* camera: the toggle shows what the signs look like to you without Kawari */
+let camOn=true;
+function camRender(){const b=$("#camT");b.textContent=camOn?D.cam_on:D.cam_off;b.setAttribute("aria-pressed",camOn);$("#cam").classList.toggle("off",!camOn)}
+$("#camT").addEventListener("click",()=>{camOn=!camOn;camRender()});
+
+/* substitute memory: one item every ~1.5s while the card is on screen; finished transfers stay finished */
+const SM_PCT=[9,18,27,41,58,74,91,100];
+const SM={n:MEM.sm?SM_PCT.length:0,prev:!!MEM.sm,vis:false,next:0};
+new IntersectionObserver(es=>{SM.vis=es[0].isIntersecting}).observe($("#sm"));
+function smRender(){const n=SM.n,done=n>=SM_PCT.length;
+  $("#smH").textContent=done?(SM.prev?D.sm_prev:D.sm_done):D.sm_h;
+  $("#smPct").textContent=(n?SM_PCT[n-1]:0)+"%";$("#smBar").style.transform=`scaleX(${(n?SM_PCT[n-1]:0)/100})`;
+  $("#smLog").innerHTML=D.sm_items.slice(0,n).map(t=>`<li>${esc(t)}</li>`).join("")}
+function smTick(now){if(!SM.vis||SM.n>=SM_PCT.length)return;
+  if(!SM.next){SM.next=now+1200;return}
+  if(now<SM.next)return;
+  SM.n++;SM.next=now+1300+Math.random()*700;
+  const li=document.createElement("li");li.textContent=D.sm_items[SM.n-1];$("#smLog").appendChild(li);
+  $("#smPct").textContent=SM_PCT[SM.n-1]+"%";$("#smBar").style.transform=`scaleX(${SM_PCT[SM.n-1]/100})`;
+  if(SM.n>=SM_PCT.length){$("#smH").textContent=D.sm_done;MEM.sm=1;saveMem()}}
 
 try{console.log("%c"+T[lang].devtools,"font:600 14px sans-serif;color:#6a4fb8")}catch(_){}
 
