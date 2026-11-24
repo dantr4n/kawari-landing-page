@@ -289,6 +289,14 @@ details p{padding:0 20px 18px;color:var(--mute)}
 .kgh i{font-style:normal;color:transparent}
 .kgh b{font-weight:400;color:#7d86a8;opacity:0;transition:opacity .8s}
 .kgh.on b{opacity:1}
+/* Kawari's offer: a chat bubble over the hint, appears when the input gets focus */
+.koffer{position:absolute;left:0;bottom:calc(100% + 6px);z-index:5;max-width:100%;display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;padding:7px 8px 7px 12px;border-radius:16px 16px 16px 6px;background:#dff0fb;color:#0e3452;font-size:14.5px;line-height:1.5;box-shadow:0 12px 30px -10px rgba(0,0,0,.55);animation:pop .35s both}
+.koffer p{margin:0}
+.koffer div{display:flex;gap:6px;flex-wrap:wrap}
+.koffer button{border:0;border-radius:999px;padding:6px 12px;font:700 13px "Be Vietnam Pro",sans-serif;cursor:pointer}
+#kofY{background:#2f9be0;color:#fff}
+#kofN{background:transparent;color:#0e3452;box-shadow:inset 0 0 0 1px #9cc6e4}
+.koffer.bye div{display:none}
 .gtip{flex-basis:100%;background:none;border:0;padding:2px 0;text-align:left;color:#7d86a8;font:13px "Be Vietnam Pro",sans-serif;cursor:pointer}
 .try .next{margin-top:12px;background:transparent;color:#5bbcf0;box-shadow:inset 0 0 0 1px #5bbcf0}
 /* after the rip: something follows your cursor, a beat late */
@@ -453,7 +461,7 @@ details p{padding:0 20px 18px;color:var(--mute)}
     <div class="try">
       <label for="ans" data-i="tryq">Thử ngay, không tra cứu: 「土産」 đọc là gì?</label>
       <p class="hint" data-i="tryhint">Gợi ý: thứ bạn mang về cho đồng nghiệp sau mỗi chuyến đi.</p>
-      <form id="tryForm" autocomplete="off"><div class="answ"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><span class="kgh" id="ghost" aria-hidden="true"><i></i><b></b></span></div><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button><button class="gtip" type="button" id="gtip" hidden></button></form>
+      <form id="tryForm" autocomplete="off"><div class="answ"><input id="ans" name="ans" lang="ja" data-ph="tryph" placeholder="Gõ cách đọc (kana hoặc romaji)"><span class="kgh" id="ghost" aria-hidden="true"><i></i><b></b></span><div class="koffer" id="koffer" role="status" hidden><p id="kofQ"></p><div><button type="button" id="kofY"></button><button type="button" id="kofN"></button></div></div></div><button class="btn" type="submit" data-i="trybtn">Kiểm tra</button><button class="gtip" type="button" id="gtip" hidden></button></form>
       <output id="tryOut" aria-live="polite"></output>
       <button class="btn next" type="button" id="tryNext" data-i="trynext" hidden>Từ tiếp theo</button>
     </div>
@@ -530,7 +538,7 @@ jlpt0:"Hôm nay thi JLPT. Còn bạn đang đọc một trang quảng cáo.",jlp
 back_soon:"Quay lại nhanh thế?",back_days:"Mấy hôm rồi nhỉ. Bạn quay lại rồi.",back_long:"Lâu lắm rồi nhỉ. Bạn quay lại rồi.",
 tryq_r:"Bạn quay lại rồi. Không tra cứu: 「%w」 đọc là gì?",tryq_t:"Không tra cứu: 「%w」 đọc là gì?",hint_p:"Gợi ý: ",hint_miss:"Lần trước bạn đã trả lời sai từ này.",
 ok_g:"Đúng: {%w|%r}. Bạn vừa tự nhớ ra.",no_g:"Chưa đúng — là {%w|%r}. Lần sau gặp lại, bạn sẽ nhớ.",
-ghost_ok:"Đúng — nhưng là Kawari gõ hộ bạn. Bạn vừa để nó nghĩ thay.",ghost_tip:"Tab ⇥ để Kawari gõ nốt",
+ghost_ok:"Đúng — nhưng là Kawari gõ hộ bạn. Bạn vừa để nó nghĩ thay.",ghost_tip:"Tab ⇥ để Kawari gõ nốt",off_q:"Để Kawari trả lời giúp bạn nhé?",off_y:"Ừ, trả lời giúp mình",off_n:"Không, mình tự làm",off_ok:"Được thôi. Mình vẫn ở đây nếu bạn cần.",
 trynext:"Từ tiếp theo",quiz_done:"Hết rồi. Hôm khác quay lại, Kawari sẽ hỏi lại đúng những từ bạn sai.",
 es_topic:"Tự giới thiệu · phỏng vấn",
 cam1:"Cấm vào",cam2:"Lối thoát hiểm",cam3:"Lối ra",cam_on:"Kawari: BẬT",cam_off:"Kawari: TẮT",cam_cap:"Tắt Kawari đi, bạn không đọc được biển nào nữa.",
@@ -607,7 +615,7 @@ jlpt0:"JLPT is today. You're reading a landing page.",jlpt1:"JLPT is this Sunday
 back_soon:"Back already?",back_days:"It's been a few days. You came back.",back_long:"It's been a while. You came back.",
 tryq_r:"You came back. Without looking it up: how do you read 「%w」?",tryq_t:"No looking it up: how do you read 「%w」?",hint_p:"Hint: ",hint_miss:"You missed this one last time.",
 ok_g:"Right: {%w|%r}. You remembered it yourself.",no_g:"Not quite — it's {%w|%r}. Next time you see it, you'll remember.",
-ghost_ok:"Correct — but Kawari typed it for you. You just let it think for you.",ghost_tip:"Tab ⇥ to let Kawari finish",
+ghost_ok:"Correct — but Kawari typed it for you. You just let it think for you.",ghost_tip:"Tab ⇥ to let Kawari finish",off_q:"Want Kawari to answer for you?",off_y:"Yes, answer for me",off_n:"No, I'll do it myself",off_ok:"Okay. I'll be right here if you need me.",
 trynext:"Next word",quiz_done:"That's all. Come back another day and Kawari will ask the ones you missed.",
 es_topic:"Self-introduction · job interview",
 cam1:"No entry",cam2:"Emergency exit",cam3:"Exit",cam_on:"Kawari: ON",cam_off:"Kawari: OFF",cam_cap:"Turn Kawari off and you can't read a single sign.",
@@ -1048,8 +1056,9 @@ const qv=()=>({w:Q.w,r:Q.r[0]});
 function renderQuiz(){const lab=$("[data-i=tryq]"),hint=$("[data-i=tryhint]");
   if(Q.ret){lab.innerHTML=rb(tmpl(D.tryq_r,qv()));hint.textContent=D["hint_"+Q.from]}
   else if(Q.h){lab.innerHTML=rb(tmpl(D.tryq_t,qv()));hint.textContent=D.hint_p+Q.h[lang]}
-  $("#gtip").textContent=D.ghost_tip}
-function setQ(i){qi=i;Q=QSEQ[i];assisted=false;$("#ans").value="";$("#tryOut").textContent="";$("#tryNext").hidden=true;hideGhost();renderQuiz()}
+  $("#gtip").textContent=D.ghost_tip;
+  $("#kofQ").textContent=$("#koffer").classList.contains("bye")?D.off_ok:D.off_q;$("#kofY").textContent=D.off_y;$("#kofN").textContent=D.off_n}
+function setQ(i){qi=i;Q=QSEQ[i];assisted=false;offered=false;clearInterval(kTyping);offerHide();$("#ans").value="";$("#tryOut").textContent="";$("#tryNext").hidden=true;hideGhost();renderQuiz()}
 $("#tryNext").addEventListener("click",()=>{if(qi+1<QSEQ.length){setQ(qi+1);$("#ans").focus()}else{$("#tryOut").innerHTML=rb(D.quiz_done);$("#tryNext").hidden=true}});
 
 /* ghost autocomplete: Kawari offers the rest of the answer. Taking it doesn't count */
@@ -1059,7 +1068,7 @@ function ghostFor(v){const r=Q.r[0];if(!v)return r;const h=kata2hira(v);
   const rm=toRomaji(r),lv=v.toLowerCase();if(/^[a-z]+$/.test(lv)&&rm.startsWith(lv)&&lv.length<rm.length)return rm.slice(lv.length);
   return""}
 function hideGhost(){clearTimeout(gT);gText="";ghostEl.classList.remove("on");gtip.hidden=true}
-function armGhost(){hideGhost();if(composing)return;const v=ansEl.value,g=ghostFor(v);if(!g)return;
+function armGhost(){hideGhost();if(composing||!$("#koffer").hidden)return;const v=ansEl.value,g=ghostFor(v);if(!g)return;
   gT=setTimeout(()=>{if(ansEl.value!==v||composing||document.activeElement!==ansEl)return;
     gText=g;ghostEl.firstChild.textContent=v;ghostEl.lastChild.textContent=g;ghostEl.classList.add("on");gtip.hidden=false},v?900:3500)}
 function takeGhost(){if(!gText)return false;ansEl.value+=gText;assisted=true;hideGhost();return true}
@@ -1071,6 +1080,22 @@ ansEl.addEventListener("keydown",e=>{if(e.isComposing)return;
   if((e.key==="Tab"&&!e.shiftKey)||(e.key==="ArrowRight"&&ansEl.selectionStart===ansEl.value.length)){if(takeGhost())e.preventDefault()}});
 gtip.addEventListener("mousedown",e=>e.preventDefault());
 gtip.addEventListener("click",()=>{takeGhost();ansEl.focus()});
+
+/* the offer: focus the input and Kawari asks to answer for you. Yes types it out and submits */
+const kof=$("#koffer");let offered=false,kTyping=0,kofT=0;
+function offerHide(){clearTimeout(kofT);kof.hidden=true;kof.classList.remove("bye")}
+function offerShow(){if(offered||ansEl.value||document.activeElement!==ansEl)return;offered=true;hideGhost();
+  kof.classList.remove("bye");$("#kofQ").textContent=D.off_q;kof.hidden=false}
+function kawariTypes(){const r=Q.r[0];let i=0;assisted=true;ansEl.value="";clearInterval(kTyping);
+  kTyping=setInterval(()=>{ansEl.value=r.slice(0,++i);if(i>=r.length){clearInterval(kTyping);setTimeout(()=>$("#tryForm").requestSubmit(),350)}},140)}
+for(const ev of["focus","click"])ansEl.addEventListener(ev,()=>setTimeout(offerShow,350));
+ansEl.addEventListener("input",()=>{if(!kof.hidden&&!kof.classList.contains("bye"))offerHide()});
+ansEl.addEventListener("keydown",e=>{if(e.key==="Escape"&&!kof.hidden){offerHide();armGhost()}});
+ansEl.addEventListener("blur",()=>setTimeout(()=>{if(document.activeElement!==ansEl&&!kof.contains(document.activeElement)&&!kof.classList.contains("bye"))offerHide()},150));
+for(const b of[$("#kofY"),$("#kofN")])b.addEventListener("mousedown",e=>e.preventDefault());
+$("#kofY").addEventListener("click",()=>{offerHide();ansEl.focus();kawariTypes()});
+$("#kofN").addEventListener("click",()=>{kof.classList.add("bye");$("#kofQ").textContent=D.off_ok;ansEl.focus();
+  kofT=setTimeout(()=>{offerHide();armGhost()},2400)});
 
 /* the twin: after the rip, a second cursor follows yours, half a second behind */
 const twin=$("#twin"),fineP=matchMedia("(pointer:fine)").matches,TR=[];
